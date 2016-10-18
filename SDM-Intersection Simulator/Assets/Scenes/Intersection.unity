@@ -247,14 +247,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c712c62206e02d45b67ad7712a05b02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 1
-  zoomSpeed: 2
-  minX: -360
-  maxX: 360
-  minY: -45
-  maxY: 45
-  sensX: 200
-  sensY: 200
+  mainSpeed: 100
+  shiftAdd: 250
+  maxShift: 1000
+  camSens: 0.25
+  rotateOnlyIfMousedown: 1
+  movementStaysFlat: 1
 --- !u!1001 &742755792
 Prefab:
   m_ObjectHideFlags: 0

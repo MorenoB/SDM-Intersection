@@ -1,62 +1,108 @@
 ﻿using UnityEngine;
 
-[RequireComponent(typeof(Camera))]
 public class CameraController : MonoBehaviour
 {
 
-    [Header("Movement Controls")]
-    [Range(15, 50)]
-    public int moveSpeed = 25;
+    [Range(0, 200)]
+    [Tooltip("Regular speed")]
+    public float mainSpeed = 100.0f;
 
-    [Header("Zoom Controls")]
-    public float zoomSpeed = 5.0f;
+    [Range(0, 500)]
+    [Tooltip("multiplied by how long shift is held.  Basically running")]
+    public float shiftAdd = 250.0f;
 
-    [Header("Rotation Contorls")]
-    public float minX = -360.0f;
-    public float maxX = 360.0f;
+    [Range(0, 2000)]
+    [Tooltip("Maximum speed when holding shift")]
+    public float maxShift = 1000.0f;
 
-    public float minY = -45.0f;
-    public float maxY = 45.0f;
+    [Range(0f, 5f)]
+    [Tooltip("How sensitive it with mouse")]
+    public float camSens = 0.25f;
+    public bool rotateOnlyIfMousedown = true;
+    public bool movementStaysFlat = true;
 
-    public float sensX = 100.0f;
-    public float sensY = 100.0f;
+    private Vector3 lastMouse = new Vector3(255, 255, 255); //kind of in the middle of the screen, rather than at the top (play)
+    private float totalRun = 1.0f;
 
-    float rotationY = 0.0f;
-    float rotationX = 0.0f;
+    void Awake()
+    {
+        transform.position = new Vector3(0, 8, -32);
+        transform.rotation = Quaternion.Euler(25, 0, 0);
+    }
+
 
     void Update()
     {
 
-        Vector3 curPosition = transform.position;
-
-
-        if (Input.GetKey(KeyCode.D))
+        if (Input.GetMouseButtonDown(1))
         {
-            transform.position += Vector3.right * moveSpeed * Time.deltaTime;
+            lastMouse = Input.mousePosition;
         }
-        if (Input.GetKey(KeyCode.A))
+
+        if (!rotateOnlyIfMousedown ||
+            (rotateOnlyIfMousedown && Input.GetMouseButton(1)))
         {
-            transform.position += Vector3.left * moveSpeed * Time.deltaTime;
+            lastMouse = Input.mousePosition - lastMouse;
+            lastMouse = new Vector3(-lastMouse.y * camSens, lastMouse.x * camSens, 0);
+            lastMouse = new Vector3(transform.eulerAngles.x + lastMouse.x, transform.eulerAngles.y + lastMouse.y, 0);
+            transform.eulerAngles = lastMouse;
+            lastMouse = Input.mousePosition;
+            //Mouse  camera angle done.  
         }
+
+        //Keyboard commands
+        float f = 0.0f;
+        Vector3 p = GetBaseInput();
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            totalRun += Time.deltaTime;
+            p = p * totalRun * shiftAdd;
+            p.x = Mathf.Clamp(p.x, -maxShift, maxShift);
+            p.y = Mathf.Clamp(p.y, -maxShift, maxShift);
+            p.z = Mathf.Clamp(p.z, -maxShift, maxShift);
+        }
+        else
+        {
+            totalRun = Mathf.Clamp(totalRun * 0.5f, 1f, 1000f);
+            p = p * mainSpeed;
+        }
+
+        p = p * Time.deltaTime;
+        Vector3 newPosition = transform.position;
+        if (Input.GetKey(KeyCode.Space)
+            || (movementStaysFlat && !(rotateOnlyIfMousedown && Input.GetMouseButton(1))))
+        { //If player wants to move on X and Z axis only
+            transform.Translate(p);
+            newPosition.x = transform.position.x;
+            newPosition.z = transform.position.z;
+            transform.position = newPosition;
+        }
+        else
+        {
+            transform.Translate(p);
+        }
+
+    }
+
+    private Vector3 GetBaseInput()
+    {
+        Vector3 p_Velocity = new Vector3();
         if (Input.GetKey(KeyCode.W))
         {
-            transform.position += Vector3.forward * moveSpeed * Time.deltaTime;
+            p_Velocity += new Vector3(0, 0, 1);
         }
         if (Input.GetKey(KeyCode.S))
         {
-            transform.position += Vector3.back * moveSpeed * Time.deltaTime;
+            p_Velocity += new Vector3(0, 0, -1);
         }
-
-        if (Input.GetMouseButton(0))
+        if (Input.GetKey(KeyCode.A))
         {
-            rotationX += Input.GetAxis("Mouse X") * sensX * Time.deltaTime;
-            rotationY += Input.GetAxis("Mouse Y") * sensY * Time.deltaTime;
-            rotationY = Mathf.Clamp(rotationY, minY, maxY);
-            transform.localEulerAngles = new Vector3(-rotationY, rotationX, 0);
+            p_Velocity += new Vector3(-1, 0, 0);
         }
-
-        float scroll = Input.GetAxis("Mouse ScrollWheel");
-        transform.Translate(0, scroll * zoomSpeed, scroll * zoomSpeed, Space.World);
-
+        if (Input.GetKey(KeyCode.D))
+        {
+            p_Velocity += new Vector3(1, 0, 0);
+        }
+        return p_Velocity;
     }
 }
