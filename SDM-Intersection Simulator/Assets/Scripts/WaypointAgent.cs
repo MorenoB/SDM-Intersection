@@ -39,10 +39,14 @@ public class WaypointAgent : MonoBehaviour {
     {
         speed = Random.Range(minAgentSpeed, maxAgentSpeed);
         carController = GetComponent<CarController>();
+        //m_waypointManager.AddEntity(gameObject);
+        //currentNodeTarget = m_waypointManager.GetNodePosition(currentIndex);
     }
 
     public virtual void Update()
     {
+        if (m_waypointManager == null) return;
+
         WaypointMovementUpdate();
     }
 
@@ -76,79 +80,74 @@ public class WaypointAgent : MonoBehaviour {
 
         // If the agent has a gameobject target assigned then move towards it otherwise 
         // get a target position in 3d sapce and move torawrds that
-
-        //  transform.Translate(DirectionVector * Time.deltaTime * Speed, Space.World);
-        Vector3 relativeVector = transform.InverseTransformPoint(currentNodeTarget);
-
-        float steerAngle = relativeVector.x / relativeVector.magnitude;
-        float speed = relativeVector.z / relativeVector.magnitude;
-        float brakeforce = 0;
-
-        if(carController.CurrentSpeed > 0 && speed < 0)
+        if (currentTarget == null)
         {
-            brakeforce = speed;
-        }
-             
+            //  transform.Translate(DirectionVector * Time.deltaTime * Speed, Space.World);
+            Vector3 relativeVector = transform.InverseTransformPoint(currentNodeTarget);
+
+            float steerAngle = relativeVector.x / relativeVector.magnitude;
+            float speed = relativeVector.z / relativeVector.magnitude;
+            float brakeforce = 0;
+
+            if (carController.CurrentSpeed > 0 && speed < 0)
+            {
+                brakeforce = speed;
+            }
+
             /*
             else if(carController.CurrentSpeed < 0 && speed > 0)
             {
                 brakeforce = speed;
             }*/
 
-        carController.Move(steerAngle, speed, brakeforce, 0);
+            carController.Move(steerAngle, speed, brakeforce, 0);
 
-        /*//This is used to give randomness to the movement
-        Vector3 smudgeFactor = new Vector3(Random.Range(-2, 2), 0, Random.Range(-2, 2));
-
-        //Rotating the object to face the target node
-        //depending on the specified rotation mode.
-        switch (m_waypointRotationMode)
-        {
-            case WaypointRotationMode.Snap:
-                transform.LookAt(currentNodeTarget + smudgeFactor);
-                break;
-
-            case WaypointRotationMode.Slerp:
-                Quaternion targetRotation = Quaternion.LookRotation((currentNodeTarget + smudgeFactor) - transform.position);
-                transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * m_slerpRotationSpeed);
-                break;
-
-            default:
-                break;
-        }*/
-
-        if (m_waypointManager.ObjectIsOnNode(this))
-        {
-
-            currentIndex++;
-
-            if (currentIndex >= m_waypointManager.NodeQuantity)
+            if (m_waypointManager.ObjectIsOnNode(this))
             {
-                if (!m_waypointManager.looping)
+
+                currentIndex++;
+
+                if (currentIndex >= m_waypointManager.NodeQuantity)
                 {
-                    m_waypointManager.RemoveEntity(this);
-                    Destroy(gameObject);
+                    if (!m_waypointManager.looping)
+                    {
+                        m_waypointManager.RemoveEntity(this);
+                        Destroy(gameObject);
+                        return;
+                    }
+                    else
+                        currentIndex = 0;
+                }
+
+                if (!randomizeExactTarget)
+                {
+                    currentNodeTarget = m_waypointManager.GetNodePosition(currentIndex);
+
                     return;
                 }
-                else
-                    currentIndex = 0;
-            }
 
-            if (!randomizeExactTarget)
+                // Get a position high enough that the agent wont clip the terrain
+                // (NOTE: The pivot point must be in the center)
+                Vector3 targetPosition = new Vector3(((Random.insideUnitSphere.x * 2) * m_nodeProximityDistance),
+                                                        0 + (GetComponent<Collider>().bounds.extents.magnitude) / 2 + 0.5f,
+                                                        ((Random.insideUnitSphere.z * 2) * m_nodeProximityDistance));
+
+                currentNodeTarget = targetPosition + m_waypointManager.GetNodePosition(currentIndex);
+
+            }
+        }
+        else
+        {
+            Vector3 relativeVector = transform.InverseTransformPoint(currentTarget.transform.position);
+
+            float steerAngle = relativeVector.x / relativeVector.magnitude;
+            float speed = relativeVector.z / relativeVector.magnitude;
+            float brakeforce = 0;
+
+            if (carController.CurrentSpeed > 0 && speed < 0)
             {
-                currentNodeTarget = m_waypointManager.GetNodePosition(currentIndex);
-
-                return;
+                brakeforce = speed;
             }
-
-            // Get a position high enough that the agent wont clip the terrain
-            // (NOTE: The pivot point must be in the center)
-            Vector3 targetPosition = new Vector3(((Random.insideUnitSphere.x * 2) * m_nodeProximityDistance),
-                                                    0 + (GetComponent<Collider>().bounds.extents.magnitude) / 2 + 0.5f,
-                                                    ((Random.insideUnitSphere.z * 2) * m_nodeProximityDistance));
-             
-            currentNodeTarget = targetPosition + m_waypointManager.GetNodePosition(currentIndex);
-                
         }
             
         

@@ -847,8 +847,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 1755133381}
   - 33: {fileID: 1755133384}
-  - 64: {fileID: 1755133383}
   - 23: {fileID: 1755133382}
+  - 65: {fileID: 1755133383}
   m_Layer: 0
   m_Name: Floor
   m_TagString: Untagged
@@ -898,8 +898,8 @@ MeshRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
---- !u!64 &1755133383
-MeshCollider:
+--- !u!65 &1755133383
+BoxCollider:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
@@ -908,8 +908,8 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Convex: 0
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+  m_Size: {x: 10, y: 2.220446e-16, z: 10}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!33 &1755133384
 MeshFilter:
   m_ObjectHideFlags: 0

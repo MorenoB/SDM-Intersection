@@ -25,7 +25,7 @@ public class Node
 public class WaypointManager : MonoBehaviour {
 	
     [Range(10,60)] public int updateIntervalPerSecond = 20;
-    [HideInInspector][SerializeField]  public List<Node> waypointNodes = new List<Node>();
+    [SerializeField]  public List<Node> waypointNodes = new List<Node>();
 	[SerializeField] private List<WaypointAgent> objectToMove = new List<WaypointAgent>();
 
 	public float nodeProximityDistance = 0.1f;
