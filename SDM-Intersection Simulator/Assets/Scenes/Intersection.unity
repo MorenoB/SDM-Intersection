@@ -167,6 +167,29 @@ Transform:
   m_PrefabParentObject: {fileID: 4000014081457234, guid: b243be82feb9e7d4780c14a03158271e,
     type: 2}
   m_PrefabInternal: {fileID: 11096155}
+--- !u!23 &11096157 stripped
+MeshRenderer:
+  m_PrefabParentObject: {fileID: 23000010986485346, guid: b243be82feb9e7d4780c14a03158271e,
+    type: 2}
+  m_PrefabInternal: {fileID: 11096155}
+--- !u!1 &11096158 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1000011990041496, guid: b243be82feb9e7d4780c14a03158271e,
+    type: 2}
+  m_PrefabInternal: {fileID: 11096155}
+--- !u!114 &11096159
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 11096158}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ba0ad8f05bc84346868b2747c32bf42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Id: O3
+  headModel: {fileID: 11096157}
 --- !u!1001 &83983432
 Prefab:
   m_ObjectHideFlags: 0
@@ -221,6 +244,11 @@ Prefab:
     - target: {fileID: 4000011182338988, guid: a71bc3cd00ff60d41be3d29f22100963, type: 2}
       propertyPath: m_LocalScale.z
       value: 0.9999998
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000010254210900, guid: a71bc3cd00ff60d41be3d29f22100963,
+        type: 2}
+      propertyPath: Id
+      value: N1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a71bc3cd00ff60d41be3d29f22100963, type: 2}
@@ -284,6 +312,11 @@ Prefab:
     - target: {fileID: 4000011182338988, guid: a71bc3cd00ff60d41be3d29f22100963, type: 2}
       propertyPath: m_LocalScale.z
       value: 1.0000004
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000010254210900, guid: a71bc3cd00ff60d41be3d29f22100963,
+        type: 2}
+      propertyPath: Id
+      value: W3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a71bc3cd00ff60d41be3d29f22100963, type: 2}
@@ -410,6 +443,11 @@ Prefab:
     - target: {fileID: 4000011182338988, guid: a71bc3cd00ff60d41be3d29f22100963, type: 2}
       propertyPath: m_LocalScale.z
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000010254210900, guid: a71bc3cd00ff60d41be3d29f22100963,
+        type: 2}
+      propertyPath: Id
+      value: W4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a71bc3cd00ff60d41be3d29f22100963, type: 2}
@@ -576,6 +614,11 @@ Prefab:
     - target: {fileID: 1000010794352586, guid: a71bc3cd00ff60d41be3d29f22100963, type: 2}
       propertyPath: m_Name
       value: TrafficLightForwardRight
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000010254210900, guid: a71bc3cd00ff60d41be3d29f22100963,
+        type: 2}
+      propertyPath: Id
+      value: Z1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a71bc3cd00ff60d41be3d29f22100963, type: 2}
@@ -772,6 +815,11 @@ Prefab:
       propertyPath: m_Name
       value: TrafficLightRight
       objectReference: {fileID: 0}
+    - target: {fileID: 114000010254210900, guid: a71bc3cd00ff60d41be3d29f22100963,
+        type: 2}
+      propertyPath: Id
+      value: O1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a71bc3cd00ff60d41be3d29f22100963, type: 2}
   m_IsPrefabParent: 0
@@ -822,6 +870,11 @@ Prefab:
     - target: {fileID: 1000010794352586, guid: a71bc3cd00ff60d41be3d29f22100963, type: 2}
       propertyPath: m_Name
       value: TrafficLightLeft
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000010254210900, guid: a71bc3cd00ff60d41be3d29f22100963,
+        type: 2}
+      propertyPath: Id
+      value: N4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a71bc3cd00ff60d41be3d29f22100963, type: 2}
@@ -874,6 +927,11 @@ Prefab:
       propertyPath: m_Name
       value: TrafficLightForward
       objectReference: {fileID: 0}
+    - target: {fileID: 114000010254210900, guid: a71bc3cd00ff60d41be3d29f22100963,
+        type: 2}
+      propertyPath: Id
+      value: N3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a71bc3cd00ff60d41be3d29f22100963, type: 2}
   m_IsPrefabParent: 0
@@ -896,8 +954,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 957142825}
   - 33: {fileID: 957142828}
-  - 64: {fileID: 957142827}
   - 23: {fileID: 957142826}
+  - 65: {fileID: 957142827}
   m_Layer: 0
   m_Name: IntersectionGround
   m_TagString: Untagged
@@ -947,8 +1005,8 @@ MeshRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
---- !u!64 &957142827
-MeshCollider:
+--- !u!65 &957142827
+BoxCollider:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
@@ -957,8 +1015,8 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Convex: 0
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+  m_Size: {x: 10, y: 2.220446e-16, z: 10}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!33 &957142828
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -1020,6 +1078,11 @@ Prefab:
     - target: {fileID: 4000011182338988, guid: a71bc3cd00ff60d41be3d29f22100963, type: 2}
       propertyPath: m_LocalScale.z
       value: 1.0000011
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000010254210900, guid: a71bc3cd00ff60d41be3d29f22100963,
+        type: 2}
+      propertyPath: Id
+      value: W1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a71bc3cd00ff60d41be3d29f22100963, type: 2}
@@ -1112,6 +1175,11 @@ Prefab:
     - target: {fileID: 1000010794352586, guid: a71bc3cd00ff60d41be3d29f22100963, type: 2}
       propertyPath: m_Name
       value: TrafficLightForward
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000010254210900, guid: a71bc3cd00ff60d41be3d29f22100963,
+        type: 2}
+      propertyPath: Id
+      value: O4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a71bc3cd00ff60d41be3d29f22100963, type: 2}
@@ -1207,6 +1275,11 @@ Prefab:
     - target: {fileID: 1000010794352586, guid: a71bc3cd00ff60d41be3d29f22100963, type: 2}
       propertyPath: m_Name
       value: TrafficLightForward
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000010254210900, guid: a71bc3cd00ff60d41be3d29f22100963,
+        type: 2}
+      propertyPath: Id
+      value: O2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a71bc3cd00ff60d41be3d29f22100963, type: 2}
@@ -1308,6 +1381,11 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 1.0000007
       objectReference: {fileID: 0}
+    - target: {fileID: 114000010254210900, guid: a71bc3cd00ff60d41be3d29f22100963,
+        type: 2}
+      propertyPath: Id
+      value: W2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a71bc3cd00ff60d41be3d29f22100963, type: 2}
   m_IsPrefabParent: 0
@@ -1379,6 +1457,11 @@ Prefab:
       propertyPath: m_Name
       value: TrafficLightLeft
       objectReference: {fileID: 0}
+    - target: {fileID: 114000010254210900, guid: a71bc3cd00ff60d41be3d29f22100963,
+        type: 2}
+      propertyPath: Id
+      value: Z2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a71bc3cd00ff60d41be3d29f22100963, type: 2}
   m_IsPrefabParent: 0
@@ -1428,6 +1511,11 @@ Prefab:
     - target: {fileID: 4000011182338988, guid: a71bc3cd00ff60d41be3d29f22100963, type: 2}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 6.5880003
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000010254210900, guid: a71bc3cd00ff60d41be3d29f22100963,
+        type: 2}
+      propertyPath: Id
+      value: N2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a71bc3cd00ff60d41be3d29f22100963, type: 2}

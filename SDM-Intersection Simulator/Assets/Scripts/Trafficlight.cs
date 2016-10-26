@@ -2,10 +2,11 @@
 
 public class Trafficlight : MonoBehaviour {
 
+    public string Id;
     public MeshRenderer headModel;
     public enum eTrafficState { NONE, GREEN, ORANGE, RED };
 
-    private eTrafficState trafficState = eTrafficState.NONE;
+    private eTrafficState trafficState = eTrafficState.GREEN;
     public eTrafficState TrafficState
     {
         get { return TrafficState; }
