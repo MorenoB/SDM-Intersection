@@ -291,7 +291,6 @@ GameObject:
   - 54: {fileID: 54000010591567052}
   - 114: {fileID: 114000011712224452}
   - 114: {fileID: 114000011148924384}
-  - 114: {fileID: 114000014145585260}
   - 65: {fileID: 65000010222071794}
   m_Layer: 0
   m_Name: Cartoon-SportCar_Unity_setup
@@ -2672,24 +2671,6 @@ MonoBehaviour:
   - {fileID: 108000012090737756}
   - {fileID: 108000012947754376}
   keyboard: 108
---- !u!114 &114000014145585260
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000012056247804}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 36a3f113616b450408a02b66f3099c06, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  randomizeExactTarget: 0
-  minAgentSpeed: 10
-  maxAgentSpeed: 20
-  m_waypointManager: {fileID: 0}
-  currentTarget: {fileID: 0}
-  currentNodeTarget: {x: 0, y: 0, z: 0}
-  waypointUpdatingEntity: 0
 --- !u!146 &146000012862769954
 WheelCollider:
   m_ObjectHideFlags: 1
