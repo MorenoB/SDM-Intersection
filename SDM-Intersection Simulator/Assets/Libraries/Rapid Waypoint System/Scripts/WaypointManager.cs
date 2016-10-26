@@ -25,7 +25,7 @@ public class Node
 public class WaypointManager : MonoBehaviour {
 	
     [Range(10,60)] public int updateIntervalPerSecond = 20;
-    [SerializeField]  public List<Node> waypointNodes = new List<Node>();
+    [SerializeField]  public List<WaypointNode> waypointNodes = new List<WaypointNode>();
 	[SerializeField] private List<WaypointAgent> objectToMove = new List<WaypointAgent>();
 
 	public float nodeProximityDistance = 0.1f;
@@ -218,17 +218,6 @@ public class WaypointManager : MonoBehaviour {
 		shouldClean = false;
 	}
 
-    private void AddNode(Transform newNode, int index)
-	{
-        waypointNodes.Insert(index, new Node(newNode));
-	}
-
-    private void AddNode(Transform newNode)
-    {
-        waypointNodes.Add(new Node(newNode));
-    }
-
-
     private bool ObjectIsOnNode(int nodeIndex, int index)
 	{
 		//Checking if the distance from the object to the target node is less than the proximity distance.
@@ -242,97 +231,6 @@ public class WaypointManager : MonoBehaviour {
 
         waypointNodes.Clear();
     }
-
-    //Dynamic Node Creation Below This Point
-    #region // Dynamic Node Creation
-
-    private struct Map
-    {
-        public GameObject[,] map;
-        public int sizeX;
-        public int sizeY;
-    }
-
-    public void Addspawn(Transform point)
-    {
-        m_spawnPoint = point;
-    }
-
-    public bool BuildNavigationMap(GameObject[,] tiles, int sizeX_, int sizeY_)
-    {
-        if (waypointNodes.Count > 0)
-            ClearNodes();
-
-        Tile[] tiles_ = FindObjectsOfType<Tile>();
-        List<Tile> listTile = tiles_.ToList();
-
-        Tile startTile = listTile.Find( x => x.m_tileType == Tile.TileType.WaypointStart);
-
-        if (startTile == null)
-            return false;
-
-        GameObject startNode = startTile.gameObject;
-
-        Vector3 newPos = new Vector3(startNode.transform.position.x, startNode.transform.position.y + 1, startNode.transform.position.z);
-        GameObject spawnNode = new GameObject("WaypointSystem_SpawnLocation");
-        spawnNode.transform.parent = transform;
-        spawnNode.transform.position = newPos;
-        spawnNode.transform.Rotate(0, 0, 90);
-        Addspawn(spawnNode.transform);
-
-        Map map_ = new Map() { map = tiles, sizeX = sizeX_, sizeY = sizeY_ };
-
-        AddNode((map_.map[startNode.GetComponent<Tile>().posX, startNode.GetComponent<Tile>().posY]).transform);
-        return FindNextPoint(map_, startNode, startNode);
-    }
-
-    private bool FindNextPoint(Map map_, GameObject currentPoint, GameObject previousNode)
-    {
-        Tile path_ = currentPoint.GetComponent<Tile>();
-        if (currentPoint.GetComponent<Tile>().m_tileType == Tile.TileType.WaypointEnd)
-        {
-            AddNode((map_.map[currentPoint.GetComponent<Tile>().posX, currentPoint.GetComponent<Tile>().posY]).transform);
-            return true;
-        }
-
-
-        if (path_.posX + 1 < map_.sizeX && previousNode != map_.map[path_.posX + 1, path_.posY].gameObject && IsWaypointPath(map_.map[path_.posX + 1, path_.posY]))
-        {
-            AddNode((map_.map[path_.posX + 1, path_.posY]).transform);
-            FindNextPoint(map_, (map_.map[path_.posX + 1, path_.posY]), currentPoint);
-			return true;
-        }
-
-        else if (path_.posX - 1 >= 0 && previousNode != map_.map[path_.posX - 1, path_.posY].gameObject && IsWaypointPath(map_.map[path_.posX - 1, path_.posY]))
-        {
-            AddNode((map_.map[path_.posX - 1, path_.posY]).transform);
-            FindNextPoint(map_, (map_.map[path_.posX - 1, path_.posY]), currentPoint);
-			return true;
-
-        }
-
-        else if (path_.posY + 1 < map_.sizeY && previousNode != map_.map[path_.posX, path_.posY + 1].gameObject && IsWaypointPath(map_.map[path_.posX, path_.posY + 1]))
-        {
-            AddNode((map_.map[path_.posX, path_.posY + 1]).transform);
-            FindNextPoint(map_, (map_.map[path_.posX, path_.posY + 1]), currentPoint);
-			return true;
-        }
-
-        else if (path_.posY - 1 >= 0 && previousNode != map_.map[path_.posX, path_.posY - 1].gameObject && IsWaypointPath(map_.map[path_.posX, path_.posY - 1]))
-        {
-            AddNode((map_.map[path_.posX, path_.posY - 1]).transform);
-            FindNextPoint(map_, (map_.map[path_.posX, path_.posY - 1]), currentPoint);
-			return true;
-        }
-		return false;
-    }
-
-    private bool IsWaypointPath(GameObject tileToCheck)
-    {
-        return tileToCheck.GetComponent<Tile>().m_tileType == Tile.TileType.WaypointPath? true : false;
-    }
-
-    #endregion 
 }
 
 
