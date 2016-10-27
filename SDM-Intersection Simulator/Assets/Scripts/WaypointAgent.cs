@@ -9,8 +9,10 @@ public class WaypointAgent : MonoBehaviour {
     //New
     public bool randomizeExactTarget = false;
 
-    private CarController carController;
+    public Trafficlight trafficLight;
 
+    private CarController carController;
+    private bool hasCollidedWithStopLine = false;
 
     ///
     [SerializeField] protected float minAgentSpeed = 10;
@@ -39,8 +41,8 @@ public class WaypointAgent : MonoBehaviour {
     {
         speed = Random.Range(minAgentSpeed, maxAgentSpeed);
         carController = GetComponent<CarController>();
-        //m_waypointManager.AddEntity(gameObject);
-        //currentNodeTarget = m_waypointManager.GetNodePosition(currentIndex);
+
+        currentNodeTarget = m_waypointManager.GetNodePosition(currentIndex);
     }
 
     public virtual void Update()
@@ -52,7 +54,7 @@ public class WaypointAgent : MonoBehaviour {
 
     protected IEnumerator DieAnimDelay()
     {
-        yield return new WaitForSeconds(/*animations.GetClip("AI_Basic_Death").averageDuration + */2.5f);
+        yield return new WaitForSeconds(2.5f);
         Destroy(gameObject);
     }
 
@@ -75,14 +77,20 @@ public class WaypointAgent : MonoBehaviour {
         Gizmos.DrawLine(transform.position, currentNodeTarget);
     }
 
+    private void OnTriggerStay(Collider other)
+    {
+        if(other.CompareTag("StopLine"))
+        {
+            carController.Move(0, 0, 1, 1);
+        }
+    }
+
     protected void WaypointMovementUpdate()
     {
-
         // If the agent has a gameobject target assigned then move towards it otherwise 
         // get a target position in 3d sapce and move torawrds that
         if (currentTarget == null)
         {
-            //  transform.Translate(DirectionVector * Time.deltaTime * Speed, Space.World);
             Vector3 relativeVector = transform.InverseTransformPoint(currentNodeTarget);
 
             float steerAngle = relativeVector.x / relativeVector.magnitude;
@@ -93,12 +101,6 @@ public class WaypointAgent : MonoBehaviour {
             {
                 brakeforce = speed;
             }
-
-            /*
-            else if(carController.CurrentSpeed < 0 && speed > 0)
-            {
-                brakeforce = speed;
-            }*/
 
             carController.Move(steerAngle, speed, brakeforce, 0);
 

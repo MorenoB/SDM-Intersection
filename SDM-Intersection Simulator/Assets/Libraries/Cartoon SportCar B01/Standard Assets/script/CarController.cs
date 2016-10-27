@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 
 namespace UnityStandardAssets.Vehicles.Car
@@ -123,6 +124,22 @@ namespace UnityStandardAssets.Vehicles.Car
             var revsRangeMin = ULerp(0f, m_RevRangeBoundary, CurveFactor(gearNumFactor));
             var revsRangeMax = ULerp(m_RevRangeBoundary, 1f, gearNumFactor);
             Revs = ULerp(revsRangeMin, revsRangeMax, m_GearFactor);
+        }
+
+        public void StopCar()
+        {
+            StartCoroutine(StopCarRoutine());
+        }
+
+        IEnumerator StopCarRoutine()
+        {
+            while (CurrentSpeed > 0.5f)
+            {
+                Move(0, -1, 1, 1);
+                yield return new WaitForSeconds(0.1f);
+            }
+
+            yield return 0;
         }
 
 
