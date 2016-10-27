@@ -50,6 +50,9 @@ public class TrafficManager : Singleton<TrafficManager> {
         }
     }
 
+    /// <summary>
+    /// Will do the lazy work for me in the editor :p
+    /// </summary>
     public void OnValidate()
     {
         for (int i = 0; i < trafficLanes.Count; i++)

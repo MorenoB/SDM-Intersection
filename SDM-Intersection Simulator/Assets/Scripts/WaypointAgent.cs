@@ -42,6 +42,7 @@ public class WaypointAgent : MonoBehaviour {
             if (waypointSystemActivated == value)
                 return;
 
+            carController.SetFreezeCar(value);
             waypointSystemActivated = value;
         }
     }
@@ -63,9 +64,9 @@ public class WaypointAgent : MonoBehaviour {
 
     public virtual void Update()
     {
-        if (m_waypointManager == null) return;
+        if (m_waypointManager == null) return;        
 
-        if(WaypointSystemActivated)
+        if (WaypointSystemActivated)
             WaypointMovementUpdate();
     }
 
@@ -98,7 +99,7 @@ public class WaypointAgent : MonoBehaviour {
     {
         if(other.CompareTag("StopLine"))
         {
-            carController.Move(0, 0, 1, 1);
+            
             WaypointSystemActivated = false;
         }
     }
@@ -168,6 +169,8 @@ public class WaypointAgent : MonoBehaviour {
             {
                 brakeforce = speed;
             }
+
+            carController.Move(steerAngle, speed, brakeforce, 0);
         }
             
         

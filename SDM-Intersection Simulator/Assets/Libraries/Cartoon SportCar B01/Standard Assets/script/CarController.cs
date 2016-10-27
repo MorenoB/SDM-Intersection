@@ -54,7 +54,7 @@ namespace UnityStandardAssets.Vehicles.Car
         public float CurrentSpeed{ get { return m_Rigidbody.velocity.magnitude*2.23693629f; }}
         public float MaxSpeed{get { return m_Topspeed; }}
         public float Revs { get; private set; }
-        public float AccelInput { get; private set; }
+        public float AccelInput { get; set; }
 
         // Use this for initialization
         private void Start()
@@ -128,14 +128,21 @@ namespace UnityStandardAssets.Vehicles.Car
 
         public void StopCar()
         {
+            AccelInput = 0;
             StartCoroutine(StopCarRoutine());
+        }
+
+        public void SetFreezeCar(bool active)
+        {
+            AccelInput = 0;
+            m_Rigidbody.isKinematic = !active;
         }
 
         IEnumerator StopCarRoutine()
         {
-            while (CurrentSpeed > 0.5f)
+            while (CurrentSpeed > 5f)
             {
-                Move(0, -1, 1, 1);
+                Move(0, 0, 1, 1);
                 yield return new WaitForSeconds(0.1f);
             }
 
@@ -145,6 +152,7 @@ namespace UnityStandardAssets.Vehicles.Car
 
         public void Move(float steering, float accel, float footbrake, float handbrake)
         {
+     
             for (int i = 0; i < 4; i++)
             {
                 Quaternion quat;
