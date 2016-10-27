@@ -13,6 +13,7 @@ public class WaypointAgent : MonoBehaviour {
 
     private CarController carController;
     private bool hasCollidedWithStopLine = false;
+    private bool waypointSystemActivated = true;
 
     ///
     [SerializeField] protected float minAgentSpeed = 10;
@@ -29,6 +30,21 @@ public class WaypointAgent : MonoBehaviour {
     protected float m_nodeProximityDistance = 0.1f;
     protected float m_slerpRotationSpeed = 0.1f;
     protected WaypointRotationMode m_waypointRotationMode;
+
+    public bool WaypointSystemActivated
+    {
+        get
+        {
+            return waypointSystemActivated;
+        }
+        set
+        {
+            if (waypointSystemActivated == value)
+                return;
+
+            waypointSystemActivated = value;
+        }
+    }
 
     public WaypointManager WaypointSystem {  set { m_waypointManager = value; } }
     public WaypointRotationMode WaypointRotation { set { m_waypointRotationMode = value; } }
@@ -49,7 +65,8 @@ public class WaypointAgent : MonoBehaviour {
     {
         if (m_waypointManager == null) return;
 
-        WaypointMovementUpdate();
+        if(WaypointSystemActivated)
+            WaypointMovementUpdate();
     }
 
     protected IEnumerator DieAnimDelay()
@@ -82,6 +99,7 @@ public class WaypointAgent : MonoBehaviour {
         if(other.CompareTag("StopLine"))
         {
             carController.Move(0, 0, 1, 1);
+            WaypointSystemActivated = false;
         }
     }
 

@@ -292,6 +292,7 @@ GameObject:
   - 114: {fileID: 114000011712224452}
   - 114: {fileID: 114000011148924384}
   - 65: {fileID: 65000010222071794}
+  - 114: {fileID: 114000010570891378}
   m_Layer: 0
   m_Name: Cartoon-SportCar_Unity_setup
   m_TagString: Player
@@ -955,8 +956,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000012056247804}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.211, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 3.7214026, y: 0, z: -23.42}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
@@ -2475,6 +2476,25 @@ Light:
   m_BounceIntensity: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &114000010570891378
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012056247804}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98449f81952e93742968ec2c389a6e60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  randomizeExactTarget: 0
+  trafficLight: {fileID: 0}
+  minAgentSpeed: 10
+  maxAgentSpeed: 20
+  m_waypointManager: {fileID: 0}
+  currentTarget: {fileID: 0}
+  currentNodeTarget: {x: 0, y: 0, z: 0}
+  waypointUpdatingEntity: 0
 --- !u!114 &114000010911246238
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2584,7 +2604,7 @@ MonoBehaviour:
   m_MaxHandbrakeTorque: 1e+16
   m_Downforce: 100
   m_SpeedType: 1
-  m_Topspeed: 200
+  m_Topspeed: 50
   m_RevRangeBoundary: 1
   m_SlipLimit: 0.9
   m_BrakeTorque: 20000
