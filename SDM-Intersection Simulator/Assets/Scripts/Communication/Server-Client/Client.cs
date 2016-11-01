@@ -42,7 +42,7 @@ public class Client : MonoBehaviour {
         JSONObject j = new JSONObject(JSONObject.Type.OBJECT);
         //array
         JSONObject arr = new JSONObject(JSONObject.Type.ARRAY);
-        j.AddField("items", arr);
+        j.Add(arr);
 
         for (int i = 0; i < TrafficManager.Instance.trafficLanes.Count; i++)
         {
