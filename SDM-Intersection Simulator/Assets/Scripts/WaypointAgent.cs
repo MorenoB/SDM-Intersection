@@ -12,6 +12,7 @@ public class WaypointAgent : MonoBehaviour {
 
     private IMovingEntity movingEntity;
     private bool waypointSystemActivated = true;
+    private bool hasLeftLane = false;
 
     ///
     [SerializeField] protected float minAgentSpeed = 10;
@@ -60,6 +61,8 @@ public class WaypointAgent : MonoBehaviour {
 
     public void ResetWaypointTargetToFirst()
     {
+        hasLeftLane = false;
+
         currentIndex = 0;
 
         if (m_waypointManager == null) return;
@@ -101,7 +104,12 @@ public class WaypointAgent : MonoBehaviour {
     {
         if(other.CompareTag("HasLeftLane"))
         {
-            if(trafficLight == null)
+            if (hasLeftLane)
+                return;
+
+            hasLeftLane = true;
+
+            if (trafficLight == null)
             {
                 Debug.LogError("WaypointManager " + gameObject.name + " does not have a valid TrafficLight object assigned!");
                 return;

@@ -472,8 +472,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 1, z: 0.21602339}
+  m_Center: {x: -0.00000008940697, y: -0.0000017881393, z: 0.39198682}
 --- !u!1 &203983082
 GameObject:
   m_ObjectHideFlags: 0
@@ -1457,8 +1457,6 @@ MonoBehaviour:
     waypointManager: {fileID: 1007653843}
     spawnLocation: {fileID: 2021963143}
     waypointAgents: []
-  carHierarchyParent: {fileID: 262343393}
-  testPrefab: {fileID: 1000012056247804, guid: ce4f4dc93b737d94d88fa9987bf4f7d9, type: 2}
 --- !u!4 &1220868760
 Transform:
   m_ObjectHideFlags: 0
