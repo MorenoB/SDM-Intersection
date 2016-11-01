@@ -328,7 +328,7 @@ GameObject:
   - 114: {fileID: 114000010570891378}
   - 65: {fileID: 65000012239446524}
   m_Layer: 0
-  m_Name: Cartoon-SportCar_Unity_setup
+  m_Name: CarPrefab
   m_TagString: MovingEntity
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -189,7 +189,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ba0ad8f05bc84346868b2747c32bf42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Id: O3
+  Id: 0
   headModel: {fileID: 11096157}
   stoplineColliders: {fileID: 0}
 --- !u!114 &70276426 stripped
@@ -1409,8 +1409,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   trafficLanes:
-  - name: N4(Zuiderplein)
-    id: N4
+  - name: 0(Zuiderplein)
+    id: 0
     trafficLight: {fileID: 732589609}
     waypointManager: {fileID: 1007653843}
     spawnLocation: {fileID: 2021963143}
