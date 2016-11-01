@@ -2,7 +2,7 @@
 
 public class Trafficlight : MonoBehaviour {
 
-    public string Id;
+    public int Id;
     public MeshRenderer headModel;
     public enum eTrafficState { NONE, GREEN, ORANGE, RED };
     public GameObject stoplineColliders;

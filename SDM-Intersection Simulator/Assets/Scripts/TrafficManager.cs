@@ -6,7 +6,7 @@ using System.Collections.Generic;
 public class TrafficLaneData
 {
     public string name;
-    [HideInInspector] public string id;
+    [HideInInspector] public int id;
 
     public Trafficlight trafficLight;
     public WaypointManager waypointManager;
@@ -60,8 +60,6 @@ public class TrafficManager : Singleton<TrafficManager> {
             TrafficLaneData trafficLane = trafficLanes[i];
             if (trafficLane == null) continue;
 
-            if (trafficLane.id == null) continue;
-
             if (trafficLane.trafficLight == null) continue;
 
             trafficLane.id = trafficLane.trafficLight.Id;
@@ -76,7 +74,7 @@ public class TrafficManager : Singleton<TrafficManager> {
     /// </summary>
     /// <param name="laneId"></param>
     /// <param name="objectToSpawn"></param>
-    public void SpawnEntityAtLane(string laneId, GameObject objectToSpawn)
+    public void SpawnEntityAtLane(int laneId, GameObject objectToSpawn)
     {
         TrafficLaneData laneData = FindLaneDataById(laneId);
 
@@ -116,7 +114,7 @@ public class TrafficManager : Singleton<TrafficManager> {
         laneData.AddWaypointAgent(waypointAgent);
     }
 
-    public void SetTrafficLightState(string id, Trafficlight.eTrafficState newTrafficLightState)
+    public void SetTrafficLightState(int id, Trafficlight.eTrafficState newTrafficLightState)
     {
         for (int i = 0; i < trafficLanes.Count; i++)
         {
@@ -145,7 +143,7 @@ public class TrafficManager : Singleton<TrafficManager> {
 
     }
 
-    private TrafficLaneData FindLaneDataById(string id)
+    private TrafficLaneData FindLaneDataById(int id)
     {
         for (int i = 0; i < trafficLanes.Count; i++)
         {

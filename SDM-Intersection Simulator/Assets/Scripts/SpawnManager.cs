@@ -19,7 +19,7 @@ public class SpawnManager : MonoBehaviour {
         carObjectPool = EZObjectPool.CreateObjectPool(carPrefab, "Cars", poolSize, true, true, true);
     }
 
-    public void SpawnObject(SpawnType spawnType, string trafficLaneId)
+    public void SpawnObject(SpawnType spawnType, int trafficLaneId)
     {
         GameObject outObject = null;
         switch(spawnType)
@@ -42,7 +42,7 @@ public class SpawnManager : MonoBehaviour {
     {
         if (Input.GetKeyDown(KeyCode.T))
         {
-            SpawnObject(SpawnType.CAR, "N4");
+            SpawnObject(SpawnType.CAR, 1);
         }
     }
 }

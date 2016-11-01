@@ -11,7 +11,6 @@ public class Client : MonoBehaviour {
         w = new WebSocket(new Uri("ws://localhost:8080/Laputa"));
         yield return StartCoroutine(w.Connect());
         Send("Hi there");
-        int i = 0;
         while (true)
         {
             string reply = w.RecvString();

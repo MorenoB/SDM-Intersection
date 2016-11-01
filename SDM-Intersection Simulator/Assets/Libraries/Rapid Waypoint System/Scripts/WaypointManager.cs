@@ -34,7 +34,6 @@ public class WaypointManager : MonoBehaviour {
    
     public bool looping = false;
 
-    private Transform m_spawnPoint;
 	private bool shouldClean = false;
 	private bool inRoutine = false;
 	private float intervalRate;
@@ -42,7 +41,6 @@ public class WaypointManager : MonoBehaviour {
 
     public int AgentQuantity { get { return objectToMove.Count; } }
     public int NodeQuantity {  get { return waypointNodes.Count; } }
-    public Transform SpawnPoint { get { return m_spawnPoint; } }
 	//--------------------Unity Functions--------------------
 
 
