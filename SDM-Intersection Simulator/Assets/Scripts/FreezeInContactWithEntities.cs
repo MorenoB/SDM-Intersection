@@ -1,16 +1,22 @@
 ﻿using UnityEngine;
-using UnityStandardAssets.Vehicles.Car;
 
 [RequireComponent(typeof(BoxCollider))]
-public class FreezeInContactWithEntities : MonoBehaviour {
+public class FreezeInContactWithEntities : MonoBehaviour
+{
+    
+    private IMovingEntity movingEntity;
 
-    public CarController carController;
+    public void OnEnable()
+    {
+        if (movingEntity == null)
+            movingEntity = GetComponentInParent<IMovingEntity>();
+    }
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.CompareTag("MovingEntity"))
+        if (other.CompareTag("MovingEntity"))
         {
-            carController.SetFreezeCar(true);
+            movingEntity.SetFreeze(true);
         }
     }
 
@@ -18,7 +24,7 @@ public class FreezeInContactWithEntities : MonoBehaviour {
     {
         if (other.CompareTag("MovingEntity"))
         {
-            carController.SetFreezeCar(false);
+            movingEntity.SetFreeze(false);
         }
     }
 }

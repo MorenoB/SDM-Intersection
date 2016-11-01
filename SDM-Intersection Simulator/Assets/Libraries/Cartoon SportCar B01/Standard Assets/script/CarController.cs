@@ -17,7 +17,7 @@ namespace UnityStandardAssets.Vehicles.Car
         KPH
     }
 
-    public class CarController : MonoBehaviour
+    public class CarController : MonoBehaviour, IMovingEntity
     {
         [SerializeField] private CarDriveType m_CarDriveType = CarDriveType.FourWheelDrive;
         [SerializeField] private WheelCollider[] m_WheelColliders = new WheelCollider[4];
@@ -130,12 +130,6 @@ namespace UnityStandardAssets.Vehicles.Car
         {
             AccelInput = 0;
             StartCoroutine(StopCarRoutine());
-        }
-
-        public void SetFreezeCar(bool active)
-        {
-            AccelInput = 0;
-            m_Rigidbody.isKinematic = !active;
         }
 
         IEnumerator StopCarRoutine()
@@ -387,6 +381,12 @@ namespace UnityStandardAssets.Vehicles.Car
                 }
             }
             return false;
+        }
+
+        public void SetFreeze(bool value)
+        {
+            AccelInput = 0;
+            m_Rigidbody.isKinematic = !value;
         }
     }
 }

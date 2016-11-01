@@ -1,8 +1,7 @@
 ﻿using UnityEngine;
-using System.Collections;
-using UnityStandardAssets.Vehicles.Car;
 
 [System.Serializable]
+[RequireComponent(typeof(IMovingEntity))]
 public class WaypointAgent : MonoBehaviour {
 
 
@@ -11,7 +10,7 @@ public class WaypointAgent : MonoBehaviour {
 
     public Trafficlight trafficLight;
 
-    private CarController carController;
+    private IMovingEntity movingEntity;
     private bool waypointSystemActivated = true;
 
     ///
@@ -41,7 +40,7 @@ public class WaypointAgent : MonoBehaviour {
             if (waypointSystemActivated == value)
                 return;
 
-            carController.SetFreezeCar(value);
+            movingEntity.SetFreeze(value);
             waypointSystemActivated = value;
         }
     }
@@ -56,7 +55,7 @@ public class WaypointAgent : MonoBehaviour {
     public virtual void Start()
     {
         speed = Random.Range(minAgentSpeed, maxAgentSpeed);
-        carController = GetComponent<CarController>();
+        movingEntity = GetComponent<IMovingEntity>();
     }
 
     private void OnEnable()
@@ -110,12 +109,12 @@ public class WaypointAgent : MonoBehaviour {
             float speed = relativeVector.z / relativeVector.magnitude;
             float brakeforce = 0;
 
-            if (carController.CurrentSpeed > 0 && speed < 0)
+            if (movingEntity.CurrentSpeed > 0 && speed < 0)
             {
                 brakeforce = speed;
             }
 
-            carController.Move(steerAngle, speed, brakeforce, 0);
+            movingEntity.Move(steerAngle, speed, brakeforce, 0);
 
             if (m_waypointManager.ObjectIsOnNode(this))
             {
@@ -159,12 +158,12 @@ public class WaypointAgent : MonoBehaviour {
             float speed = relativeVector.z / relativeVector.magnitude;
             float brakeforce = 0;
 
-            if (carController.CurrentSpeed > 0 && speed < 0)
+            if (movingEntity.CurrentSpeed > 0 && speed < 0)
             {
                 brakeforce = speed;
             }
 
-            carController.Move(steerAngle, speed, brakeforce, 0);
+            movingEntity.Move(steerAngle, speed, brakeforce, 0);
         }
             
         
