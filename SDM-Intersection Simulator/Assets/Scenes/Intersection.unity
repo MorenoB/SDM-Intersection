@@ -1389,6 +1389,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1220868760}
   - 114: {fileID: 1220868759}
+  - 114: {fileID: 1220868761}
   m_Layer: 0
   m_Name: TrafficManager
   m_TagString: Untagged
@@ -1429,6 +1430,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
+--- !u!114 &1220868761
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1220868758}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 406b8884e92ac20459d5d9dfd436f03f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  poolSize: 200
+  carPrefab: {fileID: 1000012056247804, guid: ce4f4dc93b737d94d88fa9987bf4f7d9, type: 2}
 --- !u!114 &1245592094 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114000011881571706, guid: 2e09674b44ad86f4083484bd023c4165,

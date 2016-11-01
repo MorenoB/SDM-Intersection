@@ -103,16 +103,17 @@ public class TrafficManager : Singleton<TrafficManager> {
             return;
         }
 
+        objectToSpawn.transform.position = spawnLocation.position;
+        //objectToSpawn.transform.SetParent(carHierarchyParent);
+
         //Assign waypoint systems.
         waypointAgent.trafficLight = laneData.trafficLight;
         waypointAgent.WaypointSystem = laneData.waypointManager;
 
-        
-
         // TODO: Make use of object pooling instead of instantiating!
-        GameObject instatiatedObject = (GameObject)Instantiate(objectToSpawn, spawnLocation.position, Quaternion.identity, carHierarchyParent);
+        //GameObject instatiatedObject = (GameObject)Instantiate(objectToSpawn, spawnLocation.position, Quaternion.identity, carHierarchyParent);
 
-        laneData.AddWaypointAgent(instatiatedObject.GetComponent<WaypointAgent>());
+        laneData.AddWaypointAgent(waypointAgent);
     }
 
     public void SetTrafficLightState(string id, Trafficlight.eTrafficState newTrafficLightState)
@@ -161,11 +162,6 @@ public class TrafficManager : Singleton<TrafficManager> {
 
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.T))
-        {
-            SpawnEntityAtLane("N4", testPrefab);
-        }
-
         if(Input.GetKeyDown(KeyCode.F5))
         {
             SetAllTrafficLights(Trafficlight.eTrafficState.RED);

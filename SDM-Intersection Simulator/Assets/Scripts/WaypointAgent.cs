@@ -12,7 +12,6 @@ public class WaypointAgent : MonoBehaviour {
     public Trafficlight trafficLight;
 
     private CarController carController;
-    private bool hasCollidedWithStopLine = false;
     private bool waypointSystemActivated = true;
 
     ///
@@ -58,6 +57,13 @@ public class WaypointAgent : MonoBehaviour {
     {
         speed = Random.Range(minAgentSpeed, maxAgentSpeed);
         carController = GetComponent<CarController>();
+    }
+
+    private void OnEnable()
+    {
+        currentIndex = 0;
+
+        if (m_waypointManager == null) return;
 
         currentNodeTarget = m_waypointManager.GetNodePosition(currentIndex);
     }
@@ -68,18 +74,6 @@ public class WaypointAgent : MonoBehaviour {
 
         if (WaypointSystemActivated)
             WaypointMovementUpdate();
-    }
-
-    protected IEnumerator DieAnimDelay()
-    {
-        yield return new WaitForSeconds(2.5f);
-        Destroy(gameObject);
-    }
-
-    protected IEnumerator DieWithDelay(float delay)
-    {
-        yield return new WaitForSeconds(delay);
-        Destroy(gameObject);
     }
 
 	public virtual void SwitchTarget(GameObject newTarget)
@@ -133,7 +127,7 @@ public class WaypointAgent : MonoBehaviour {
                     if (!m_waypointManager.looping)
                     {
                         m_waypointManager.RemoveEntity(this);
-                        Destroy(gameObject);
+                        gameObject.SetActive(false);
                         return;
                     }
                     else
