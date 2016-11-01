@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using System.Collections;
 using System.Collections.Generic;
 
 [System.Serializable]
@@ -11,6 +10,22 @@ public class TrafficLaneData
     public Trafficlight trafficLight;
     public WaypointManager waypointManager;
     public Transform spawnLocation;
+    
+    public int NumberOfEntitiesInLane
+    {
+        get
+        {
+            return numberOfEntitiesInLane;
+        }
+        set
+        {
+            if (numberOfEntitiesInLane == value)
+                return;
+
+            numberOfEntitiesInLane = value;
+        }
+    }
+    private int numberOfEntitiesInLane = 0;
 
     [HideInInspector] public List<WaypointAgent> waypointAgents = new List<WaypointAgent>();
 
@@ -112,6 +127,8 @@ public class TrafficManager : Singleton<TrafficManager> {
         //GameObject instatiatedObject = (GameObject)Instantiate(objectToSpawn, spawnLocation.position, Quaternion.identity, carHierarchyParent);
 
         laneData.AddWaypointAgent(waypointAgent);
+
+        laneData.NumberOfEntitiesInLane++;
     }
 
     public void SetTrafficLightState(int id, Trafficlight.eTrafficState newTrafficLightState)
@@ -141,6 +158,19 @@ public class TrafficManager : Singleton<TrafficManager> {
 
 
 
+    }
+
+    public void DecreaseNumberOfCarsInLaneByOne(int laneId)
+    {
+        TrafficLaneData laneData = FindLaneDataById(laneId);
+
+        if(laneData == null)
+        {
+            Debug.LogError("Failed to decrease total count of cars in lane " + laneId);
+            return;
+        }
+
+        laneData.NumberOfEntitiesInLane--;
     }
 
     private TrafficLaneData FindLaneDataById(int id)

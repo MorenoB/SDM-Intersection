@@ -54,7 +54,7 @@ public class Client : MonoBehaviour
             TrafficLaneData laneData = TrafficManager.Instance.trafficLanes[i];
 
             arr.AddField("trafficLight", laneData.id);
-            arr.AddField("count", 0);
+            arr.AddField("count", laneData.NumberOfEntitiesInLane);
         }
 
 

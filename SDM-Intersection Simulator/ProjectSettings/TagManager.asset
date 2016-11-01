@@ -6,6 +6,7 @@ TagManager:
   tags:
   - StopLine
   - MovingEntity
+  - HasLeftLane
   layers:
   - Default
   - TransparentFX

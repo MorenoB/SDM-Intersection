@@ -97,6 +97,20 @@ public class WaypointAgent : MonoBehaviour {
         }
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.CompareTag("HasLeftLane"))
+        {
+            if(trafficLight == null)
+            {
+                Debug.LogError("WaypointManager " + gameObject.name + " does not have a valid TrafficLight object assigned!");
+                return;
+            }
+
+            TrafficManager.Instance.DecreaseNumberOfCarsInLaneByOne(trafficLight.Id);
+        }
+    }
+
     protected void WaypointMovementUpdate()
     {
         // If the agent has a gameobject target assigned then move towards it otherwise 
