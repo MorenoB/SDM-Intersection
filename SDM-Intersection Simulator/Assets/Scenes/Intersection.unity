@@ -1443,6 +1443,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   poolSize: 200
   carPrefab: {fileID: 1000012056247804, guid: ce4f4dc93b737d94d88fa9987bf4f7d9, type: 2}
+  bicyclePrefab: {fileID: 1000012056247804, guid: ce4f4dc93b737d94d88fa9987bf4f7d9,
+    type: 2}
+  trainPrefab: {fileID: 1000012056247804, guid: ce4f4dc93b737d94d88fa9987bf4f7d9,
+    type: 2}
+  busPrefab: {fileID: 1000012056247804, guid: ce4f4dc93b737d94d88fa9987bf4f7d9, type: 2}
+  pedestrianPrefab: {fileID: 1000012056247804, guid: ce4f4dc93b737d94d88fa9987bf4f7d9,
+    type: 2}
 --- !u!114 &1245592094 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114000011881571706, guid: 2e09674b44ad86f4083484bd023c4165,
