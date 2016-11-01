@@ -4,7 +4,8 @@ using System;
 
 public class Client : MonoBehaviour {
 
-    WebSocket w;
+    private WebSocket w;
+
     IEnumerator Start()
     {
         w = new WebSocket(new Uri("ws://localhost:8080/Laputa"));
@@ -29,7 +30,34 @@ public class Client : MonoBehaviour {
     }
 
     private void Update()
-    { }
+    {
+        if(Input.GetKeyDown(KeyCode.U))
+        {
+            SendStateData();
+        }
+    }
+
+    public void SendStateData()
+    {
+
+        JSONObject j = new JSONObject(JSONObject.Type.OBJECT);
+        //array
+        JSONObject arr = new JSONObject(JSONObject.Type.ARRAY);
+        j.AddField("items", arr);
+
+        for (int i = 0; i < TrafficManager.Instance.trafficLanes.Count; i++)
+        {
+            TrafficLaneData laneData = TrafficManager.Instance.trafficLanes[i];
+
+            arr.AddField("trafficLight", laneData.id);
+            arr.AddField("count", 0);
+        }
+
+
+        string encodedString = "{\"state\":" + j.Print() + "}";
+
+        Send(encodedString);
+    }
 
     private void Send(string message)
     {
