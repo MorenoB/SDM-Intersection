@@ -58,7 +58,7 @@ public class WaypointAgent : MonoBehaviour {
         movingEntity = GetComponent<IMovingEntity>();
     }
 
-    private void OnEnable()
+    public void ResetWaypointTargetToFirst()
     {
         currentIndex = 0;
 

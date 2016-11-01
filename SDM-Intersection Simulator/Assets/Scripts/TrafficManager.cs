@@ -5,12 +5,13 @@ using System.Collections.Generic;
 public class TrafficLaneData
 {
     public string name;
-    [HideInInspector] public int id;
+    [HideInInspector]
+    public int id;
 
     public Trafficlight trafficLight;
     public WaypointManager waypointManager;
     public Transform spawnLocation;
-    
+
     public int NumberOfEntitiesInLane
     {
         get
@@ -27,7 +28,8 @@ public class TrafficLaneData
     }
     private int numberOfEntitiesInLane = 0;
 
-    [HideInInspector] public List<WaypointAgent> waypointAgents = new List<WaypointAgent>();
+    [HideInInspector]
+    public List<WaypointAgent> waypointAgents = new List<WaypointAgent>();
 
     public TrafficLaneData(Trafficlight trafficLight)
     {
@@ -41,13 +43,10 @@ public class TrafficLaneData
     }
 }
 
-public class TrafficManager : Singleton<TrafficManager> {
+public class TrafficManager : Singleton<TrafficManager>
+{
 
     public List<TrafficLaneData> trafficLanes = new List<TrafficLaneData>();
-
-    public Transform carHierarchyParent;
-
-    public GameObject testPrefab;
 
     public void Start()
     {
@@ -84,12 +83,11 @@ public class TrafficManager : Singleton<TrafficManager> {
     }
 
     /// <summary>
-    /// Used for spawning entities on the map & configuring the correct lane data & Waypoint data.
-    /// NOTE:: NEEDS TO MAKE USE OF OBJECT POOLING LATER!
+    /// Used for initializing entities on the map & configuring the correct lane data & Waypoint data.
     /// </summary>
     /// <param name="laneId"></param>
     /// <param name="objectToSpawn"></param>
-    public void SpawnEntityAtLane(int laneId, GameObject objectToSpawn)
+    public void InitEntityAtLane(int laneId, GameObject objectToSpawn)
     {
         TrafficLaneData laneData = FindLaneDataById(laneId);
 
@@ -98,7 +96,7 @@ public class TrafficManager : Singleton<TrafficManager> {
 
         WaypointAgent waypointAgent = objectToSpawn.GetComponent<WaypointAgent>();
 
-        if(waypointAgent == null)
+        if (waypointAgent == null)
         {
             Debug.LogError("Entity " + objectToSpawn + " is missing WaypointAgent component!");
             return;
@@ -117,15 +115,14 @@ public class TrafficManager : Singleton<TrafficManager> {
         }
 
         objectToSpawn.transform.position = spawnLocation.position;
-        //objectToSpawn.transform.SetParent(carHierarchyParent);
 
         //Assign waypoint systems.
         waypointAgent.trafficLight = laneData.trafficLight;
         waypointAgent.WaypointSystem = laneData.waypointManager;
 
-        // TODO: Make use of object pooling instead of instantiating!
-        //GameObject instatiatedObject = (GameObject)Instantiate(objectToSpawn, spawnLocation.position, Quaternion.identity, carHierarchyParent);
+        waypointAgent.ResetWaypointTargetToFirst();
 
+        //Notify the lane data
         laneData.AddWaypointAgent(waypointAgent);
 
         laneData.NumberOfEntitiesInLane++;
@@ -154,17 +151,13 @@ public class TrafficManager : Singleton<TrafficManager> {
                 }
 
         }
-
-
-
-
     }
 
     public void DecreaseNumberOfCarsInLaneByOne(int laneId)
     {
         TrafficLaneData laneData = FindLaneDataById(laneId);
 
-        if(laneData == null)
+        if (laneData == null)
         {
             Debug.LogError("Failed to decrease total count of cars in lane " + laneId);
             return;
@@ -190,7 +183,7 @@ public class TrafficManager : Singleton<TrafficManager> {
 
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.F5))
+        if (Input.GetKeyDown(KeyCode.F5))
         {
             SetAllTrafficLights(Trafficlight.eTrafficState.RED);
         }

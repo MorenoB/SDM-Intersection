@@ -40,7 +40,7 @@ public class SpawnManager : MonoBehaviour
             case SpawnType.CAR:
                 if (carObjectPool.TryGetNextObject(Vector3.one, Quaternion.identity, out outObject))
                 {
-                    TrafficManager.Instance.SpawnEntityAtLane(trafficLaneId, outObject);
+                    TrafficManager.Instance.InitEntityAtLane(trafficLaneId, outObject);
                 }
 
                 break;
@@ -48,28 +48,28 @@ public class SpawnManager : MonoBehaviour
             case SpawnType.BICYCLE:
                 if (bicycleObjectPool.TryGetNextObject(Vector3.one, Quaternion.identity, out outObject))
                 {
-                    TrafficManager.Instance.SpawnEntityAtLane(trafficLaneId, outObject);
+                    TrafficManager.Instance.InitEntityAtLane(trafficLaneId, outObject);
                 }
                 break;
 
             case SpawnType.BUS:
                 if (busObjectPool.TryGetNextObject(Vector3.one, Quaternion.identity, out outObject))
                 {
-                    TrafficManager.Instance.SpawnEntityAtLane(trafficLaneId, outObject);
+                    TrafficManager.Instance.InitEntityAtLane(trafficLaneId, outObject);
                 }
                 break;
 
             case SpawnType.PEDESTRIAN:
                 if (pedestrianObjectPool.TryGetNextObject(Vector3.one, Quaternion.identity, out outObject))
                 {
-                    TrafficManager.Instance.SpawnEntityAtLane(trafficLaneId, outObject);
+                    TrafficManager.Instance.InitEntityAtLane(trafficLaneId, outObject);
                 }
                 break;
 
             case SpawnType.TRAIN:
                 if (trainObjectPool.TryGetNextObject(Vector3.one, Quaternion.identity, out outObject))
                 {
-                    TrafficManager.Instance.SpawnEntityAtLane(trafficLaneId, outObject);
+                    TrafficManager.Instance.InitEntityAtLane(trafficLaneId, outObject);
                 }
                 break;
 
