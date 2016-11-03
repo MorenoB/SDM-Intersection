@@ -125,6 +125,9 @@ public class TrafficManager : Singleton<TrafficManager>
         }
 
         Transform spawnLocation = laneData.spawnLocation;
+
+        objectToSpawn.transform.rotation = spawnLocation.rotation;
+
         WaypointManager waypointManager = laneData.GetRandomWaypointManager();
 
         WaypointAgent waypointAgent = objectToSpawn.GetComponent<WaypointAgent>();
