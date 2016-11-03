@@ -83,7 +83,7 @@ public class SpawnManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.T))
         {
-            SpawnObject(SpawnType.CAR, 9);
+            SpawnObject(SpawnType.CAR, 8);
         }
     }
 }
