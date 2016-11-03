@@ -83,7 +83,7 @@ public class SpawnManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.T))
         {
-            int randomLane = Random.Range(5, 11);
+            int randomLane = Random.Range(3, 5);
             SpawnObject(SpawnType.CAR, randomLane);
            
         }
