@@ -1,0 +1,382 @@
+fileFormatVersion: 2
+guid: d4d0909b9be65bf4abe3bd34c90e1cd3
+timeCreated: 1476789966
+licenseType: Free
+SketchUpImporter:
+  generateBackFace: 0
+  mergeCoplanarFaces: 0
+  selectedNodes: 000000000100000002000000030000000400000005000000060000000700000008000000090000000a0000000b0000000c0000000d0000000e0000000f000000100000001100000012000000130000001400000015000000160000001700000018000000190000001a0000001b0000001c0000001d0000001e0000001f000000200000002100000022000000230000002400000025000000260000002700000028000000290000002a0000002b0000002c0000002d0000002e0000002f000000300000003100000032000000330000003400000035000000360000003700000038000000390000003a0000003b0000003c0000003d0000003e0000003f000000400000004100000042000000430000004400000045000000460000004700000048000000490000004a0000004b0000004c0000004d0000004e0000004f000000500000005100000052000000530000005400000055000000560000005700000058000000590000005a0000005b0000005c0000005d0000005e0000005f000000600000006100000062000000630000006400000065000000660000006700000068000000690000006a0000006b0000006c0000006d0000006e0000006f000000700000007100000072000000730000007400000075000000760000007700000078000000790000007a0000007b0000007c0000007d0000007e0000007f000000800000008100000082000000830000008400000085000000860000008700000088000000890000008a0000008b0000008c0000008d000000
+  assetHash:
+    serializedVersion: 2
+    Hash: b86ec3a24043cfc33c1f6067c8114d1f
+  longitude: -105.283
+  latitude: 40.017
+  northCorrection: -0
+  fileUnit: 0
+  sketchUpImportData:
+    defaultCamera:
+      position: {x: 25.863146, y: 10.9537735, z: -4.176033}
+      lookAt: {x: 11.179212, y: -0.119355805, z: 12.070465}
+      up: {x: -0.30256933, y: 0.892403, z: 0.33476666}
+      fov: 35
+      aspectRatio: 0
+      orthoSize: 1
+      isPerspective: 1
+    scenes: []
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Group 138
+    100004: Group 140
+    100006: Group 22
+    100008: Group 24
+    100010: Group 29
+    100012: Group 31
+    100014: Group 5
+    100016: Group 7
+    100018: ske13
+    100020: ske13 1
+    100022: ske13#1
+    100024: ske13#1 1
+    100026: ske16B
+    100028: ske16B 1
+    100030: ske16B#1
+    100032: ske16B#1 1
+    100034: ske32
+    100036: ske32 1
+    100038: ske32 10
+    100040: ske32 11
+    100042: ske32 12
+    100044: ske32 13
+    100046: ske32 14
+    100048: ske32 15
+    100050: ske32 16
+    100052: ske32 17
+    100054: ske32 18
+    100056: ske32 19
+    100058: ske32 2
+    100060: ske32 20
+    100062: ske32 21
+    100064: ske32 22
+    100066: ske32 23
+    100068: ske32 3
+    100070: ske32 4
+    100072: ske32 5
+    100074: ske32 6
+    100076: ske32 7
+    100078: ske32 8
+    100080: ske32 9
+    100082: ske34
+    100084: ske34 1
+    100086: ske34 10
+    100088: ske34 11
+    100090: ske34 12
+    100092: ske34 13
+    100094: ske34 14
+    100096: ske34 15
+    100098: ske34 16
+    100100: ske34 17
+    100102: ske34 18
+    100104: ske34 19
+    100106: ske34 2
+    100108: ske34 20
+    100110: ske34 21
+    100112: ske34 22
+    100114: ske34 23
+    100116: ske34 24
+    100118: ske34 25
+    100120: ske34 26
+    100122: ske34 27
+    100124: ske34 28
+    100126: ske34 29
+    100128: ske34 3
+    100130: ske34 30
+    100132: ske34 31
+    100134: ske34 4
+    100136: ske34 5
+    100138: ske34 6
+    100140: ske34 7
+    100142: ske34 8
+    100144: ske34 9
+    400000: //RootNode
+    400002: Group 138
+    400004: Group 140
+    400006: Group 22
+    400008: Group 24
+    400010: Group 29
+    400012: Group 31
+    400014: Group 5
+    400016: Group 7
+    400018: ske13
+    400020: ske13 1
+    400022: ske13#1
+    400024: ske13#1 1
+    400026: ske16B
+    400028: ske16B 1
+    400030: ske16B#1
+    400032: ske16B#1 1
+    400034: ske32
+    400036: ske32 1
+    400038: ske32 10
+    400040: ske32 11
+    400042: ske32 12
+    400044: ske32 13
+    400046: ske32 14
+    400048: ske32 15
+    400050: ske32 16
+    400052: ske32 17
+    400054: ske32 18
+    400056: ske32 19
+    400058: ske32 2
+    400060: ske32 20
+    400062: ske32 21
+    400064: ske32 22
+    400066: ske32 23
+    400068: ske32 3
+    400070: ske32 4
+    400072: ske32 5
+    400074: ske32 6
+    400076: ske32 7
+    400078: ske32 8
+    400080: ske32 9
+    400082: ske34
+    400084: ske34 1
+    400086: ske34 10
+    400088: ske34 11
+    400090: ske34 12
+    400092: ske34 13
+    400094: ske34 14
+    400096: ske34 15
+    400098: ske34 16
+    400100: ske34 17
+    400102: ske34 18
+    400104: ske34 19
+    400106: ske34 2
+    400108: ske34 20
+    400110: ske34 21
+    400112: ske34 22
+    400114: ske34 23
+    400116: ske34 24
+    400118: ske34 25
+    400120: ske34 26
+    400122: ske34 27
+    400124: ske34 28
+    400126: ske34 29
+    400128: ske34 3
+    400130: ske34 30
+    400132: ske34 31
+    400134: ske34 4
+    400136: ske34 5
+    400138: ske34 6
+    400140: ske34 7
+    400142: ske34 8
+    400144: ske34 9
+    2300000: //RootNode
+    2300002: Group 138
+    2300004: Group 140
+    2300006: Group 22
+    2300008: Group 24
+    2300010: Group 29
+    2300012: Group 31
+    2300014: Group 5
+    2300016: Group 7
+    2300018: ske16B
+    2300020: ske16B 1
+    2300022: ske16B#1
+    2300024: ske16B#1 1
+    2300026: ske32
+    2300028: ske32 1
+    2300030: ske32 10
+    2300032: ske32 11
+    2300034: ske32 12
+    2300036: ske32 13
+    2300038: ske32 14
+    2300040: ske32 15
+    2300042: ske32 16
+    2300044: ske32 17
+    2300046: ske32 18
+    2300048: ske32 19
+    2300050: ske32 2
+    2300052: ske32 20
+    2300054: ske32 21
+    2300056: ske32 22
+    2300058: ske32 23
+    2300060: ske32 3
+    2300062: ske32 4
+    2300064: ske32 5
+    2300066: ske32 6
+    2300068: ske32 7
+    2300070: ske32 8
+    2300072: ske32 9
+    2300074: ske34
+    2300076: ske34 1
+    2300078: ske34 10
+    2300080: ske34 11
+    2300082: ske34 12
+    2300084: ske34 13
+    2300086: ske34 14
+    2300088: ske34 15
+    2300090: ske34 16
+    2300092: ske34 17
+    2300094: ske34 18
+    2300096: ske34 19
+    2300098: ske34 2
+    2300100: ske34 20
+    2300102: ske34 21
+    2300104: ske34 22
+    2300106: ske34 23
+    2300108: ske34 24
+    2300110: ske34 25
+    2300112: ske34 26
+    2300114: ske34 27
+    2300116: ske34 28
+    2300118: ske34 29
+    2300120: ske34 3
+    2300122: ske34 30
+    2300124: ske34 31
+    2300126: ske34 4
+    2300128: ske34 5
+    2300130: ske34 6
+    2300132: ske34 7
+    2300134: ske34 8
+    2300136: ske34 9
+    3300000: //RootNode
+    3300002: Group 138
+    3300004: Group 140
+    3300006: Group 22
+    3300008: Group 24
+    3300010: Group 29
+    3300012: Group 31
+    3300014: Group 5
+    3300016: Group 7
+    3300018: ske16B
+    3300020: ske16B 1
+    3300022: ske16B#1
+    3300024: ske16B#1 1
+    3300026: ske32
+    3300028: ske32 1
+    3300030: ske32 10
+    3300032: ske32 11
+    3300034: ske32 12
+    3300036: ske32 13
+    3300038: ske32 14
+    3300040: ske32 15
+    3300042: ske32 16
+    3300044: ske32 17
+    3300046: ske32 18
+    3300048: ske32 19
+    3300050: ske32 2
+    3300052: ske32 20
+    3300054: ske32 21
+    3300056: ske32 22
+    3300058: ske32 23
+    3300060: ske32 3
+    3300062: ske32 4
+    3300064: ske32 5
+    3300066: ske32 6
+    3300068: ske32 7
+    3300070: ske32 8
+    3300072: ske32 9
+    3300074: ske34
+    3300076: ske34 1
+    3300078: ske34 10
+    3300080: ske34 11
+    3300082: ske34 12
+    3300084: ske34 13
+    3300086: ske34 14
+    3300088: ske34 15
+    3300090: ske34 16
+    3300092: ske34 17
+    3300094: ske34 18
+    3300096: ske34 19
+    3300098: ske34 2
+    3300100: ske34 20
+    3300102: ske34 21
+    3300104: ske34 22
+    3300106: ske34 23
+    3300108: ske34 24
+    3300110: ske34 25
+    3300112: ske34 26
+    3300114: ske34 27
+    3300116: ske34 28
+    3300118: ske34 29
+    3300120: ske34 3
+    3300122: ske34 30
+    3300124: ske34 31
+    3300126: ske34 4
+    3300128: ske34 5
+    3300130: ske34 6
+    3300132: ske34 7
+    3300134: ske34 8
+    3300136: ske34 9
+    4300000: Mesh 4wayintersection2lane
+    4300002: Mesh ske16B#1
+    4300004: Mesh Group 5
+    4300006: Mesh Group 7
+    4300008: Mesh ske32
+    4300010: Mesh ske34
+    4300012: Mesh ske16B
+  materials:
+    importMaterials: 1
+    materialName: 2
+    materialSearch: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 0.0254
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 0
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
