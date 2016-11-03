@@ -8,7 +8,7 @@ public class TrafficLaneData
     public int id;
 
     public List<Trafficlight> trafficLights = new List<Trafficlight>();
-    public WaypointManager waypointManager;
+    public List<WaypointManager> waypointManagers = new List<WaypointManager>();
     public Transform spawnLocation;
 
     public int NumberOfEntitiesInLane
@@ -50,6 +50,19 @@ public class TrafficLaneData
 
         Debug.LogError("No trafficlights assigned to lane " + id);
         return null;
+    }
+
+    public WaypointManager GetRandomWaypointManager()
+    {
+        if(waypointManagers.Count < 1)
+        {
+            Debug.LogError("No waypointmanagers assigned to lane " + id);
+            return null;
+        }
+
+        int randomWaypointmanagerIndex = Random.Range(0, waypointManagers.Count);
+
+        return waypointManagers[randomWaypointmanagerIndex];
     }
 }
 
@@ -106,7 +119,7 @@ public class TrafficManager : Singleton<TrafficManager>
         TrafficLaneData laneData = FindLaneDataById(laneId);
 
         Transform spawnLocation = laneData.spawnLocation;
-        WaypointManager waypointManager = laneData.waypointManager;
+        WaypointManager waypointManager = laneData.GetRandomWaypointManager();
 
         WaypointAgent waypointAgent = objectToSpawn.GetComponent<WaypointAgent>();
 
@@ -137,7 +150,7 @@ public class TrafficManager : Singleton<TrafficManager>
 
         waypointAgent.trafficLight = trafficLight;
 
-        waypointAgent.WaypointSystem = laneData.waypointManager;
+        waypointAgent.WaypointSystem = waypointManager;
 
         waypointAgent.ResetWaypointTargetToFirst();
 
