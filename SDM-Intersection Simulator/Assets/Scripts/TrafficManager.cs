@@ -5,10 +5,9 @@ using System.Collections.Generic;
 public class TrafficLaneData
 {
     public string name;
-    [HideInInspector]
     public int id;
 
-    public Trafficlight trafficLight;
+    public List<Trafficlight> trafficLights = new List<Trafficlight>();
     public WaypointManager waypointManager;
     public Transform spawnLocation;
 
@@ -31,15 +30,26 @@ public class TrafficLaneData
     [HideInInspector]
     public List<WaypointAgent> waypointAgents = new List<WaypointAgent>();
 
-    public TrafficLaneData(Trafficlight trafficLight)
-    {
-        id = trafficLight.Id;
-        this.trafficLight = trafficLight;
-    }
-
     public void AddWaypointAgent(WaypointAgent newAgent)
     {
         waypointAgents.Add(newAgent);
+    }
+
+    public Trafficlight GetAvailableTrafficLight()
+    {
+        if (trafficLights.Count < 1)
+        {
+            Debug.LogError("No trafficlights assigned to lane " + id);
+            return null;
+        }
+
+        for (int i = 0; i < trafficLights.Count; i++)
+        {
+            if (trafficLights[i] != null) return trafficLights[i];
+        }
+
+        Debug.LogError("No trafficlights assigned to lane " + id);
+        return null;
     }
 }
 
@@ -57,10 +67,14 @@ public class TrafficManager : Singleton<TrafficManager>
     {
         for (int i = 0; i < trafficLanes.Count; i++)
         {
-            Trafficlight trafficLight = trafficLanes[i].trafficLight;
-            if (trafficLight == null) continue;
+            for (int j = 0; j < trafficLanes[i].trafficLights.Count; j++)
+            {
+                Trafficlight trafficLight = trafficLanes[i].trafficLights[j];
+                if (trafficLight == null) continue;
 
-            SetTrafficLightState(trafficLight.Id, newState);
+                SetTrafficLightState(trafficLight.Id, newState);
+            }
+
         }
     }
 
@@ -74,11 +88,11 @@ public class TrafficManager : Singleton<TrafficManager>
             TrafficLaneData trafficLane = trafficLanes[i];
             if (trafficLane == null) continue;
 
-            if (trafficLane.trafficLight == null) continue;
+            if (trafficLane.trafficLights.Count < 1) return;
 
-            trafficLane.id = trafficLane.trafficLight.Id;
+            if (trafficLane.trafficLights[0] == null) continue;
 
-            trafficLane.name = trafficLane.id + "(" + trafficLane.trafficLight.transform.parent.name + ")";
+            trafficLane.name = trafficLane.id + "(" + trafficLane.trafficLights[0].transform.parent.name + ")";
         }
     }
 
@@ -117,7 +131,12 @@ public class TrafficManager : Singleton<TrafficManager>
         objectToSpawn.transform.position = spawnLocation.position;
 
         //Assign waypoint systems.
-        waypointAgent.trafficLight = laneData.trafficLight;
+        Trafficlight trafficLight = laneData.GetAvailableTrafficLight();
+
+        if (trafficLight == null) return;
+
+        waypointAgent.trafficLight = trafficLight;
+
         waypointAgent.WaypointSystem = laneData.waypointManager;
 
         waypointAgent.ResetWaypointTargetToFirst();
@@ -136,11 +155,15 @@ public class TrafficManager : Singleton<TrafficManager>
 
             if (laneData == null) continue;
 
-            if (laneData.id != id) continue;
+            for (int j = 0; j < laneData.trafficLights.Count; j++)
+            {
+                Trafficlight trafficLight = laneData.trafficLights[j];
 
-            Trafficlight trafficLight = laneData.trafficLight;
+                if (trafficLight.Id != id) continue;
 
-            trafficLight.TrafficState = newTrafficLightState;
+                trafficLight.TrafficState = newTrafficLightState;
+            }
+
 
             if (newTrafficLightState == Trafficlight.eTrafficState.GREEN || newTrafficLightState == Trafficlight.eTrafficState.ORANGE)
                 for (int j = 0; j < laneData.waypointAgents.Count; j++)

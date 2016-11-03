@@ -2456,7 +2456,7 @@ Prefab:
       objectReference: {fileID: 1245592094}
     - target: {fileID: 1000010503702402, guid: 2e09674b44ad86f4083484bd023c4165, type: 2}
       propertyPath: m_Name
-      value: ZuiderpleinToOosterkadeLeft
+      value: (10) ZuiderpleinToOosterkadeLeft
       objectReference: {fileID: 0}
     - target: {fileID: 1000013008568842, guid: 2e09674b44ad86f4083484bd023c4165, type: 2}
       propertyPath: m_TagString
@@ -2481,7 +2481,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4000013522354334, guid: 2e09674b44ad86f4083484bd023c4165, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4000012413612204, guid: 2e09674b44ad86f4083484bd023c4165, type: 2}
       propertyPath: m_RootOrder
@@ -2489,7 +2489,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4000014233596844, guid: 2e09674b44ad86f4083484bd023c4165, type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4000014233596844, guid: 2e09674b44ad86f4083484bd023c4165, type: 2}
       propertyPath: m_LocalPosition.x
@@ -2509,15 +2509,23 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4000012413612204, guid: 2e09674b44ad86f4083484bd023c4165, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 2.63
+      value: 1.7
       objectReference: {fileID: 0}
     - target: {fileID: 4000012413612204, guid: 2e09674b44ad86f4083484bd023c4165, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -3.23
+      value: -6.37
       objectReference: {fileID: 0}
     - target: {fileID: 4000013522354334, guid: 2e09674b44ad86f4083484bd023c4165, type: 2}
       propertyPath: m_LocalPosition.x
       value: -44.48
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000013522354334, guid: 2e09674b44ad86f4083484bd023c4165, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 1.56
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000013522354334, guid: 2e09674b44ad86f4083484bd023c4165, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2e09674b44ad86f4083484bd023c4165, type: 2}
@@ -14639,9 +14647,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   trafficLanes:
-  - name: 0(Zuiderplein)
-    id: 0
-    trafficLight: {fileID: 732589609}
+  - name: 10(Zuiderplein)
+    id: 10
+    trafficLights:
+    - {fileID: 732589609}
     waypointManager: {fileID: 1007653843}
     spawnLocation: {fileID: 2021963143}
     waypointAgents: []
