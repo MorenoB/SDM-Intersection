@@ -71,8 +71,12 @@ public class TrafficManager : Singleton<TrafficManager>
 
     public List<TrafficLaneData> trafficLanes = new List<TrafficLaneData>();
 
+
+    private Client client;
+
     public void Start()
     {
+        client = GetComponent<Client>();
         SetAllTrafficLights(Trafficlight.eTrafficState.RED);
     }
 
@@ -167,6 +171,9 @@ public class TrafficManager : Singleton<TrafficManager>
         laneData.AddWaypointAgent(waypointAgent);
 
         laneData.NumberOfEntitiesInLane++;
+
+        //Send update to controller
+        client.SendStateData();
     }
 
     public void SetTrafficLightState(int id, Trafficlight.eTrafficState newTrafficLightState)
