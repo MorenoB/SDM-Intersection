@@ -118,6 +118,12 @@ public class TrafficManager : Singleton<TrafficManager>
     {
         TrafficLaneData laneData = FindLaneDataById(laneId);
 
+        if(laneData == null)
+        {
+            Debug.LogError("Lane id " + laneId + " not found!");
+            return;
+        }
+
         Transform spawnLocation = laneData.spawnLocation;
         WaypointManager waypointManager = laneData.GetRandomWaypointManager();
 
