@@ -17028,6 +17028,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 406b8884e92ac20459d5d9dfd436f03f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spawnRate: 2
+  maximumCarsInLane: 6
   poolSize: 200
   carPrefab: {fileID: 1000012056247804, guid: ce4f4dc93b737d94d88fa9987bf4f7d9, type: 2}
   bicyclePrefab: {fileID: 1000012056247804, guid: ce4f4dc93b737d94d88fa9987bf4f7d9,
@@ -17048,7 +17050,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 958c777daaa2b5047885d910a22e1ff0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  trafficData: []
+  address: localhost
+  port: 8080
+  optionalWebhook: Laputa
 --- !u!1001 &1222248368
 Prefab:
   m_ObjectHideFlags: 0
