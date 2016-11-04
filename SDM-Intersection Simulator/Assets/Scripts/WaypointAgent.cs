@@ -121,22 +121,27 @@ public class WaypointAgent : MonoBehaviour {
 
 	protected void WaypointMovementUpdate()
 	{
-		// If the agent has a gameobject target assigned then move towards it otherwise 
-		// get a target position in 3d sapce and move torawrds that
+		Vector3 relativeVector = Vector3.one;
+
+		float steerAngle = 0;
+		float speed = 0;
+		float brakeforce = 0;
+
+		// If the agent has a game object target assigned then move towards it otherwise 
+		// get a target position in 3d space and move towards that
 		if (currentTarget == null)
 		{
-			Vector3 relativeVector = transform.InverseTransformPoint(currentNodeTarget);
+			relativeVector = transform.InverseTransformPoint(currentNodeTarget);
 
-			float steerAngle = relativeVector.x / relativeVector.magnitude;
-			float speed = relativeVector.z / relativeVector.magnitude;
-			float brakeforce = 0;
+			steerAngle = relativeVector.x / relativeVector.magnitude;
+			speed = relativeVector.z / relativeVector.magnitude;
 
 			if (movingEntity.CurrentSpeed > 0 && speed < 0)
 			{
 				brakeforce = speed;
 			}
 
-			movingEntity.Move(steerAngle, speed, brakeforce, 0);
+			movingEntity.Move(steerAngle, speed, brakeforce, brakeforce);
 
 			if (m_waypointManager.ObjectIsOnNode(this))
 			{
@@ -174,18 +179,17 @@ public class WaypointAgent : MonoBehaviour {
 		}
 		else
 		{
-			Vector3 relativeVector = transform.InverseTransformPoint(currentTarget.transform.position);
+			relativeVector = transform.InverseTransformPoint(currentTarget.transform.position);
 
-			float steerAngle = relativeVector.x / relativeVector.magnitude;
-			float speed = relativeVector.z / relativeVector.magnitude;
-			float brakeforce = 0;
+			steerAngle = relativeVector.x / relativeVector.magnitude;
+			speed = relativeVector.z / relativeVector.magnitude;
 
 			if (movingEntity.CurrentSpeed > 0 && speed < 0)
 			{
 				brakeforce = speed;
 			}
 
-			movingEntity.Move(steerAngle, speed, brakeforce, 0);
+			movingEntity.Move(steerAngle, speed, brakeforce, brakeforce);
 		}
 			
 		
