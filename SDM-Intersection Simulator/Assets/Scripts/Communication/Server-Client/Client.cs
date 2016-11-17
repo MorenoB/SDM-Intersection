@@ -1,36 +1,36 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System;
-using System.Collections.Generic;
 
 public class Client : MonoBehaviour
 {
-    public List<Trafficlight> trafficData = new List<Trafficlight>();
+    public string address = "localhost";
+    public int port = 8080;
+    public string optionalWebhook = "Laputa";
 
-    private WebSocket w;
-
+    private WebSocket webSocket;
     private int lastNumber = -1;
 
     IEnumerator Start()
     {
-        w = new WebSocket(new Uri("ws://localhost:8080/Laputa"));
-        yield return StartCoroutine(w.Connect());
+        webSocket = new WebSocket(new Uri("ws://" + address + ":" + port + "/" + optionalWebhook));
+        yield return StartCoroutine(webSocket.Connect());
         while (true)
         {
-            string reply = w.RecvString();
+            string reply = webSocket.RecvString();
             if (reply != null)
             {
                 Debug.Log("Received: " + reply);
                 DecodeJSON(reply);
             }
-            if (w.error != null)
+            if (webSocket.error != null)
             {
-                Debug.LogError("Error: " + w.error);
+                Debug.LogError("Error: " + webSocket.error);
                 break;
             }
-            yield return 0;
+            yield return null;
         }
-        w.Close();
+        webSocket.Close();
     }
 
     private void Update()
@@ -113,9 +113,9 @@ public class Client : MonoBehaviour
 
     private void Send(string message)
     {
-        if (w == null)
+        if (webSocket == null)
             return;
-        w.SendString(message);
+        webSocket.SendString(message);
         Debug.Log("Sent " + message);
     }
 }

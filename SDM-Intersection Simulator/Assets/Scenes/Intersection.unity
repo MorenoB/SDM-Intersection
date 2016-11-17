@@ -4779,7 +4779,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 324640504}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.71, y: 0, z: -0.46000004}
+  m_LocalPosition: {x: -1.507, y: 0, z: -0.46}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
@@ -7409,7 +7409,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 543478981}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.71, y: 0, z: -0.46000004}
+  m_LocalPosition: {x: -1.44, y: 0, z: -0.46}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
@@ -17028,6 +17028,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 406b8884e92ac20459d5d9dfd436f03f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spawnRate: 2
+  maximumCarsInLane: 6
   poolSize: 200
   carPrefab: {fileID: 1000012056247804, guid: ce4f4dc93b737d94d88fa9987bf4f7d9, type: 2}
   bicyclePrefab: {fileID: 1000012056247804, guid: ce4f4dc93b737d94d88fa9987bf4f7d9,
@@ -17048,7 +17050,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 958c777daaa2b5047885d910a22e1ff0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  trafficData: []
+  address: 217.120.20.200
+  port: 8080
+  optionalWebhook: ws
 --- !u!1001 &1222248368
 Prefab:
   m_ObjectHideFlags: 0
@@ -26000,11 +26004,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4000012413612204, guid: 2e09674b44ad86f4083484bd023c4165, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -8.14
+      value: -7.87
       objectReference: {fileID: 0}
     - target: {fileID: 4000012413612204, guid: 2e09674b44ad86f4083484bd023c4165, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 1.09
+      value: 3.26
       objectReference: {fileID: 0}
     - target: {fileID: 4000013522354334, guid: 2e09674b44ad86f4083484bd023c4165, type: 2}
       propertyPath: m_LocalPosition.x

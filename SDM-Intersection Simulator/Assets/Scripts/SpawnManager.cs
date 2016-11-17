@@ -4,7 +4,13 @@ using EZObjectPools;
 
 public class SpawnManager : MonoBehaviour
 {
+    [Header("Spawn settings.")]
+    [Range(2, 10)]
+    public int spawnRate = 2;
+    public int maximumCarsInLane = 6;
 
+
+    [Header("Prefab settings.")]
     [Range(1, 500)]
     public int poolSize = 200;
 
@@ -22,6 +28,8 @@ public class SpawnManager : MonoBehaviour
     private EZObjectPool busObjectPool;
     private EZObjectPool pedestrianObjectPool;
 
+    private bool randomUpdateLoopActive;
+
 
     void Awake()
     {
@@ -30,6 +38,13 @@ public class SpawnManager : MonoBehaviour
         trainObjectPool = EZObjectPool.CreateObjectPool(trainPrefab, "Trains", poolSize, true, true, true);
         busObjectPool = EZObjectPool.CreateObjectPool(busPrefab, "Busses", poolSize, true, true, true);
         pedestrianObjectPool = EZObjectPool.CreateObjectPool(pedestrianPrefab, "Pedestrians", poolSize, true, true, true);
+    }
+
+    private void Start()
+    {
+        randomUpdateLoopActive = true;
+
+        StartCoroutine(RandomSpawnLoop());
     }
 
     public void SpawnObject(SpawnType spawnType, int trafficLaneId)
@@ -77,6 +92,21 @@ public class SpawnManager : MonoBehaviour
 
                 break;
         }
+    }
+
+    private IEnumerator RandomSpawnLoop()
+    {
+        while (randomUpdateLoopActive)
+        {
+            int randomLane = Random.Range(1, 11);
+
+            if (TrafficManager.Instance.FindLaneDataById(randomLane).NumberOfEntitiesInLane >= maximumCarsInLane)
+                yield return null;
+
+            SpawnObject(SpawnType.CAR, randomLane);
+            yield return new WaitForSeconds(spawnRate);
+        }
+
     }
 
     private void Update()

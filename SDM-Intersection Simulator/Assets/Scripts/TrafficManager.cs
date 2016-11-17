@@ -218,7 +218,7 @@ public class TrafficManager : Singleton<TrafficManager>
         laneData.NumberOfEntitiesInLane--;
     }
 
-    private TrafficLaneData FindLaneDataById(int id)
+    public TrafficLaneData FindLaneDataById(int id)
     {
         for (int i = 0; i < trafficLanes.Count; i++)
         {
