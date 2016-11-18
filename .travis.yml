@@ -2,6 +2,8 @@ language: csharp
 solution: unity.sln
 git:
   submodules: false
+notifications:
+  email: false
 env:
   matrix:
     - MONO_VERSION="3.5.0"
