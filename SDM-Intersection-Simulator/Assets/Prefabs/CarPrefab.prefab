@@ -327,6 +327,7 @@ GameObject:
   - 65: {fileID: 65000010222071794}
   - 114: {fileID: 114000010570891378}
   - 65: {fileID: 65000012239446524}
+  - 114: {fileID: 114000012699651936}
   m_Layer: 8
   m_Name: CarPrefab
   m_TagString: MovingEntity
@@ -2735,6 +2736,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SkidTrailPrefab: {fileID: 400000, guid: 4b6aa99de5d21424eab6ae279f31475b, type: 2}
   skidParticles: {fileID: 0}
+--- !u!114 &114000012699651936
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012056247804}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9db865986f75ee44eba89ace4646af65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_WaitTime: 3
+  m_VelocityThreshold: 1
 --- !u!114 &114000012745608772
 MonoBehaviour:
   m_ObjectHideFlags: 1

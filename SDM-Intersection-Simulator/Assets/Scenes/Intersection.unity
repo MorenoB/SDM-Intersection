@@ -26114,9 +26114,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnRate: 2
   maximumCarsInLane: 6
+  maximumBicyclesInLane: 6
   poolSize: 200
   carPrefab: {fileID: 1000012056247804, guid: ce4f4dc93b737d94d88fa9987bf4f7d9, type: 2}
-  bicyclePrefab: {fileID: 1000012056247804, guid: ce4f4dc93b737d94d88fa9987bf4f7d9,
+  bicyclePrefab: {fileID: 1000010461030740, guid: bb6f2cfce8ff6b249b77b04395eb2658,
     type: 2}
   trainPrefab: {fileID: 1000012056247804, guid: ce4f4dc93b737d94d88fa9987bf4f7d9,
     type: 2}

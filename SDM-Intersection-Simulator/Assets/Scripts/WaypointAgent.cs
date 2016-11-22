@@ -15,8 +15,6 @@ public class WaypointAgent : MonoBehaviour {
 	private bool hasLeftLane = false;
 
 	///
-	[SerializeField] protected float minAgentSpeed = 10;
-	[SerializeField] protected float maxAgentSpeed = 20;
 	[SerializeField] protected WaypointManager m_waypointManager;
 
 	[HideInInspector] protected int currentIndex = 0;
@@ -55,7 +53,6 @@ public class WaypointAgent : MonoBehaviour {
 
 	public virtual void Start()
 	{
-		speed = Random.Range(minAgentSpeed, maxAgentSpeed);
 		movingEntity = GetComponent<IMovingEntity>();
 	}
 
@@ -134,7 +131,7 @@ public class WaypointAgent : MonoBehaviour {
 			relativeVector = transform.InverseTransformPoint(currentNodeTarget);
 
 			steerAngle = relativeVector.x / relativeVector.magnitude;
-			speed = relativeVector.z / relativeVector.magnitude;
+			speed = 1;
 
 			if (movingEntity.CurrentSpeed > 0 && speed < 0)
 			{
@@ -182,7 +179,7 @@ public class WaypointAgent : MonoBehaviour {
 			relativeVector = transform.InverseTransformPoint(currentTarget.transform.position);
 
 			steerAngle = relativeVector.x / relativeVector.magnitude;
-			speed = relativeVector.z / relativeVector.magnitude;
+			speed = 1;
 
 			if (movingEntity.CurrentSpeed > 0 && speed < 0)
 			{
