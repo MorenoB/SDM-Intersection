@@ -372,6 +372,8 @@ MonoBehaviour:
   Id: 42
   headModel: {fileID: 11096157}
   stoplineColliders: {fileID: 324640504}
+  useGameObjectSwitching: 0
+  LightStates: []
 --- !u!1001 &13099845
 Prefab:
   m_ObjectHideFlags: 0
