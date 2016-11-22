@@ -179,7 +179,7 @@ public class TrafficManager : Singleton<TrafficManager>
 
         if (trafficLight == null) return;
 
-        waypointAgent.trafficLight = trafficLight;
+        waypointAgent.TrafficLight = trafficLight;
 
         waypointAgent.WaypointSystem = waypointManager;
 
