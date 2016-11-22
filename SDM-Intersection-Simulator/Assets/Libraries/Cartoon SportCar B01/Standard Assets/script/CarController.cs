@@ -38,18 +38,13 @@ namespace UnityStandardAssets.Vehicles.Car
         [SerializeField] private float m_SlipLimit;
         [SerializeField] private float m_BrakeTorque;
 
-        private Quaternion[] m_WheelMeshLocalRotations;
-        private Vector3 m_Prevpos, m_Pos;
         private float m_SteerAngle;
         private int m_GearNum;
         private float m_GearFactor;
         private float m_OldRotation;
         private float m_CurrentTorque;
         private Rigidbody m_Rigidbody;
-        private const float k_ReversingThreshold = 0.01f;
 
-        public bool Skidding { get; private set; }
-        public float BrakeInput { get; private set; }
         public float CurrentSteerAngle{ get { return m_SteerAngle; }}
         public float CurrentSpeed{ get { return m_Rigidbody.velocity.magnitude*2.23693629f; }}
         public float MaxSpeed{get { return m_Topspeed; }}
@@ -59,11 +54,6 @@ namespace UnityStandardAssets.Vehicles.Car
         // Use this for initialization
         private void Start()
         {
-            m_WheelMeshLocalRotations = new Quaternion[4];
-            for (int i = 0; i < 4; i++)
-            {
-                m_WheelMeshLocalRotations[i] = m_WheelMeshes[i].transform.localRotation;
-            }
             m_WheelColliders[0].attachedRigidbody.centerOfMass = m_CentreOfMassOffset;
 
             m_MaxHandbrakeTorque = float.MaxValue;
@@ -159,7 +149,6 @@ namespace UnityStandardAssets.Vehicles.Car
             //clamp input values
             steering = Mathf.Clamp(steering, -1, 1);
             AccelInput = accel = Mathf.Clamp(accel, 0, 1);
-            BrakeInput = footbrake = -1*Mathf.Clamp(footbrake, -1, 0);
             handbrake = Mathf.Clamp(handbrake, 0, 1);
 
             //Set the steer on the front wheels.
