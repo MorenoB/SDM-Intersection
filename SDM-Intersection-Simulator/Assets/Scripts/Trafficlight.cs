@@ -1,4 +1,12 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
+
+[System.Serializable]
+public class TrafficLightStateObject
+{
+    public GameObject gameObject;
+    public Trafficlight.eTrafficState trafficState = Trafficlight.eTrafficState.NONE;
+}
 
 public class Trafficlight : MonoBehaviour {
 
@@ -6,6 +14,10 @@ public class Trafficlight : MonoBehaviour {
     public MeshRenderer headModel;
     public enum eTrafficState { NONE, GREEN, ORANGE, RED };
     public GameObject stoplineColliders;
+
+    public bool useGameObjectSwitching = false;
+
+    public List<TrafficLightStateObject> LightStates = new List<TrafficLightStateObject>();
 
     private eTrafficState trafficState = eTrafficState.NONE;
     public eTrafficState TrafficState
@@ -43,6 +55,26 @@ public class Trafficlight : MonoBehaviour {
         return ret;
     }
 
+    private void EnableLightStateObject(eTrafficState trafficState)
+    {
+        for (int i = 0; i < LightStates.Count; i++)
+        {
+            TrafficLightStateObject obj = LightStates[i];
+            if (obj == null) continue;
+
+            if (obj.trafficState == trafficState)
+            {
+                if (!obj.gameObject.activeSelf)
+                    obj.gameObject.SetActive(true);
+
+                continue;
+            }
+
+            if(obj.gameObject.activeSelf)
+                obj.gameObject.SetActive(false);
+        }
+    } 
+
     private void UpdateColor()
     {
         Color baseColor = Color.cyan;
@@ -70,6 +102,20 @@ public class Trafficlight : MonoBehaviour {
                 if(stoplineColliders != null)
                     stoplineColliders.SetActive(true);
                 break;
+        }
+
+
+        //If property is checked, only switch states by activating or deactivating gameobjects rather than modifying materials.
+        if(useGameObjectSwitching)
+        {
+            EnableLightStateObject(TrafficState);
+            return;
+        }
+
+        if(headModel == null)
+        {
+            Debug.LogError("No headmodel set on this object while modifying material!");
+            return;
         }
 
         for (int i = 0; i < headModel.materials.Length; i++)
