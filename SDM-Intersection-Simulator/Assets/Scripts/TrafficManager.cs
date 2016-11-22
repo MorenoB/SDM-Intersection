@@ -70,6 +70,8 @@ public class TrafficManager : Singleton<TrafficManager>
 {
     public List<TrafficLaneData> carLanes = new List<TrafficLaneData>();
 
+    public List<TrafficLaneData> bicycleLanes = new List<TrafficLaneData>();
+
     private List<TrafficLaneData> cachedTrafficLanes = new List<TrafficLaneData>();
     public List<TrafficLaneData> TrafficLanes
     {
@@ -93,6 +95,7 @@ public class TrafficManager : Singleton<TrafficManager>
     private void PopulateTrafficLanes()
     {
         cachedTrafficLanes.AddRange(carLanes);
+        cachedTrafficLanes.AddRange(bicycleLanes);
     }
 
     private void SetAllTrafficLights(Trafficlight.eTrafficState newState)
@@ -231,6 +234,40 @@ public class TrafficManager : Singleton<TrafficManager>
         }
 
         laneData.NumberOfEntitiesInLane--;
+    }
+
+    public TrafficLaneData GetRandomCarLane(int maxNrOfEnttitiesInLane = -1)
+    {
+        int randomIndex = Random.Range(0, carLanes.Count);
+        TrafficLaneData trafficLane = carLanes[randomIndex];
+
+        if (maxNrOfEnttitiesInLane == -1)
+            return trafficLane;
+
+        if (trafficLane.NumberOfEntitiesInLane < maxNrOfEnttitiesInLane)
+            return trafficLane;
+        else
+            GetRandomBicycleLane(maxNrOfEnttitiesInLane);
+
+
+        return null;
+    }
+
+    public TrafficLaneData GetRandomBicycleLane(int maxNrOfEnttitiesInLane = -1)
+    {
+        int randomIndex = Random.Range(0, bicycleLanes.Count);
+        TrafficLaneData trafficLane = bicycleLanes[randomIndex];
+
+        if (maxNrOfEnttitiesInLane == -1)
+                return trafficLane;
+
+        if (trafficLane.NumberOfEntitiesInLane < maxNrOfEnttitiesInLane)
+            return trafficLane;
+        else
+            GetRandomBicycleLane(maxNrOfEnttitiesInLane);
+        
+
+        return null;
     }
 
     public TrafficLaneData FindLaneDataById(int id)
