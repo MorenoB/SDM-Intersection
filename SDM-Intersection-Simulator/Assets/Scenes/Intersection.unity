@@ -26077,14 +26077,6 @@ MonoBehaviour:
     - {fileID: 136311617}
     spawnLocation: {fileID: 1416316603}
     waypointAgents: []
-  - name: 42(Oostergoweg)
-    id: 42
-    trafficLights:
-    - {fileID: 11096159}
-    waypointManagers:
-    - {fileID: 879425708}
-    spawnLocation: {fileID: 588967882}
-    waypointAgents: []
   bicycleLanes:
   - name: (23/22) SchransToZuiderplein
     id: 23
@@ -26136,6 +26128,15 @@ MonoBehaviour:
     - {fileID: 480867643}
     spawnLocation: {fileID: 1572179713}
     waypointAgents: []
+  busLanes:
+  - name: 42(Oostergoweg)BUS
+    id: 42
+    trafficLights:
+    - {fileID: 11096159}
+    waypointManagers:
+    - {fileID: 879425708}
+    spawnLocation: {fileID: 588967882}
+    waypointAgents: []
 --- !u!4 &1220868760
 Transform:
   m_ObjectHideFlags: 0
@@ -26163,6 +26164,7 @@ MonoBehaviour:
   spawnRate: 2
   maximumCarsInLane: 6
   maximumBicyclesInLane: 6
+  maximumBussesInLane: 2
   poolSize: 200
   carPrefab: {fileID: 1000012056247804, guid: ce4f4dc93b737d94d88fa9987bf4f7d9, type: 2}
   bicyclePrefab: {fileID: 1000010461030740, guid: bb6f2cfce8ff6b249b77b04395eb2658,

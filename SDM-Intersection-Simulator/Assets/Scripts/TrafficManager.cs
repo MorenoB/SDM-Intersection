@@ -72,6 +72,8 @@ public class TrafficManager : Singleton<TrafficManager>
 
     public List<TrafficLaneData> bicycleLanes = new List<TrafficLaneData>();
 
+    public List<TrafficLaneData> busLanes = new List<TrafficLaneData>();
+
     private List<TrafficLaneData> cachedTrafficLanes = new List<TrafficLaneData>();
     public List<TrafficLaneData> TrafficLanes
     {
@@ -96,6 +98,7 @@ public class TrafficManager : Singleton<TrafficManager>
     {
         cachedTrafficLanes.AddRange(carLanes);
         cachedTrafficLanes.AddRange(bicycleLanes);
+        cachedTrafficLanes.AddRange(busLanes);
     }
 
     private void SetAllTrafficLights(Trafficlight.eTrafficState newState)
@@ -268,6 +271,20 @@ public class TrafficManager : Singleton<TrafficManager>
         
 
         return null;
+    }
+
+    public TrafficLaneData GetRandomBusLane(int maxNrOfEnttitiesInLane = -1)
+    {
+        int randomIndex = Random.Range(0, busLanes.Count);
+        TrafficLaneData trafficLane = busLanes[randomIndex];
+
+        if (maxNrOfEnttitiesInLane == -1)
+            return trafficLane;
+
+        if (trafficLane.NumberOfEntitiesInLane >= maxNrOfEnttitiesInLane)
+            return null;
+
+        return trafficLane;
     }
 
     public TrafficLaneData FindLaneDataById(int id)
