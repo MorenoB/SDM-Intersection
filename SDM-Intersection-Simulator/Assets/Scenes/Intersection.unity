@@ -1977,34 +1977,6 @@ Transform:
   m_PrefabParentObject: {fileID: 4000011182338988, guid: a71bc3cd00ff60d41be3d29f22100963,
     type: 2}
   m_PrefabInternal: {fileID: 83983432}
---- !u!1 &84570180
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 84570181}
-  m_Layer: 0
-  m_Name: SchransToStationsweg
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &84570181
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 84570180}
-  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
-  m_LocalPosition: {x: -6.2, y: 2.6, z: 69}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
-  m_Children: []
-  m_Father: {fileID: 1008989363}
-  m_RootOrder: 6
 --- !u!1001 &84942448
 Prefab:
   m_ObjectHideFlags: 0
@@ -2657,10 +2629,10 @@ Transform:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 119090086}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 9, y: 0, z: 39.7}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
   m_Children: []
   m_Father: {fileID: 1110191205}
   m_RootOrder: 0
@@ -4290,10 +4262,10 @@ Transform:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 172347669}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 9, y: 0, z: 42.7}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
   m_Children: []
   m_Father: {fileID: 115007434}
   m_RootOrder: 0
@@ -5015,34 +4987,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 194578814}
   m_Mesh: {fileID: 4300000, guid: c39d7d9976b11ce4db371c8ad552da6a, type: 3}
---- !u!1 &195483751
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 195483752}
-  m_Layer: 0
-  m_Name: Zuiderplein
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &195483752
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 195483751}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -12.16, y: 2, z: -22.8}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_Children: []
-  m_Father: {fileID: 2026931527}
-  m_RootOrder: 1
 --- !u!4 &197485446 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400002, guid: c39d7d9976b11ce4db371c8ad552da6a, type: 3}
@@ -5136,37 +5080,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 732c1a58217e3ee4eb62137f787980d7, type: 3}
   m_IsPrefabParent: 0
---- !u!1 &203983082
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 203983083}
-  m_Layer: 0
-  m_Name: SpawnPoints
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &203983083
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 203983082}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.5970675, y: -1.0980377, z: -23.491869}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_Children:
-  - {fileID: 1008989363}
-  - {fileID: 2026931527}
-  - {fileID: 1373129209}
-  m_Father: {fileID: 0}
-  m_RootOrder: 5
 --- !u!1001 &205797393
 Prefab:
   m_ObjectHideFlags: 0
@@ -9114,34 +9027,6 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 400002, guid: d6944e375349727488147f07e5ce6722, type: 3}
   m_PrefabInternal: {fileID: 411792045}
---- !u!1 &417940522
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 417940523}
-  m_Layer: 0
-  m_Name: Oostergoweg
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &417940523
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 417940522}
-  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -55.2, y: 2, z: 42.7}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
-  m_Children: []
-  m_Father: {fileID: 1373129209}
-  m_RootOrder: 1
 --- !u!1001 &420216345
 Prefab:
   m_ObjectHideFlags: 0
@@ -10050,10 +9935,10 @@ Transform:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 463546587}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 12, y: 0, z: 42.7}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
   m_Children: []
   m_Father: {fileID: 1638181849}
   m_RootOrder: 0
@@ -12848,34 +12733,6 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 400002, guid: c39d7d9976b11ce4db371c8ad552da6a, type: 3}
   m_PrefabInternal: {fileID: 586928986}
---- !u!1 &588967881
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 588967882}
-  m_Layer: 0
-  m_Name: OostergoBUS
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &588967882
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 588967881}
-  m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -49.28, y: 2.6, z: 16.75}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
-  m_Children: []
-  m_Father: {fileID: 1008989363}
-  m_RootOrder: 10
 --- !u!1001 &591792910
 Prefab:
   m_ObjectHideFlags: 0
@@ -14349,34 +14206,6 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 1497122531}
   m_Script: {fileID: 11500000, guid: 7ba0ad8f05bc84346868b2747c32bf42, type: 3}
---- !u!1 &661827169
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 661827170}
-  m_Layer: 0
-  m_Name: SchransToForwardLeft
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &661827170
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 661827169}
-  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
-  m_LocalPosition: {x: -8.97, y: 2.6, z: 68.93}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
-  m_Children: []
-  m_Father: {fileID: 1008989363}
-  m_RootOrder: 7
 --- !u!1001 &666458464
 Prefab:
   m_ObjectHideFlags: 0
@@ -14983,34 +14812,6 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 400002, guid: c087dd3c8b8426f47aaeda01b716f661, type: 3}
   m_PrefabInternal: {fileID: 692298685}
---- !u!1 &694520422
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 694520423}
-  m_Layer: 0
-  m_Name: Stationsweg
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &694520423
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 694520422}
-  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 42.5, y: 2, z: 12.99}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
-  m_Children: []
-  m_Father: {fileID: 2026931527}
-  m_RootOrder: 3
 --- !u!1001 &695205826
 Prefab:
   m_ObjectHideFlags: 0
@@ -20708,10 +20509,10 @@ Transform:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 928395491}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 2.9, y: 0, z: 42.48}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
   m_Children: []
   m_Father: {fileID: 480867645}
   m_RootOrder: 0
@@ -22038,34 +21839,6 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 400002, guid: c39d7d9976b11ce4db371c8ad552da6a, type: 3}
   m_PrefabInternal: {fileID: 982425551}
---- !u!1 &988112286
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 988112287}
-  m_Layer: 0
-  m_Name: OostergoToStationsweg
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &988112287
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 988112286}
-  m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -49.28, y: 2.6, z: 22.18}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
-  m_Children: []
-  m_Father: {fileID: 1008989363}
-  m_RootOrder: 8
 --- !u!1001 &989161349
 Prefab:
   m_ObjectHideFlags: 0
@@ -22220,34 +21993,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c39d7d9976b11ce4db371c8ad552da6a, type: 3}
   m_IsPrefabParent: 0
---- !u!1 &1000526924
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 1000526925}
-  m_Layer: 0
-  m_Name: StationswegToOostergoweg
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1000526925
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1000526924}
-  m_LocalRotation: {x: -0, y: -0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 41.6, y: 2.6, z: 25.39}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
-  m_Children: []
-  m_Father: {fileID: 1008989363}
-  m_RootOrder: 4
 --- !u!1001 &1001199152
 Prefab:
   m_ObjectHideFlags: 0
@@ -22537,45 +22282,6 @@ Transform:
   m_PrefabParentObject: {fileID: 4000013831864008, guid: 2e09674b44ad86f4083484bd023c4165,
     type: 2}
   m_PrefabInternal: {fileID: 157894425}
---- !u!1 &1008989362
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 1008989363}
-  m_Layer: 0
-  m_Name: Cars
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1008989363
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1008989362}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_Children:
-  - {fileID: 2021963143}
-  - {fileID: 1294572018}
-  - {fileID: 1942819915}
-  - {fileID: 1292932674}
-  - {fileID: 1000526925}
-  - {fileID: 1758579923}
-  - {fileID: 84570181}
-  - {fileID: 661827170}
-  - {fileID: 988112287}
-  - {fileID: 1416316603}
-  - {fileID: 588967882}
-  m_Father: {fileID: 203983083}
-  m_RootOrder: 0
 --- !u!1001 &1014125229
 Prefab:
   m_ObjectHideFlags: 0
@@ -24533,10 +24239,10 @@ Transform:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1132627705}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 8.54, y: -0, z: 42.7}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
   m_Children: []
   m_Father: {fileID: 6469405}
   m_RootOrder: 0
@@ -25948,7 +25654,6 @@ MonoBehaviour:
     waypointManagers:
     - {fileID: 1007653843}
     - {fileID: 1083999470}
-    spawnLocation: {fileID: 2021963143}
     waypointAgents: []
   - name: 9(Zuiderplein)
     id: 9
@@ -25957,7 +25662,6 @@ MonoBehaviour:
     - {fileID: 1576146994}
     waypointManagers:
     - {fileID: 1299171452}
-    spawnLocation: {fileID: 1294572018}
     waypointAgents: []
   - name: 8(Zuiderplein)
     id: 8
@@ -25965,7 +25669,6 @@ MonoBehaviour:
     - {fileID: 1964267454}
     waypointManagers:
     - {fileID: 796165818}
-    spawnLocation: {fileID: 1942819915}
     waypointAgents: []
   - name: 7(Stationsweg)
     id: 7
@@ -25973,7 +25676,6 @@ MonoBehaviour:
     - {fileID: 95746392}
     waypointManagers:
     - {fileID: 1982605436}
-    spawnLocation: {fileID: 1292932674}
     waypointAgents: []
   - name: 6(Stationsweg)
     id: 6
@@ -25982,7 +25684,6 @@ MonoBehaviour:
     - {fileID: 1459384753}
     waypointManagers:
     - {fileID: 1535742774}
-    spawnLocation: {fileID: 1000526925}
     waypointAgents: []
   - name: 5(Stationsweg)
     id: 5
@@ -25990,7 +25691,6 @@ MonoBehaviour:
     - {fileID: 721519936}
     waypointManagers:
     - {fileID: 2035668190}
-    spawnLocation: {fileID: 1758579923}
     waypointAgents: []
   - name: 4(Schrans)
     id: 4
@@ -25998,7 +25698,6 @@ MonoBehaviour:
     - {fileID: 810019123}
     waypointManagers:
     - {fileID: 296921419}
-    spawnLocation: {fileID: 84570181}
     waypointAgents: []
   - name: 3(Schrans)
     id: 3
@@ -26007,7 +25706,6 @@ MonoBehaviour:
     waypointManagers:
     - {fileID: 1612204129}
     - {fileID: 2130688412}
-    spawnLocation: {fileID: 661827170}
     waypointAgents: []
   - name: 2(Oostergoweg)
     id: 2
@@ -26016,7 +25714,6 @@ MonoBehaviour:
     - {fileID: 1490306339}
     waypointManagers:
     - {fileID: 875256182}
-    spawnLocation: {fileID: 988112287}
     waypointAgents: []
   - name: 1(Oostergoweg)
     id: 1
@@ -26024,7 +25721,6 @@ MonoBehaviour:
     - {fileID: 621382096}
     waypointManagers:
     - {fileID: 136311617}
-    spawnLocation: {fileID: 1416316603}
     waypointAgents: []
   bicycleLanes:
   - name: (23/22) SchransToZuiderplein
@@ -26034,7 +25730,6 @@ MonoBehaviour:
     - {fileID: 1030481111}
     waypointManagers:
     - {fileID: 807108858}
-    spawnLocation: {fileID: 2103641655}
     waypointAgents: []
   - name: (21) ZuiderpleinToSchrans
     id: 21
@@ -26042,7 +25737,6 @@ MonoBehaviour:
     - {fileID: 1403658715}
     waypointManagers:
     - {fileID: 1110191210}
-    spawnLocation: {fileID: 195483752}
     waypointAgents: []
   - name: (28) OostergowegToStationsweg
     id: 28
@@ -26050,7 +25744,6 @@ MonoBehaviour:
     - {fileID: 465373103}
     waypointManagers:
     - {fileID: 115007439}
-    spawnLocation: {fileID: 2048562604}
     waypointAgents: []
   - name: (27) StationswegToOostergoweg
     id: 27
@@ -26058,7 +25751,6 @@ MonoBehaviour:
     - {fileID: 2017459917}
     waypointManagers:
     - {fileID: 6469403}
-    spawnLocation: {fileID: 694520423}
     waypointAgents: []
   - name: (25) StationswegToZuiderplein
     id: 25
@@ -26066,7 +25758,6 @@ MonoBehaviour:
     - {fileID: 1591990149}
     waypointManagers:
     - {fileID: 1638181854}
-    spawnLocation: {fileID: 2140218442}
     waypointAgents: []
   - name: (26) ZuiderpleinToSchrans
     id: 26
@@ -26075,7 +25766,6 @@ MonoBehaviour:
     - {fileID: 1134446612}
     waypointManagers:
     - {fileID: 480867643}
-    spawnLocation: {fileID: 1572179713}
     waypointAgents: []
   busLanes:
   - name: 42(Oostergoweg)BUS
@@ -26084,7 +25774,6 @@ MonoBehaviour:
     - {fileID: 11096159}
     waypointManagers:
     - {fileID: 879425708}
-    spawnLocation: {fileID: 588967882}
     waypointAgents: []
   trainLanes:
   - name: (45) Traintrack
@@ -26093,7 +25782,6 @@ MonoBehaviour:
     waypointManagers:
     - {fileID: 837571390}
     - {fileID: 639748098}
-    spawnLocation: {fileID: 1904708582}
     waypointAgents: []
 --- !u!4 &1220868760
 Transform:
@@ -26119,7 +25807,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 406b8884e92ac20459d5d9dfd436f03f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnRate: 2
+  spawnRate: 4
   maximumCarsInLane: 6
   maximumBicyclesInLane: 6
   maximumBussesInLane: 2
@@ -26962,34 +26650,6 @@ Transform:
 Transform:
   m_PrefabParentObject: {fileID: 400002, guid: f016001fb52f8e944853affd3734490f, type: 3}
   m_PrefabInternal: {fileID: 1494277180}
---- !u!1 &1292932673
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 1292932674}
-  m_Layer: 0
-  m_Name: StationswegToZuiderpleinLeft
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1292932674
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1292932673}
-  m_LocalRotation: {x: -0, y: -0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 41.6, y: 2.6, z: 22.68}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
-  m_Children: []
-  m_Father: {fileID: 1008989363}
-  m_RootOrder: 3
 --- !u!1 &1293257033
 GameObject:
   m_ObjectHideFlags: 0
@@ -27019,34 +26679,6 @@ Transform:
   - {fileID: 2113881499}
   m_Father: {fileID: 0}
   m_RootOrder: 2
---- !u!1 &1294572017
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 1294572018}
-  m_Layer: 0
-  m_Name: ZuiderpleinToOosterkadeForward
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1294572018
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1294572017}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.52, y: 2.6, z: -25.770002}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_Children: []
-  m_Father: {fileID: 1008989363}
-  m_RootOrder: 1
 --- !u!4 &1296461320 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400002, guid: 732c1a58217e3ee4eb62137f787980d7, type: 3}
@@ -27692,10 +27324,10 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1327494209}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 47.44, y: -9.3, z: 19.52}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
   m_Children: []
   m_Father: {fileID: 837571389}
   m_RootOrder: 0
@@ -28768,36 +28400,6 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 400002, guid: c39d7d9976b11ce4db371c8ad552da6a, type: 3}
   m_PrefabInternal: {fileID: 839902718}
---- !u!1 &1373129208
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 1373129209}
-  m_Layer: 0
-  m_Name: Trains
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1373129209
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1373129208}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_Children:
-  - {fileID: 1904708582}
-  - {fileID: 417940523}
-  m_Father: {fileID: 203983083}
-  m_RootOrder: 2
 --- !u!1001 &1375116913
 Prefab:
   m_ObjectHideFlags: 0
@@ -30019,34 +29621,6 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 400002, guid: c6572a181a027f842a94a0b7ed374dad, type: 3}
   m_PrefabInternal: {fileID: 1415541249}
---- !u!1 &1416316602
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 1416316603}
-  m_Layer: 0
-  m_Name: OostergoToZuiderplein
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1416316603
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1416316602}
-  m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -49.28, y: 2.6, z: 19.18}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
-  m_Children: []
-  m_Father: {fileID: 1008989363}
-  m_RootOrder: 9
 --- !u!1 &1416719389
 GameObject:
   m_ObjectHideFlags: 0
@@ -32946,10 +32520,10 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1549028157}
-  m_LocalRotation: {x: -0.000000029802322, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: -50.67, y: -9.3, z: 19.52}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
   m_Children: []
   m_Father: {fileID: 639748097}
   m_RootOrder: 0
@@ -32998,34 +32572,6 @@ Transform:
 Transform:
   m_PrefabParentObject: {fileID: 400002, guid: f016001fb52f8e944853affd3734490f, type: 3}
   m_PrefabInternal: {fileID: 1722972942}
---- !u!1 &1572179712
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 1572179713}
-  m_Layer: 0
-  m_Name: Zuiderplein (1)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1572179713
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1572179712}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5.8, y: 2, z: -22.800001}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_Children: []
-  m_Father: {fileID: 2026931527}
-  m_RootOrder: 5
 --- !u!1001 &1575461920
 Prefab:
   m_ObjectHideFlags: 0
@@ -36473,7 +36019,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1737285879}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 6, y: 0, z: -44.31}
+  m_LocalPosition: {x: 6, y: 0, z: -50.47}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
@@ -36946,34 +36492,6 @@ Transform:
   - {fileID: 1520625136}
   m_Father: {fileID: 1130278512}
   m_RootOrder: 1
---- !u!1 &1758579922
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 1758579923}
-  m_Layer: 0
-  m_Name: StationswegToSchrans
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1758579923
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1758579922}
-  m_LocalRotation: {x: -0, y: -0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 41.6, y: 2.6, z: 28.04}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
-  m_Children: []
-  m_Father: {fileID: 1008989363}
-  m_RootOrder: 5
 --- !u!1001 &1762267728
 Prefab:
   m_ObjectHideFlags: 0
@@ -39671,34 +39189,6 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 400002, guid: 42cde6954761ad241ba1272766a69f4e, type: 3}
   m_PrefabInternal: {fileID: 1901652258}
---- !u!1 &1904708581
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 1904708582}
-  m_Layer: 0
-  m_Name: Stationsweg
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1904708582
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1904708581}
-  m_LocalRotation: {x: -0, y: -0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 46.8, y: 2, z: 42.7}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
-  m_Children: []
-  m_Father: {fileID: 1373129209}
-  m_RootOrder: 0
 --- !u!1001 &1915002332
 Prefab:
   m_ObjectHideFlags: 0
@@ -40456,34 +39946,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1942368046}
   m_Mesh: {fileID: 4300000, guid: c39d7d9976b11ce4db371c8ad552da6a, type: 3}
---- !u!1 &1942819914
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 1942819915}
-  m_Layer: 0
-  m_Name: ZuiderpleinToStationswegRight
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1942819915
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1942819914}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.06, y: 2.6, z: -25.770002}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_Children: []
-  m_Father: {fileID: 1008989363}
-  m_RootOrder: 2
 --- !u!4 &1944938416 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400002, guid: 732c1a58217e3ee4eb62137f787980d7, type: 3}
@@ -42240,34 +41702,6 @@ Transform:
   - {fileID: 1310794392}
   m_Father: {fileID: 1562600782}
   m_RootOrder: 1
---- !u!1 &2021963142
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 2021963143}
-  m_Layer: 0
-  m_Name: ZuiderpleinToOosterkadeLeft
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2021963143
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2021963142}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -6, y: 2.6, z: -25.770002}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_Children: []
-  m_Father: {fileID: 1008989363}
-  m_RootOrder: 0
 --- !u!1 &2022033088
 GameObject:
   m_ObjectHideFlags: 0
@@ -42431,40 +41865,6 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 400002, guid: c39d7d9976b11ce4db371c8ad552da6a, type: 3}
   m_PrefabInternal: {fileID: 2022731319}
---- !u!1 &2026931526
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 2026931527}
-  m_Layer: 0
-  m_Name: Bicycles
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2026931527
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2026931526}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_Children:
-  - {fileID: 2103641655}
-  - {fileID: 195483752}
-  - {fileID: 2048562604}
-  - {fileID: 694520423}
-  - {fileID: 2140218442}
-  - {fileID: 1572179713}
-  m_Father: {fileID: 203983083}
-  m_RootOrder: 1
 --- !u!1001 &2027980773
 Prefab:
   m_ObjectHideFlags: 0
@@ -43009,34 +42409,6 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 400002, guid: c39d7d9976b11ce4db371c8ad552da6a, type: 3}
   m_PrefabInternal: {fileID: 427211404}
---- !u!1 &2048562603
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 2048562604}
-  m_Layer: 0
-  m_Name: Oostergoweg
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2048562604
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2048562603}
-  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -50.52, y: 2, z: 12.99}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
-  m_Children: []
-  m_Father: {fileID: 2026931527}
-  m_RootOrder: 2
 --- !u!1 &2049819115
 GameObject:
   m_ObjectHideFlags: 0
@@ -44188,34 +43560,6 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 400002, guid: 732c1a58217e3ee4eb62137f787980d7, type: 3}
   m_PrefabInternal: {fileID: 678636619}
---- !u!1 &2103641654
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 2103641655}
-  m_Layer: 0
-  m_Name: Schrans
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2103641655
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2103641654}
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: -12.16, y: 2, z: 67.17}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
-  m_Children: []
-  m_Father: {fileID: 2026931527}
-  m_RootOrder: 0
 --- !u!1 &2105186597
 GameObject:
   m_ObjectHideFlags: 0
@@ -45200,34 +44544,6 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 400002, guid: d6944e375349727488147f07e5ce6722, type: 3}
   m_PrefabInternal: {fileID: 2138116892}
---- !u!1 &2140218441
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 2140218442}
-  m_Layer: 0
-  m_Name: Stationsweg (1)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2140218442
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2140218441}
-  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 42.5, y: 2, z: 30.99}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
-  m_Children: []
-  m_Father: {fileID: 2026931527}
-  m_RootOrder: 4
 --- !u!1001 &2140500334
 Prefab:
   m_ObjectHideFlags: 0

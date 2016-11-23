@@ -9,7 +9,6 @@ public class TrafficLaneData
 
     public List<Trafficlight> trafficLights = new List<Trafficlight>();
     public List<WaypointManager> waypointManagers = new List<WaypointManager>();
-    public Transform spawnLocation;
 
     public int NumberOfEntitiesInLane
     {
@@ -135,15 +134,20 @@ public class TrafficManager : Singleton<TrafficManager>
 
         WaypointManager waypointManager = laneData.GetRandomWaypointManager();
 
-        Transform spawnLocation = null;
-
-        if (laneData.spawnLocation == null)
+        if (waypointManager == null)
         {
-            spawnLocation = waypointManager.waypointNodes[0].transform;
-            Debug.LogWarning("No spawnpoint set for lane " + laneData.name + " using first waypoint node location...");
+            Debug.LogError("No waypointmanager assigned for lane " + laneId);
+            return;
         }
-        else
-            spawnLocation = laneData.spawnLocation;
+        
+
+        if (waypointManager.waypointNodes.Count < 1)
+        {
+            Debug.LogError("No waypoint nodes set!");
+            return;
+        }
+
+        Transform spawnLocation = waypointManager.waypointNodes[0].transform;
 
         objectToSpawn.transform.rotation = spawnLocation.rotation;
 
@@ -152,18 +156,6 @@ public class TrafficManager : Singleton<TrafficManager>
         if (waypointAgent == null)
         {
             Debug.LogError("Entity " + objectToSpawn + " is missing WaypointAgent component!");
-            return;
-        }
-
-        if (spawnLocation == null)
-        {
-            Debug.LogError("No spawnlocation assigned for lane " + laneId);
-            return;
-        }
-
-        if (waypointManager == null)
-        {
-            Debug.LogError("No waypointmanager assigned for lane " + laneId);
             return;
         }
 
