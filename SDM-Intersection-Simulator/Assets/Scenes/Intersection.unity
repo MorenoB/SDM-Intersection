@@ -9622,10 +9622,10 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 417940522}
-  m_LocalRotation: {x: -0, y: -0.7071068, z: -0, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: -55.2, y: 2, z: 42.7}
-  m_LocalScale: {x: 1.0000007, y: 1, z: 1.0000007}
-  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
   m_Children: []
   m_Father: {fileID: 1373129209}
   m_RootOrder: 1
@@ -27530,6 +27530,7 @@ MonoBehaviour:
   maximumCarsInLane: 6
   maximumBicyclesInLane: 6
   maximumBussesInLane: 2
+  maximumTrainsInLane: 1
   poolSize: 200
   carPrefab: {fileID: 1000012056247804, guid: ce4f4dc93b737d94d88fa9987bf4f7d9, type: 2}
   bicyclePrefab: {fileID: 1000010461030740, guid: bb6f2cfce8ff6b249b77b04395eb2658,

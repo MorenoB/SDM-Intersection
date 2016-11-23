@@ -39,7 +39,7 @@ public class TrafficLaneData
     {
         if (trafficLights.Count < 1)
         {
-            Debug.LogError("No trafficlights assigned to lane " + id);
+            Debug.LogWarning("No trafficlights assigned to lane " + id);
             return null;
         }
 
@@ -189,9 +189,8 @@ public class TrafficManager : Singleton<TrafficManager>
         //Assign waypoint systems.
         Trafficlight trafficLight = laneData.GetAvailableTrafficLight();
 
-        if (trafficLight == null) return;
-
-        waypointAgent.TrafficLight = trafficLight;
+        if (trafficLight != null)
+            waypointAgent.TrafficLight = trafficLight;
 
         waypointAgent.WaypointSystem = waypointManager;
 
@@ -268,6 +267,12 @@ public class TrafficManager : Singleton<TrafficManager>
             case SpawnManager.SpawnType.CAR:
                 randomIndex = Random.Range(0, carLanes.Count);
                 trafficLane = carLanes[randomIndex];
+                break;
+
+            case SpawnManager.SpawnType.TRAIN:
+                randomIndex = Random.Range(0, trainLanes.Count);
+                trafficLane = trainLanes[randomIndex];
+
                 break;
         }
 

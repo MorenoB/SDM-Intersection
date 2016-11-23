@@ -10,6 +10,7 @@ public class SpawnManager : MonoBehaviour
     public int maximumCarsInLane = 6;
     public int maximumBicyclesInLane = 6;
     public int maximumBussesInLane = 1;
+    public int maximumTrainsInLane = 1;
 
 
     [Header("Prefab settings.")]
@@ -152,6 +153,19 @@ public class SpawnManager : MonoBehaviour
         {
             randomBusSpawningLoopActive = !randomBusSpawningLoopActive;
             Debug.Log("Random bus loop is " + randomBusSpawningLoopActive);
+        }
+
+        if(Input.GetKeyDown(KeyCode.I))
+        {
+            TrafficLaneData randomTrainLane = TrafficManager.Instance.GetLane(SpawnType.TRAIN, maximumTrainsInLane);
+
+            if(randomTrainLane == null)
+            {
+                Debug.LogError("No available train lanes");
+                return;
+            }
+
+            SpawnObject(SpawnType.TRAIN, randomTrainLane.id);
         }
     }
 }
