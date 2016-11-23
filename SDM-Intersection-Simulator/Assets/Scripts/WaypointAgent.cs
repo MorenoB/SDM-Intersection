@@ -8,18 +8,18 @@ public class WaypointAgent : MonoBehaviour {
 	//New
 	public bool randomizeExactTarget = false;
 
-	private Trafficlight trafficLight;
+	private TrafficLaneData assignedTrafficLane;
 
-	public Trafficlight TrafficLight
+	public TrafficLaneData AssignedTrafficLane
 	{
 		get
 		{
-			return trafficLight;
+			return assignedTrafficLane;
 		}
 		set
 		{
-			if (value != trafficLight)
-				trafficLight = value;
+			if (value != assignedTrafficLane)
+				assignedTrafficLane = value;
 		}
 	}
 
@@ -119,13 +119,13 @@ public class WaypointAgent : MonoBehaviour {
 
 			hasLeftLane = true;
 
-			if (TrafficLight == null)
+			if (AssignedTrafficLane == null)
 			{
-				Debug.LogError("WaypointAgent " + gameObject.name + " does not have a valid TrafficLight object assigned!");
+				Debug.LogError("WaypointAgent " + gameObject.name + " does not have a valid TrafficLane object assigned!");
 				return;
 			}
 
-			TrafficManager.Instance.DecreaseNumberOfCarsInLaneByOne(TrafficLight.Id);
+			TrafficManager.Instance.DecreaseNumberOfCarsInLaneByOne(AssignedTrafficLane.id);
 		}
 	}
 

@@ -35,23 +35,6 @@ public class TrafficLaneData
         waypointAgents.Add(newAgent);
     }
 
-    public Trafficlight GetAvailableTrafficLight()
-    {
-        if (trafficLights.Count < 1)
-        {
-            Debug.LogWarning("No trafficlights assigned to lane " + id);
-            return null;
-        }
-
-        for (int i = 0; i < trafficLights.Count; i++)
-        {
-            if (trafficLights[i] != null) return trafficLights[i];
-        }
-
-        Debug.LogError("No trafficlights assigned to lane " + id);
-        return null;
-    }
-
     public WaypointManager GetRandomWaypointManager()
     {
         if(waypointManagers.Count < 1)
@@ -187,11 +170,6 @@ public class TrafficManager : Singleton<TrafficManager>
         objectToSpawn.transform.position = spawnLocation.position;
 
         //Assign waypoint systems.
-        Trafficlight trafficLight = laneData.GetAvailableTrafficLight();
-
-        if (trafficLight != null)
-            waypointAgent.TrafficLight = trafficLight;
-
         waypointAgent.WaypointSystem = waypointManager;
 
         waypointAgent.ResetWaypointTargetToFirst();
@@ -200,6 +178,9 @@ public class TrafficManager : Singleton<TrafficManager>
         laneData.AddWaypointAgent(waypointAgent);
 
         laneData.NumberOfEntitiesInLane++;
+
+        //Add updated lane data object to the waypointagent
+        waypointAgent.AssignedTrafficLane = laneData;
 
         //Send update to controller
         client.SendStateData();
