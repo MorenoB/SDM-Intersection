@@ -1,5 +1,4 @@
 using System;
-using System.Collections;
 using UnityEngine;
 
 namespace UnityStandardAssets.Vehicles.Car
@@ -17,7 +16,7 @@ namespace UnityStandardAssets.Vehicles.Car
         KPH
     }
 
-    public class CarController : MonoBehaviour, IMovingEntity
+    public class CarController : MonoBehaviour , IMovingEntity
     {
         [SerializeField] private CarDriveType m_CarDriveType = CarDriveType.FourWheelDrive;
         [SerializeField] private WheelCollider[] m_WheelColliders = new WheelCollider[4];
@@ -38,15 +37,12 @@ namespace UnityStandardAssets.Vehicles.Car
         [SerializeField] private float m_SlipLimit;
         [SerializeField] private float m_BrakeTorque;
 
-        private Quaternion[] m_WheelMeshLocalRotations;
-        private Vector3 m_Prevpos, m_Pos;
         private float m_SteerAngle;
         private int m_GearNum;
         private float m_GearFactor;
         private float m_OldRotation;
         private float m_CurrentTorque;
         private Rigidbody m_Rigidbody;
-        private const float k_ReversingThreshold = 0.01f;
 
         public bool Skidding { get; private set; }
         public float BrakeInput { get; private set; }
@@ -54,16 +50,11 @@ namespace UnityStandardAssets.Vehicles.Car
         public float CurrentSpeed{ get { return m_Rigidbody.velocity.magnitude*2.23693629f; }}
         public float MaxSpeed{get { return m_Topspeed; }}
         public float Revs { get; private set; }
-        public float AccelInput { get; set; }
+        public float AccelInput { get; private set; }
 
         // Use this for initialization
         private void Start()
         {
-            m_WheelMeshLocalRotations = new Quaternion[4];
-            for (int i = 0; i < 4; i++)
-            {
-                m_WheelMeshLocalRotations[i] = m_WheelMeshes[i].transform.localRotation;
-            }
             m_WheelColliders[0].attachedRigidbody.centerOfMass = m_CentreOfMassOffset;
 
             m_MaxHandbrakeTorque = float.MaxValue;
@@ -126,28 +117,10 @@ namespace UnityStandardAssets.Vehicles.Car
             Revs = ULerp(revsRangeMin, revsRangeMax, m_GearFactor);
         }
 
-        public void StopCar()
-        {
-            AccelInput = 0;
-            StartCoroutine(StopCarRoutine());
-        }
-
-        IEnumerator StopCarRoutine()
-        {
-            while (CurrentSpeed > 5f)
-            {
-                Move(0, 0, 1, 1);
-                yield return new WaitForSeconds(0.1f);
-            }
-
-            yield return 0;
-        }
-
 
         public void Move(float steering, float accel, float footbrake, float handbrake)
         {
-     
-            for (int i = 0; i < 4; i++)
+            for (int i = 0; i < m_WheelColliders.Length; i++)
             {
                 Quaternion quat;
                 Vector3 position;
@@ -220,7 +193,7 @@ namespace UnityStandardAssets.Vehicles.Car
             {
                 case CarDriveType.FourWheelDrive:
                     thrustTorque = accel * (m_CurrentTorque / 4f);
-                    for (int i = 0; i < 4; i++)
+                    for (int i = 0; i < m_WheelColliders.Length; i++)
                     {
                         m_WheelColliders[i].motorTorque = thrustTorque;
                     }
@@ -290,7 +263,7 @@ namespace UnityStandardAssets.Vehicles.Car
         private void CheckForWheelSpin()
         {
             // loop through all wheels
-            for (int i = 0; i < 4; i++)
+            for (int i = 0; i < m_WheelColliders.Length; i++)
             {
                 WheelHit wheelHit;
                 m_WheelColliders[i].GetGroundHit(out wheelHit);
@@ -327,7 +300,7 @@ namespace UnityStandardAssets.Vehicles.Car
             {
                 case CarDriveType.FourWheelDrive:
                     // loop through all wheels
-                    for (int i = 0; i < 4; i++)
+                    for (int i = 0; i < m_WheelColliders.Length; i++)
                     {
                         m_WheelColliders[i].GetGroundHit(out wheelHit);
 
@@ -373,7 +346,7 @@ namespace UnityStandardAssets.Vehicles.Car
 
         private bool AnySkidSoundPlaying()
         {
-            for (int i = 0; i < 4; i++)
+            for (int i = 0; i < m_WheelEffects.Length; i++)
             {
                 if (m_WheelEffects[i].PlayingAudio)
                 {
@@ -385,7 +358,6 @@ namespace UnityStandardAssets.Vehicles.Car
 
         public void SetFreeze(bool value)
         {
-            AccelInput = 0;
             m_Rigidbody.isKinematic = !value;
         }
     }

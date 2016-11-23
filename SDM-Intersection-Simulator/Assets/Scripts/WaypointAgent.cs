@@ -8,15 +8,26 @@ public class WaypointAgent : MonoBehaviour {
 	//New
 	public bool randomizeExactTarget = false;
 
-	public Trafficlight trafficLight;
+	private Trafficlight trafficLight;
+
+	public Trafficlight TrafficLight
+	{
+		get
+		{
+			return trafficLight;
+		}
+		set
+		{
+			if (value != trafficLight)
+				trafficLight = value;
+		}
+	}
 
 	private IMovingEntity movingEntity;
 	private bool waypointSystemActivated = true;
 	private bool hasLeftLane = false;
 
 	///
-	[SerializeField] protected float minAgentSpeed = 10;
-	[SerializeField] protected float maxAgentSpeed = 20;
 	[SerializeField] protected WaypointManager m_waypointManager;
 
 	[HideInInspector] protected int currentIndex = 0;
@@ -55,7 +66,6 @@ public class WaypointAgent : MonoBehaviour {
 
 	public virtual void Start()
 	{
-		speed = Random.Range(minAgentSpeed, maxAgentSpeed);
 		movingEntity = GetComponent<IMovingEntity>();
 	}
 
@@ -109,13 +119,13 @@ public class WaypointAgent : MonoBehaviour {
 
 			hasLeftLane = true;
 
-			if (trafficLight == null)
+			if (TrafficLight == null)
 			{
 				Debug.LogError("WaypointAgent " + gameObject.name + " does not have a valid TrafficLight object assigned!");
 				return;
 			}
 
-			TrafficManager.Instance.DecreaseNumberOfCarsInLaneByOne(trafficLight.Id);
+			TrafficManager.Instance.DecreaseNumberOfCarsInLaneByOne(TrafficLight.Id);
 		}
 	}
 
@@ -134,7 +144,7 @@ public class WaypointAgent : MonoBehaviour {
 			relativeVector = transform.InverseTransformPoint(currentNodeTarget);
 
 			steerAngle = relativeVector.x / relativeVector.magnitude;
-			speed = relativeVector.z / relativeVector.magnitude;
+			speed = 1;
 
 			if (movingEntity.CurrentSpeed > 0 && speed < 0)
 			{
@@ -182,7 +192,7 @@ public class WaypointAgent : MonoBehaviour {
 			relativeVector = transform.InverseTransformPoint(currentTarget.transform.position);
 
 			steerAngle = relativeVector.x / relativeVector.magnitude;
-			speed = relativeVector.z / relativeVector.magnitude;
+			speed = 1;
 
 			if (movingEntity.CurrentSpeed > 0 && speed < 0)
 			{

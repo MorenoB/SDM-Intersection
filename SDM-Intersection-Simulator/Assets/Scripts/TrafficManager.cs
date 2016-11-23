@@ -68,25 +68,43 @@ public class TrafficLaneData
 
 public class TrafficManager : Singleton<TrafficManager>
 {
+    public List<TrafficLaneData> carLanes = new List<TrafficLaneData>();
 
-    public List<TrafficLaneData> trafficLanes = new List<TrafficLaneData>();
+    public List<TrafficLaneData> bicycleLanes = new List<TrafficLaneData>();
 
+    private List<TrafficLaneData> cachedTrafficLanes = new List<TrafficLaneData>();
+    public List<TrafficLaneData> TrafficLanes
+    {
+        get
+        {
+            return cachedTrafficLanes;
+
+        }
+    }
 
     private Client client;
 
     public void Start()
     {
+        PopulateTrafficLanes();
+
         client = GetComponent<Client>();
         SetAllTrafficLights(Trafficlight.eTrafficState.RED);
     }
 
+    private void PopulateTrafficLanes()
+    {
+        cachedTrafficLanes.AddRange(carLanes);
+        cachedTrafficLanes.AddRange(bicycleLanes);
+    }
+
     private void SetAllTrafficLights(Trafficlight.eTrafficState newState)
     {
-        for (int i = 0; i < trafficLanes.Count; i++)
+        for (int i = 0; i < TrafficLanes.Count; i++)
         {
-            for (int j = 0; j < trafficLanes[i].trafficLights.Count; j++)
+            for (int j = 0; j < TrafficLanes[i].trafficLights.Count; j++)
             {
-                Trafficlight trafficLight = trafficLanes[i].trafficLights[j];
+                Trafficlight trafficLight = TrafficLanes[i].trafficLights[j];
                 if (trafficLight == null) continue;
 
                 SetTrafficLightState(trafficLight.Id, newState);
@@ -100,9 +118,9 @@ public class TrafficManager : Singleton<TrafficManager>
     /// </summary>
     public void OnValidate()
     {
-        for (int i = 0; i < trafficLanes.Count; i++)
+        for (int i = 0; i < TrafficLanes.Count; i++)
         {
-            TrafficLaneData trafficLane = trafficLanes[i];
+            TrafficLaneData trafficLane = TrafficLanes[i];
             if (trafficLane == null) continue;
 
             if (trafficLane.trafficLights.Count < 1) return;
@@ -161,7 +179,7 @@ public class TrafficManager : Singleton<TrafficManager>
 
         if (trafficLight == null) return;
 
-        waypointAgent.trafficLight = trafficLight;
+        waypointAgent.TrafficLight = trafficLight;
 
         waypointAgent.WaypointSystem = waypointManager;
 
@@ -178,9 +196,9 @@ public class TrafficManager : Singleton<TrafficManager>
 
     public void SetTrafficLightState(int id, Trafficlight.eTrafficState newTrafficLightState)
     {
-        for (int i = 0; i < trafficLanes.Count; i++)
+        for (int i = 0; i < TrafficLanes.Count; i++)
         {
-            TrafficLaneData laneData = trafficLanes[i];
+            TrafficLaneData laneData = TrafficLanes[i];
 
             if (laneData == null) continue;
 
@@ -218,11 +236,45 @@ public class TrafficManager : Singleton<TrafficManager>
         laneData.NumberOfEntitiesInLane--;
     }
 
+    public TrafficLaneData GetRandomCarLane(int maxNrOfEnttitiesInLane = -1)
+    {
+        int randomIndex = Random.Range(0, carLanes.Count);
+        TrafficLaneData trafficLane = carLanes[randomIndex];
+
+        if (maxNrOfEnttitiesInLane == -1)
+            return trafficLane;
+
+        if (trafficLane.NumberOfEntitiesInLane < maxNrOfEnttitiesInLane)
+            return trafficLane;
+        else
+            GetRandomBicycleLane(maxNrOfEnttitiesInLane);
+
+
+        return null;
+    }
+
+    public TrafficLaneData GetRandomBicycleLane(int maxNrOfEnttitiesInLane = -1)
+    {
+        int randomIndex = Random.Range(0, bicycleLanes.Count);
+        TrafficLaneData trafficLane = bicycleLanes[randomIndex];
+
+        if (maxNrOfEnttitiesInLane == -1)
+                return trafficLane;
+
+        if (trafficLane.NumberOfEntitiesInLane < maxNrOfEnttitiesInLane)
+            return trafficLane;
+        else
+            GetRandomBicycleLane(maxNrOfEnttitiesInLane);
+        
+
+        return null;
+    }
+
     public TrafficLaneData FindLaneDataById(int id)
     {
-        for (int i = 0; i < trafficLanes.Count; i++)
+        for (int i = 0; i < TrafficLanes.Count; i++)
         {
-            TrafficLaneData trafficLane = trafficLanes[i];
+            TrafficLaneData trafficLane = TrafficLanes[i];
 
             if (trafficLane == null) continue;
 

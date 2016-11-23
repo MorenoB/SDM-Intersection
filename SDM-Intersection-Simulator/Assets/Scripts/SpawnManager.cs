@@ -8,6 +8,7 @@ public class SpawnManager : MonoBehaviour
     [Range(2, 10)]
     public int spawnRate = 2;
     public int maximumCarsInLane = 6;
+    public int maximumBicyclesInLane = 6;
 
 
     [Header("Prefab settings.")]
@@ -98,12 +99,14 @@ public class SpawnManager : MonoBehaviour
     {
         while (randomUpdateLoopActive)
         {
-            int randomLane = Random.Range(1, 11);
+            TrafficLaneData randomCarLane = TrafficManager.Instance.GetRandomCarLane(maximumCarsInLane);
+            TrafficLaneData randomBicycleLane = TrafficManager.Instance.GetRandomBicycleLane(maximumBicyclesInLane);
 
-            if (TrafficManager.Instance.FindLaneDataById(randomLane).NumberOfEntitiesInLane >= maximumCarsInLane)
+            if (randomCarLane == null || randomBicycleLane == null)
                 yield return null;
 
-            SpawnObject(SpawnType.CAR, randomLane);
+            SpawnObject(SpawnType.BICYCLE, randomBicycleLane.id);
+            SpawnObject(SpawnType.CAR, randomCarLane.id);
             yield return new WaitForSeconds(spawnRate);
         }
 

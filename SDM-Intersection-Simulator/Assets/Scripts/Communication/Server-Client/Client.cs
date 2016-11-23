@@ -49,9 +49,9 @@ public class Client : MonoBehaviour
         JSONObject arr = new JSONObject(JSONObject.Type.ARRAY);
         j.Add(arr);
 
-        for (int i = 0; i < TrafficManager.Instance.trafficLanes.Count; i++)
+        for (int i = 0; i < TrafficManager.Instance.TrafficLanes.Count; i++)
         {
-            TrafficLaneData laneData = TrafficManager.Instance.trafficLanes[i];
+            TrafficLaneData laneData = TrafficManager.Instance.TrafficLanes[i];
 
             arr.AddField("trafficLight", laneData.id);
             arr.AddField("count", laneData.NumberOfEntitiesInLane);

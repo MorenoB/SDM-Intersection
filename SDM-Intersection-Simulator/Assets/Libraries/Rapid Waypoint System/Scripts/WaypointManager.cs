@@ -12,202 +12,202 @@ public enum WaypointRotationMode
 public class Node 
 {
 
-    public Node() { }
-    public Node(Transform transform_)
-    {
-        transform = transform_;
-    }
+	public Node() { }
+	public Node(Transform transform_)
+	{
+		transform = transform_;
+	}
 
-    public Transform transform;
+	public Transform transform;
 }
 
 [System.Serializable]
 public class WaypointManager : MonoBehaviour {
 	
-    [Range(10,60)] public int updateIntervalPerSecond = 20;
-    [SerializeField]  public List<WaypointNode> waypointNodes = new List<WaypointNode>();
+	[Range(10,60)] public int updateIntervalPerSecond = 20;
+	[SerializeField]  public List<WaypointNode> waypointNodes = new List<WaypointNode>();
 	[SerializeField] private List<WaypointAgent> objectToMove = new List<WaypointAgent>();
 
 	public float nodeProximityDistance = 0.1f;
 	public WaypointRotationMode rotationMode;
 	public float slerpRotationSpeed = 1.0f;
    
-    public bool looping = false;
+	public bool looping = false;
 
 	private bool shouldClean = false;
 	private bool inRoutine = false;
 	private float intervalRate;
 	private float timeSinceLastUpdate = 0.0f;
 
-    public int AgentQuantity { get { return objectToMove.Count; } }
-    public int NodeQuantity {  get { return waypointNodes.Count; } }
+	public int AgentQuantity { get { return objectToMove.Count; } }
+	public int NodeQuantity {  get { return waypointNodes.Count; } }
 	//--------------------Unity Functions--------------------
 
 
-    void Start()
-    {
+	void Start()
+	{
 		intervalRate = 1 / updateIntervalPerSecond;
-    }
+	}
 
 	void Update()
 	{
-	    timeSinceLastUpdate += Time.deltaTime;
+		timeSinceLastUpdate += Time.deltaTime;
 
-	    objectToMove.TrimExcess();
-	    timeSinceLastUpdate += Time.deltaTime;
-	    if (timeSinceLastUpdate >= intervalRate)
-            UpdateSystem();
+		objectToMove.TrimExcess();
+		timeSinceLastUpdate += Time.deltaTime;
+		if (timeSinceLastUpdate >= intervalRate)
+			UpdateSystem();
 	}
 
-    void OnDrawGizmos()
-    {
-        //Drawing the waypoint nodes and the paths
-        //between them as red spheres and lines.
-        if (waypointNodes.Count > 0)
-        {
-                Vector3 previousNode = waypointNodes[0].transform.position;
-                foreach (var node in waypointNodes)
-                {
-                    if (node.transform)
-                    {
-                        Gizmos.DrawWireSphere(node.transform.position, nodeProximityDistance);
-                        Gizmos.DrawLine(previousNode, node.transform.position);
-                        previousNode = node.transform.position;
-                    }
-                }
-                if (looping)
-                    Gizmos.DrawLine(previousNode, waypointNodes[0].transform.position);
-            }
-        
-    }
+	void OnDrawGizmos()
+	{
+		//Drawing the waypoint nodes and the paths
+		//between them as red spheres and lines.
+		if (waypointNodes.Count > 0)
+		{
+				Vector3 previousNode = waypointNodes[0].transform.position;
+				foreach (var node in waypointNodes)
+				{
+					if (node.transform)
+					{
+						Gizmos.DrawWireSphere(node.transform.position, nodeProximityDistance);
+						Gizmos.DrawLine(previousNode, node.transform.position);
+						previousNode = node.transform.position;
+					}
+				}
+				if (looping)
+					Gizmos.DrawLine(previousNode, waypointNodes[0].transform.position);
+			}
+		
+	}
 
-    public void AddEntity(GameObject entity)
-    {
-        objectToMove.Add(SpawnEntity(entity).GetComponent<WaypointAgent>());
-    }
+	public void AddEntity(GameObject entity)
+	{
+		objectToMove.Add(SpawnEntity(entity).GetComponent<WaypointAgent>());
+	}
 
-    public void AddEntity(GameObject entity, int index)
-    {
-        objectToMove.Insert(index, SpawnEntity(entity).GetComponent<WaypointAgent>());
-    }
+	public void AddEntity(GameObject entity, int index)
+	{
+		objectToMove.Insert(index, SpawnEntity(entity).GetComponent<WaypointAgent>());
+	}
 
-    public void EnableEntityAtIndex(int index)
-    {
-        objectToMove[index].gameObject.SetActive(true);
-    }
+	public void EnableEntityAtIndex(int index)
+	{
+		objectToMove[index].gameObject.SetActive(true);
+	}
 
-    public void EnableInactiveEntity()
-    {
-        foreach (WaypointAgent entity in objectToMove)
-        {
-            if (!entity.gameObject.activeInHierarchy)
-            {
-                entity.gameObject.SetActive(true);
-                return;
-            }
-        }
-    }
+	public void EnableInactiveEntity()
+	{
+		foreach (WaypointAgent entity in objectToMove)
+		{
+			if (!entity.gameObject.activeInHierarchy)
+			{
+				entity.gameObject.SetActive(true);
+				return;
+			}
+		}
+	}
 
-    // Call this function when the interval between updates in the waypoint system should be updated
-    public void UpdateIntervalTime()
-    {
-        intervalRate = 1 / updateIntervalPerSecond;
-    }
+	// Call this function when the interval between updates in the waypoint system should be updated
+	public void UpdateIntervalTime()
+	{
+		intervalRate = 1 / updateIntervalPerSecond;
+	}
 
-    private void UpdateSystem()
-    {
-        for (int i = 0; i < objectToMove.Count; ++i)
-        {
-            if (objectToMove[i] == null)
-            {
-                objectToMove.TrimExcess();
-                continue;
-            }
+	private void UpdateSystem()
+	{
+		for (int i = 0; i < objectToMove.Count; ++i)
+		{
+			if (objectToMove[i] == null)
+			{
+				objectToMove.TrimExcess();
+				continue;
+			}
 
-            if (!objectToMove[i].gameObject.activeInHierarchy)
-                continue;
+			if (!objectToMove[i].gameObject.activeInHierarchy)
+				continue;
 
-            WaypointAgent aiObj = objectToMove[i];
+			WaypointAgent aiObj = objectToMove[i];
 
-            //Exiting if the target node is 
-            //outside of the waypointNodes list.
-            if (aiObj.CurrentIndex >= waypointNodes.Count)
-            {
-                if (!looping)
-                {
-                    RemoveEntity(aiObj);
-                    Destroy(aiObj.gameObject);
-                    objectToMove.TrimExcess();
-                }
-                else
-                    aiObj.CurrentIndex = 0;
+			//Exiting if the target node is 
+			//outside of the waypointNodes list.
+			if (aiObj.CurrentIndex >= waypointNodes.Count)
+			{
+				if (!looping)
+				{
+					RemoveEntity(aiObj);
+					Destroy(aiObj.gameObject);
+					objectToMove.TrimExcess();
+				}
+				else
+					aiObj.CurrentIndex = 0;
 
-                continue;
-            }                    
-        }
+				continue;
+			}                    
+		}
 
-        // Trim the list of unnecessary entries
-        if (shouldClean && !inRoutine)
-            StartCoroutine(CleanList());
+		// Trim the list of unnecessary entries
+		if (shouldClean && !inRoutine)
+			StartCoroutine(CleanList());
 
-        // Reset the update timer
-        timeSinceLastUpdate = 0.0f;
+		// Reset the update timer
+		timeSinceLastUpdate = 0.0f;
 
-    }
+	}
 
-    public Vector3 GetNodePosition(int nodeIndex)
-    {
-        return waypointNodes[nodeIndex].transform == null ? waypointNodes[nodeIndex + 1].transform.position : waypointNodes[nodeIndex].transform.position;
-    }
+	public Vector3 GetNodePosition(int nodeIndex)
+	{
+		return waypointNodes[nodeIndex].transform == null ? waypointNodes[nodeIndex + 1].transform.position : waypointNodes[nodeIndex].transform.position;
+	}
 
-    public bool ObjectIsOnNode(WaypointAgent obj)
-    {
-        //Checking if the distance from the object to the target node is less than the proximity distance.
-        return (Vector3.Distance(obj.transform.position, obj.currentNodeTarget) < nodeProximityDistance);
-    }
+	public bool ObjectIsOnNode(WaypointAgent obj)
+	{
+		//Checking if the distance from the object to the target node is less than the proximity distance.
+		return (Vector3.Distance(obj.transform.position, obj.currentNodeTarget) < nodeProximityDistance);
+	}
 
-    // Remove an entity from the list
-    public void RemoveEntity(WaypointAgent entity)
-    {
-        if (objectToMove.Contains(entity))
-            objectToMove.Remove(entity);
+	// Remove an entity from the list
+	public void RemoveEntity(WaypointAgent entity)
+	{
+		if (objectToMove.Contains(entity))
+			objectToMove.Remove(entity);
 
-        shouldClean = true;
-        objectToMove.TrimExcess();
-    }
+		shouldClean = true;
+		objectToMove.TrimExcess();
+	}
 
-    public void ResetSystem()
-    {
-        objectToMove.TrimExcess();
+	public void ResetSystem()
+	{
+		objectToMove.TrimExcess();
 
-        foreach (var item in objectToMove)
-            Destroy(item.gameObject);
+		foreach (var item in objectToMove)
+			Destroy(item.gameObject);
 
-        objectToMove.Clear();
-    }
+		objectToMove.Clear();
+	}
 
-    //--------------------Private Functions--------------------
+	//--------------------Private Functions--------------------
 
-    // Spawns the entity within the system....doesn't spawn it with the world. It needs to already exist
-    private GameObject SpawnEntity(GameObject objectToSpawn)
-    {
-        objectToSpawn.transform.parent = transform;
-        WaypointAgent agent = objectToSpawn.GetComponent<WaypointAgent>();
+	// Spawns the entity within the system....doesn't spawn it with the world. It needs to already exist
+	private GameObject SpawnEntity(GameObject objectToSpawn)
+	{
+		objectToSpawn.transform.parent = transform;
+		WaypointAgent agent = objectToSpawn.GetComponent<WaypointAgent>();
 
-        Vector3 targetPosition = new Vector3(((Random.insideUnitSphere.x * 2) * nodeProximityDistance),
-                                                        0 + (objectToSpawn.GetComponent<Collider>().bounds.extents.magnitude) / 2,
-                                                        ((Random.insideUnitSphere.z * 2) * nodeProximityDistance));
-        agent.currentNodeTarget = targetPosition + waypointNodes[agent.CurrentIndex].transform.position;
-        agent.WaypointSystem = this;
-        agent.WaypointRotation = rotationMode;
-        agent.NodeProximityDistance = nodeProximityDistance;
-        agent.SlerpSpeed = slerpRotationSpeed;
+		Vector3 targetPosition = new Vector3(((Random.insideUnitSphere.x * 2) * nodeProximityDistance),
+														0 + (objectToSpawn.GetComponent<Collider>().bounds.extents.magnitude) / 2,
+														((Random.insideUnitSphere.z * 2) * nodeProximityDistance));
+		agent.currentNodeTarget = targetPosition + waypointNodes[agent.CurrentIndex].transform.position;
+		agent.WaypointSystem = this;
+		agent.WaypointRotation = rotationMode;
+		agent.NodeProximityDistance = nodeProximityDistance;
+		agent.SlerpSpeed = slerpRotationSpeed;
 
-        return objectToSpawn;
-    }
+		return objectToSpawn;
+	}
 
-    // Trim the list of unnecessary entries
-    IEnumerator CleanList()
+	// Trim the list of unnecessary entries
+	IEnumerator CleanList()
 	{
 		inRoutine = true;
 		yield return new WaitForSeconds (2.5f);
@@ -216,19 +216,19 @@ public class WaypointManager : MonoBehaviour {
 		shouldClean = false;
 	}
 
-    private bool ObjectIsOnNode(int nodeIndex, int index)
+	private bool ObjectIsOnNode(int nodeIndex, int index)
 	{
 		//Checking if the distance from the object to the target node is less than the proximity distance.
-        return (Vector3.Distance(objectToMove[index].transform.position, objectToMove[index].currentNodeTarget) < nodeProximityDistance);
+		return (Vector3.Distance(objectToMove[index].transform.position, objectToMove[index].currentNodeTarget) < nodeProximityDistance);
 	}
 
-    private void ClearNodes()
-    {
-        foreach (var node in waypointNodes)
-            Destroy(node.transform.gameObject);
+	private void ClearNodes()
+	{
+		foreach (var node in waypointNodes)
+			Destroy(node.transform.gameObject);
 
-        waypointNodes.Clear();
-    }
+		waypointNodes.Clear();
+	}
 }
 
 
