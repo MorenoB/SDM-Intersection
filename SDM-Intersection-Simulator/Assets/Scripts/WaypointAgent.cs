@@ -8,18 +8,18 @@ public class WaypointAgent : MonoBehaviour {
 	//New
 	public bool randomizeExactTarget = false;
 
-	private Trafficlight trafficLight;
+	private TrafficLaneData assignedTrafficLane;
 
-	public Trafficlight TrafficLight
+	public TrafficLaneData AssignedTrafficLane
 	{
 		get
 		{
-			return trafficLight;
+			return assignedTrafficLane;
 		}
 		set
 		{
-			if (value != trafficLight)
-				trafficLight = value;
+			if (value != assignedTrafficLane)
+				assignedTrafficLane = value;
 		}
 	}
 
@@ -103,9 +103,29 @@ public class WaypointAgent : MonoBehaviour {
 
 	private void OnTriggerStay(Collider other)
 	{
+		if (WaypointSystemActivated == false || hasLeftLane)
+			return;
+
 		if(other.CompareTag("StopLine"))
 		{
-			
+			LaneIdentifier laneIdentifier = other.GetComponent<LaneIdentifier>();
+			if (laneIdentifier == null)
+			{
+				//Does not matter
+				return;
+			}
+
+
+			if (AssignedTrafficLane == null)
+			{
+				Debug.LogError("WaypointAgent " + gameObject.name + " does not have a valid TrafficLane object assigned!");
+				return;
+			}
+
+			//Make sure we exit the correct lane
+			if (AssignedTrafficLane.id != laneIdentifier.Id)
+				return;
+
 			WaypointSystemActivated = false;
 		}
 	}
@@ -114,18 +134,30 @@ public class WaypointAgent : MonoBehaviour {
 	{
 		if(other.CompareTag("HasLeftLane"))
 		{
+
 			if (hasLeftLane)
 				return;
 
-			hasLeftLane = true;
-
-			if (TrafficLight == null)
+			LaneIdentifier laneIdentifier = other.GetComponent<LaneIdentifier>();
+			if(laneIdentifier == null)
 			{
-				Debug.LogError("WaypointAgent " + gameObject.name + " does not have a valid TrafficLight object assigned!");
+				Debug.LogError("Collider " + other + " has no LaneIdentifier! Check your collider tags");
 				return;
 			}
 
-			TrafficManager.Instance.DecreaseNumberOfCarsInLaneByOne(TrafficLight.Id);
+
+			if (AssignedTrafficLane == null)
+			{
+				Debug.LogError("WaypointAgent " + gameObject.name + " does not have a valid TrafficLane object assigned!");
+				return;
+			}
+
+			//Make sure we exit the correct lane
+			if (AssignedTrafficLane.id != laneIdentifier.Id)
+				return;
+
+			hasLeftLane = true;
+			TrafficManager.Instance.DecreaseNumberOfCarsInLaneByOne(AssignedTrafficLane.id);
 		}
 	}
 

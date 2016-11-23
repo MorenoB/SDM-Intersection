@@ -9,7 +9,6 @@ public class TrafficLaneData
 
     public List<Trafficlight> trafficLights = new List<Trafficlight>();
     public List<WaypointManager> waypointManagers = new List<WaypointManager>();
-    public Transform spawnLocation;
 
     public int NumberOfEntitiesInLane
     {
@@ -35,23 +34,6 @@ public class TrafficLaneData
         waypointAgents.Add(newAgent);
     }
 
-    public Trafficlight GetAvailableTrafficLight()
-    {
-        if (trafficLights.Count < 1)
-        {
-            Debug.LogError("No trafficlights assigned to lane " + id);
-            return null;
-        }
-
-        for (int i = 0; i < trafficLights.Count; i++)
-        {
-            if (trafficLights[i] != null) return trafficLights[i];
-        }
-
-        Debug.LogError("No trafficlights assigned to lane " + id);
-        return null;
-    }
-
     public WaypointManager GetRandomWaypointManager()
     {
         if(waypointManagers.Count < 1)
@@ -69,10 +51,10 @@ public class TrafficLaneData
 public class TrafficManager : Singleton<TrafficManager>
 {
     public List<TrafficLaneData> carLanes = new List<TrafficLaneData>();
-
     public List<TrafficLaneData> bicycleLanes = new List<TrafficLaneData>();
-
     public List<TrafficLaneData> busLanes = new List<TrafficLaneData>();
+    public List<TrafficLaneData> trainLanes = new List<TrafficLaneData>();
+
 
     private List<TrafficLaneData> cachedTrafficLanes = new List<TrafficLaneData>();
     public List<TrafficLaneData> TrafficLanes
@@ -99,6 +81,7 @@ public class TrafficManager : Singleton<TrafficManager>
         cachedTrafficLanes.AddRange(carLanes);
         cachedTrafficLanes.AddRange(bicycleLanes);
         cachedTrafficLanes.AddRange(busLanes);
+        cachedTrafficLanes.AddRange(trainLanes);
     }
 
     private void SetAllTrafficLights(Trafficlight.eTrafficState newState)
@@ -149,11 +132,24 @@ public class TrafficManager : Singleton<TrafficManager>
             return;
         }
 
-        Transform spawnLocation = laneData.spawnLocation;
+        WaypointManager waypointManager = laneData.GetRandomWaypointManager();
+
+        if (waypointManager == null)
+        {
+            Debug.LogError("No waypointmanager assigned for lane " + laneId);
+            return;
+        }
+        
+
+        if (waypointManager.waypointNodes.Count < 1)
+        {
+            Debug.LogError("No waypoint nodes set!");
+            return;
+        }
+
+        Transform spawnLocation = waypointManager.waypointNodes[0].transform;
 
         objectToSpawn.transform.rotation = spawnLocation.rotation;
-
-        WaypointManager waypointManager = laneData.GetRandomWaypointManager();
 
         WaypointAgent waypointAgent = objectToSpawn.GetComponent<WaypointAgent>();
 
@@ -163,27 +159,9 @@ public class TrafficManager : Singleton<TrafficManager>
             return;
         }
 
-        if (spawnLocation == null)
-        {
-            Debug.LogError("No spawnlocation assigned for lane " + laneId);
-            return;
-        }
-
-        if (waypointManager == null)
-        {
-            Debug.LogError("No waypointmanager assigned for lane " + laneId);
-            return;
-        }
-
         objectToSpawn.transform.position = spawnLocation.position;
 
         //Assign waypoint systems.
-        Trafficlight trafficLight = laneData.GetAvailableTrafficLight();
-
-        if (trafficLight == null) return;
-
-        waypointAgent.TrafficLight = trafficLight;
-
         waypointAgent.WaypointSystem = waypointManager;
 
         waypointAgent.ResetWaypointTargetToFirst();
@@ -192,6 +170,9 @@ public class TrafficManager : Singleton<TrafficManager>
         laneData.AddWaypointAgent(waypointAgent);
 
         laneData.NumberOfEntitiesInLane++;
+
+        //Add updated lane data object to the waypointagent
+        waypointAgent.AssignedTrafficLane = laneData;
 
         //Send update to controller
         client.SendStateData();
@@ -259,6 +240,12 @@ public class TrafficManager : Singleton<TrafficManager>
             case SpawnManager.SpawnType.CAR:
                 randomIndex = Random.Range(0, carLanes.Count);
                 trafficLane = carLanes[randomIndex];
+                break;
+
+            case SpawnManager.SpawnType.TRAIN:
+                randomIndex = Random.Range(0, trainLanes.Count);
+                trafficLane = trainLanes[randomIndex];
+
                 break;
         }
 
