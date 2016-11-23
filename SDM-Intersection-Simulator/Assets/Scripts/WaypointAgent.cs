@@ -103,9 +103,29 @@ public class WaypointAgent : MonoBehaviour {
 
 	private void OnTriggerStay(Collider other)
 	{
+		if (WaypointSystemActivated == false || hasLeftLane)
+			return;
+
 		if(other.CompareTag("StopLine"))
 		{
-			
+			LaneIdentifier laneIdentifier = other.GetComponent<LaneIdentifier>();
+			if (laneIdentifier == null)
+			{
+				//Does not matter
+				return;
+			}
+
+
+			if (AssignedTrafficLane == null)
+			{
+				Debug.LogError("WaypointAgent " + gameObject.name + " does not have a valid TrafficLane object assigned!");
+				return;
+			}
+
+			//Make sure we exit the correct lane
+			if (AssignedTrafficLane.id != laneIdentifier.Id)
+				return;
+
 			WaypointSystemActivated = false;
 		}
 	}
@@ -114,10 +134,17 @@ public class WaypointAgent : MonoBehaviour {
 	{
 		if(other.CompareTag("HasLeftLane"))
 		{
+
 			if (hasLeftLane)
 				return;
 
-			hasLeftLane = true;
+			LaneIdentifier laneIdentifier = other.GetComponent<LaneIdentifier>();
+			if(laneIdentifier == null)
+			{
+				Debug.LogError("Collider " + other + " has no LaneIdentifier! Check your collider tags");
+				return;
+			}
+
 
 			if (AssignedTrafficLane == null)
 			{
@@ -125,6 +152,11 @@ public class WaypointAgent : MonoBehaviour {
 				return;
 			}
 
+			//Make sure we exit the correct lane
+			if (AssignedTrafficLane.id != laneIdentifier.Id)
+				return;
+
+			hasLeftLane = true;
 			TrafficManager.Instance.DecreaseNumberOfCarsInLaneByOne(AssignedTrafficLane.id);
 		}
 	}

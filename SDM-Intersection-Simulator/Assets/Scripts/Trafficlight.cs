@@ -13,7 +13,9 @@ public class Trafficlight : MonoBehaviour {
     public int Id;
     public MeshRenderer headModel;
     public enum eTrafficState { NONE, GREEN, ORANGE, RED };
-    public GameObject stoplineColliders;
+
+    public LaneIdentifier stoplineCollider;
+    public LaneIdentifier hasLeftLaneCollider;
 
     public bool useGameObjectSwitching = false;
 
@@ -32,6 +34,15 @@ public class Trafficlight : MonoBehaviour {
 
             UpdateColor();
         }
+    }
+
+    private void Start()
+    {
+        if(hasLeftLaneCollider != null)
+            hasLeftLaneCollider.Id = Id;
+
+        if (stoplineCollider != null)
+            stoplineCollider.Id = Id;
     }
 
     private Color GetColorByLightIndex(byte lightIndex)
@@ -85,22 +96,31 @@ public class Trafficlight : MonoBehaviour {
             case eTrafficState.GREEN:
                 lightIndex = 4;
 
-                if(stoplineColliders != null)
-                    stoplineColliders.SetActive(false);
+                if (stoplineCollider != null)
+                    stoplineCollider.gameObject.SetActive(false);
+
+                if (hasLeftLaneCollider != null)
+                    hasLeftLaneCollider.gameObject.SetActive(true);
                 break;
 
             case eTrafficState.ORANGE:
                 lightIndex = 1;
 
-                if(stoplineColliders != null)
-                    stoplineColliders.SetActive(false);
+                if (stoplineCollider != null)
+                    stoplineCollider.gameObject.SetActive(false);
+
+                if (hasLeftLaneCollider != null)
+                    hasLeftLaneCollider.gameObject.SetActive(true);
                 break;
 
             case eTrafficState.RED:
                 lightIndex = 3;
 
-                if(stoplineColliders != null)
-                    stoplineColliders.SetActive(true);
+                if(stoplineCollider != null)
+                    stoplineCollider.gameObject.SetActive(true);
+
+                if(hasLeftLaneCollider != null)
+                    hasLeftLaneCollider.gameObject.SetActive(false);
                 break;
         }
 
