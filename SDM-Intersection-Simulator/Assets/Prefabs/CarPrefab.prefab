@@ -2587,9 +2587,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   randomizeExactTarget: 0
-  trafficLight: {fileID: 0}
-  minAgentSpeed: 10
-  maxAgentSpeed: 20
   m_waypointManager: {fileID: 0}
   currentTarget: {fileID: 0}
   currentNodeTarget: {x: 0, y: 0, z: 0}
@@ -2612,7 +2609,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000012056247804}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 20fa55eb64c5cea4aa3c71ae19c434bf, type: 3}
   m_Name: 
@@ -2642,6 +2639,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SkidTrailPrefab: {fileID: 400000, guid: 4b6aa99de5d21424eab6ae279f31475b, type: 2}
   skidParticles: {fileID: 0}
+  useParticles: 1
 --- !u!114 &114000011305741866
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2655,6 +2653,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SkidTrailPrefab: {fileID: 400000, guid: 4b6aa99de5d21424eab6ae279f31475b, type: 2}
   skidParticles: {fileID: 0}
+  useParticles: 1
 --- !u!114 &114000011501919422
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2697,13 +2696,13 @@ MonoBehaviour:
   m_CentreOfMassOffset: {x: 0, y: 0, z: 0}
   m_MaximumSteerAngle: 50
   m_SteerHelper: 0.5
-  m_TractionControl: 0.8
+  m_TractionControl: 0.863
   m_FullTorqueOverAllWheels: 2000
   m_ReverseTorque: 1000
   m_MaxHandbrakeTorque: 1e+16
   m_Downforce: 100
   m_SpeedType: 1
-  m_Topspeed: 50
+  m_Topspeed: 35
   m_RevRangeBoundary: 1
   m_SlipLimit: 0.9
   m_BrakeTorque: 2000000
@@ -2736,6 +2735,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SkidTrailPrefab: {fileID: 400000, guid: 4b6aa99de5d21424eab6ae279f31475b, type: 2}
   skidParticles: {fileID: 0}
+  useParticles: 1
 --- !u!114 &114000012699651936
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2762,6 +2762,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SkidTrailPrefab: {fileID: 400000, guid: 4b6aa99de5d21424eab6ae279f31475b, type: 2}
   skidParticles: {fileID: 0}
+  useParticles: 1
 --- !u!114 &114000013011087326
 MonoBehaviour:
   m_ObjectHideFlags: 1
