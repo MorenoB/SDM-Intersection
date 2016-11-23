@@ -69,10 +69,10 @@ public class TrafficLaneData
 public class TrafficManager : Singleton<TrafficManager>
 {
     public List<TrafficLaneData> carLanes = new List<TrafficLaneData>();
-
     public List<TrafficLaneData> bicycleLanes = new List<TrafficLaneData>();
-
     public List<TrafficLaneData> busLanes = new List<TrafficLaneData>();
+    public List<TrafficLaneData> trainLanes = new List<TrafficLaneData>();
+
 
     private List<TrafficLaneData> cachedTrafficLanes = new List<TrafficLaneData>();
     public List<TrafficLaneData> TrafficLanes
@@ -99,6 +99,7 @@ public class TrafficManager : Singleton<TrafficManager>
         cachedTrafficLanes.AddRange(carLanes);
         cachedTrafficLanes.AddRange(bicycleLanes);
         cachedTrafficLanes.AddRange(busLanes);
+        cachedTrafficLanes.AddRange(trainLanes);
     }
 
     private void SetAllTrafficLights(Trafficlight.eTrafficState newState)
@@ -149,11 +150,19 @@ public class TrafficManager : Singleton<TrafficManager>
             return;
         }
 
-        Transform spawnLocation = laneData.spawnLocation;
+        WaypointManager waypointManager = laneData.GetRandomWaypointManager();
+
+        Transform spawnLocation = null;
+
+        if (laneData.spawnLocation == null)
+        {
+            spawnLocation = waypointManager.waypointNodes[0].transform;
+            Debug.LogWarning("No spawnpoint set for lane " + laneData.name + " using first waypoint node location...");
+        }
+        else
+            spawnLocation = laneData.spawnLocation;
 
         objectToSpawn.transform.rotation = spawnLocation.rotation;
-
-        WaypointManager waypointManager = laneData.GetRandomWaypointManager();
 
         WaypointAgent waypointAgent = objectToSpawn.GetComponent<WaypointAgent>();
 
