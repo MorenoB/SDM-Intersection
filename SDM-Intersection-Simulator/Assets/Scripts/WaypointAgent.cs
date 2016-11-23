@@ -146,11 +146,6 @@ public class WaypointAgent : MonoBehaviour {
 			steerAngle = relativeVector.x / relativeVector.magnitude;
 			speed = 1;
 
-			if (movingEntity.CurrentSpeed > 0 && speed < 0)
-			{
-				brakeforce = speed;
-			}
-
 			movingEntity.Move(steerAngle, speed, brakeforce, brakeforce);
 
 			if (m_waypointManager.ObjectIsOnNode(this))

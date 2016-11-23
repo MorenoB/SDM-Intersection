@@ -9,6 +9,7 @@ public class SpawnManager : MonoBehaviour
     public int spawnRate = 2;
     public int maximumCarsInLane = 6;
     public int maximumBicyclesInLane = 6;
+    public int maximumBussesInLane = 1;
 
 
     [Header("Prefab settings.")]
@@ -29,7 +30,9 @@ public class SpawnManager : MonoBehaviour
     private EZObjectPool busObjectPool;
     private EZObjectPool pedestrianObjectPool;
 
-    private bool randomUpdateLoopActive;
+    private bool randomCarSpawningLoopActive;
+    private bool randomBicycleSpawningLoopActive;
+    private bool randomBusSpawningLoopActive;
 
 
     void Awake()
@@ -43,8 +46,6 @@ public class SpawnManager : MonoBehaviour
 
     private void Start()
     {
-        randomUpdateLoopActive = true;
-
         StartCoroutine(RandomSpawnLoop());
     }
 
@@ -97,16 +98,35 @@ public class SpawnManager : MonoBehaviour
 
     private IEnumerator RandomSpawnLoop()
     {
-        while (randomUpdateLoopActive)
+        while (true)
         {
-            TrafficLaneData randomCarLane = TrafficManager.Instance.GetRandomCarLane(maximumCarsInLane);
-            TrafficLaneData randomBicycleLane = TrafficManager.Instance.GetRandomBicycleLane(maximumBicyclesInLane);
+            if (randomCarSpawningLoopActive)
+            {
+                TrafficLaneData randomCarLane = TrafficManager.Instance.GetLane(SpawnType.CAR, maximumCarsInLane);
 
-            if (randomCarLane == null || randomBicycleLane == null)
-                yield return null;
 
-            SpawnObject(SpawnType.BICYCLE, randomBicycleLane.id);
-            SpawnObject(SpawnType.CAR, randomCarLane.id);
+                if (randomCarLane != null)                
+                SpawnObject(SpawnType.CAR, randomCarLane.id);
+
+            }
+
+            if(randomBicycleSpawningLoopActive)
+            {
+                TrafficLaneData randomBicycleLane = TrafficManager.Instance.GetLane(SpawnType.BICYCLE, maximumBicyclesInLane);
+
+                if (randomBicycleLane != null)
+                SpawnObject(SpawnType.BICYCLE, randomBicycleLane.id);
+            }
+
+            if(randomBusSpawningLoopActive)
+            {
+                TrafficLaneData randomBusLane = TrafficManager.Instance.GetLane(SpawnType.BUS, maximumBussesInLane);
+
+                if (randomBusLane != null)
+                    SpawnObject(SpawnType.BUS, randomBusLane.id);
+            }
+
+
             yield return new WaitForSeconds(spawnRate);
         }
 
@@ -116,9 +136,22 @@ public class SpawnManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.T))
         {
-            int randomLane = Random.Range(1, 11);
-            SpawnObject(SpawnType.CAR, randomLane);
-           
+            randomCarSpawningLoopActive = !randomCarSpawningLoopActive;
+            Debug.Log("Random car loop is " + randomCarSpawningLoopActive);
+
+        }
+
+        if (Input.GetKeyDown(KeyCode.Y))
+        {
+            randomBicycleSpawningLoopActive = !randomBicycleSpawningLoopActive;
+            Debug.Log("Random bicycle loop is " + randomBicycleSpawningLoopActive);
+
+        }
+
+        if(Input.GetKeyDown(KeyCode.U))
+        {
+            randomBusSpawningLoopActive = !randomBusSpawningLoopActive;
+            Debug.Log("Random bus loop is " + randomBusSpawningLoopActive);
         }
     }
 }
