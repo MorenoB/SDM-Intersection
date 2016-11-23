@@ -239,44 +239,28 @@ public class TrafficManager : Singleton<TrafficManager>
         laneData.NumberOfEntitiesInLane--;
     }
 
-    public TrafficLaneData GetRandomCarLane(int maxNrOfEnttitiesInLane = -1)
+    public TrafficLaneData GetLane(SpawnManager.SpawnType entityType, int maxNrOfEnttitiesInLane = -1)
     {
-        int randomIndex = Random.Range(0, carLanes.Count);
-        TrafficLaneData trafficLane = carLanes[randomIndex];
+        int randomIndex = 0;
+        TrafficLaneData trafficLane = null;
 
-        if (maxNrOfEnttitiesInLane == -1)
-            return trafficLane;
+        switch(entityType)
+        {
+            case SpawnManager.SpawnType.BICYCLE:
+                randomIndex = Random.Range(0, bicycleLanes.Count);
+                trafficLane = bicycleLanes[randomIndex];
+                break;
 
-        if (trafficLane.NumberOfEntitiesInLane < maxNrOfEnttitiesInLane)
-            return trafficLane;
-        else
-            GetRandomBicycleLane(maxNrOfEnttitiesInLane);
+            case SpawnManager.SpawnType.BUS:
+                randomIndex = Random.Range(0, busLanes.Count);
+                trafficLane = busLanes[randomIndex];
+                break;
 
-
-        return null;
-    }
-
-    public TrafficLaneData GetRandomBicycleLane(int maxNrOfEnttitiesInLane = -1)
-    {
-        int randomIndex = Random.Range(0, bicycleLanes.Count);
-        TrafficLaneData trafficLane = bicycleLanes[randomIndex];
-
-        if (maxNrOfEnttitiesInLane == -1)
-                return trafficLane;
-
-        if (trafficLane.NumberOfEntitiesInLane < maxNrOfEnttitiesInLane)
-            return trafficLane;
-        else
-            GetRandomBicycleLane(maxNrOfEnttitiesInLane);
-        
-
-        return null;
-    }
-
-    public TrafficLaneData GetRandomBusLane(int maxNrOfEnttitiesInLane = -1)
-    {
-        int randomIndex = Random.Range(0, busLanes.Count);
-        TrafficLaneData trafficLane = busLanes[randomIndex];
+            case SpawnManager.SpawnType.CAR:
+                randomIndex = Random.Range(0, carLanes.Count);
+                trafficLane = carLanes[randomIndex];
+                break;
+        }
 
         if (maxNrOfEnttitiesInLane == -1)
             return trafficLane;

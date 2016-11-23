@@ -102,7 +102,7 @@ public class SpawnManager : MonoBehaviour
         {
             if (randomCarSpawningLoopActive)
             {
-                TrafficLaneData randomCarLane = TrafficManager.Instance.GetRandomCarLane(maximumCarsInLane);
+                TrafficLaneData randomCarLane = TrafficManager.Instance.GetLane(SpawnType.CAR, maximumCarsInLane);
 
 
                 if (randomCarLane != null)                
@@ -112,7 +112,7 @@ public class SpawnManager : MonoBehaviour
 
             if(randomBicycleSpawningLoopActive)
             {
-                TrafficLaneData randomBicycleLane = TrafficManager.Instance.GetRandomBicycleLane(maximumBicyclesInLane);
+                TrafficLaneData randomBicycleLane = TrafficManager.Instance.GetLane(SpawnType.BICYCLE, maximumBicyclesInLane);
 
                 if (randomBicycleLane != null)
                 SpawnObject(SpawnType.BICYCLE, randomBicycleLane.id);
@@ -120,7 +120,7 @@ public class SpawnManager : MonoBehaviour
 
             if(randomBusSpawningLoopActive)
             {
-                TrafficLaneData randomBusLane = TrafficManager.Instance.GetRandomBusLane(maximumBussesInLane);
+                TrafficLaneData randomBusLane = TrafficManager.Instance.GetLane(SpawnType.BUS, maximumBussesInLane);
 
                 if (randomBusLane != null)
                     SpawnObject(SpawnType.BUS, randomBusLane.id);
