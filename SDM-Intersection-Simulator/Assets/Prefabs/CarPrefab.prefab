@@ -1018,7 +1018,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000012056247804}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 11.056811, y: 0.00000011920929, z: -32.536327}
+  m_LocalPosition: {x: -13.97761, y: 0.60000014, z: -10.398642}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
@@ -2189,7 +2189,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   spreadCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -2211,7 +2211,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
 --- !u!82 &82000014235340786
 AudioSource:
   m_ObjectHideFlags: 1
@@ -2263,7 +2263,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   spreadCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -2285,7 +2285,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
 --- !u!95 &95000011734691672
 Animator:
   serializedVersion: 3
@@ -2677,12 +2677,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ea65b38d485c374caa584a03f1de571, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_CarDriveType: 2
-  m_WheelColliders:
+  frontWheelColliders:
   - {fileID: 146000013610159922}
   - {fileID: 146000013159041156}
-  - {fileID: 146000013223049060}
+  backWheelColliders:
   - {fileID: 146000012862769954}
+  - {fileID: 146000013223049060}
+  m_CarDriveType: 2
+  m_WheelColliders: []
   m_WheelMeshes:
   - {fileID: 1000011207494196}
   - {fileID: 1000013033560116}
