@@ -4,27 +4,40 @@
 public class FreezeInContactWithEntities : MonoBehaviour
 {
     
-    private IMovingEntity movingEntity;
+    private WaypointAgent waypointAgent;
 
     public void OnEnable()
     {
-        if (movingEntity == null)
-            movingEntity = GetComponentInParent<IMovingEntity>();
+        if (waypointAgent == null)
+            waypointAgent = GetComponentInParent<WaypointAgent>();
     }
 
     private void OnTriggerEnter(Collider other)
     {
+        if (waypointAgent == null)
+        {
+            Debug.LogError("No waypoint agent is assigned to this object " + name);
+            return;
+        }
+            
+        
         if (other.CompareTag("MovingEntity"))
         {
-            movingEntity.SetFreeze(true);
+            waypointAgent.WaypointSystemActivated = false;
         }
     }
 
     private void OnTriggerLeave(Collider other)
     {
+        if (waypointAgent == null)
+        {
+            Debug.LogError("No waypoint agent is assigned to this object " + name);
+            return;
+        }
+
         if (other.CompareTag("MovingEntity"))
         {
-            movingEntity.SetFreeze(false);
+            waypointAgent.WaypointSystemActivated = true;
         }
     }
 }
