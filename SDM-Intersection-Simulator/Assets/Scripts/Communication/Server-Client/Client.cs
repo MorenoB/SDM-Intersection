@@ -93,6 +93,11 @@ public class Client : MonoBehaviour
                         TrafficManager.Instance.SetTrafficLightState(lastNumber, Trafficlight.eTrafficState.ORANGE);
                         break;
 
+                    case "yellow":
+                        Debug.LogWarning("Recieved 'Yellow' instead of 'Orange'!");
+                        TrafficManager.Instance.SetTrafficLightState(lastNumber, Trafficlight.eTrafficState.ORANGE);
+                        break;
+
                     case "red":
                         TrafficManager.Instance.SetTrafficLightState(lastNumber, Trafficlight.eTrafficState.RED);
                         break;
