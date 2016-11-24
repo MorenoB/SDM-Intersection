@@ -54,6 +54,9 @@ public class TrafficManager : Singleton<TrafficManager>
     public List<TrafficLaneData> bicycleLanes = new List<TrafficLaneData>();
     public List<TrafficLaneData> busLanes = new List<TrafficLaneData>();
     public List<TrafficLaneData> trainLanes = new List<TrafficLaneData>();
+    public List<TrafficLaneData> pedestrianLanes = new List<TrafficLaneData>();
+
+    private List<Trafficlight> trafficLights = new List<Trafficlight>();
 
 
     private List<TrafficLaneData> cachedTrafficLanes = new List<TrafficLaneData>();
@@ -72,6 +75,7 @@ public class TrafficManager : Singleton<TrafficManager>
     {
         PopulateTrafficLanes();
 
+
         client = GetComponent<Client>();
         SetAllTrafficLights(Trafficlight.eTrafficState.RED);
     }
@@ -82,6 +86,7 @@ public class TrafficManager : Singleton<TrafficManager>
         cachedTrafficLanes.AddRange(bicycleLanes);
         cachedTrafficLanes.AddRange(busLanes);
         cachedTrafficLanes.AddRange(trainLanes);
+        cachedTrafficLanes.AddRange(pedestrianLanes);
     }
 
     private void SetAllTrafficLights(Trafficlight.eTrafficState newState)
