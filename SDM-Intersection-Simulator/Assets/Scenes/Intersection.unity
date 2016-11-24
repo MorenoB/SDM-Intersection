@@ -10465,6 +10465,10 @@ Prefab:
       propertyPath: stoplineColliders
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 4000012774435030, guid: 66c209c4ce64829419b89d62f938741c, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0.19
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 66c209c4ce64829419b89d62f938741c, type: 2}
   m_IsPrefabParent: 0
@@ -32624,11 +32628,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4000011361756750, guid: a71bc3cd00ff60d41be3d29f22100963, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 0.5
+      value: 0.87
       objectReference: {fileID: 0}
     - target: {fileID: 4000011361756750, guid: a71bc3cd00ff60d41be3d29f22100963, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 0.39
+      value: 0.44
       objectReference: {fileID: 0}
     - target: {fileID: 4000011361756750, guid: a71bc3cd00ff60d41be3d29f22100963, type: 2}
       propertyPath: m_LocalEulerAnglesHint.y
