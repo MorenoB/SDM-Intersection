@@ -46,15 +46,17 @@ public class Client : MonoBehaviour
 
         JSONObject j = new JSONObject(JSONObject.Type.OBJECT);
         //array
-        JSONObject arr = new JSONObject(JSONObject.Type.ARRAY);
-        j.Add(arr);
+       // JSONObject arr = new JSONObject(JSONObject.Type.ARRAY);
+        //j.Add(arr);
 
         for (int i = 0; i < TrafficManager.Instance.TrafficLanes.Count; i++)
         {
             TrafficLaneData laneData = TrafficManager.Instance.TrafficLanes[i];
 
-            arr.AddField("trafficLight", laneData.id);
-            arr.AddField("count", laneData.NumberOfEntitiesInLane);
+            JSONObject arrayObject = new JSONObject();
+            arrayObject.AddField("trafficLight", laneData.id);
+            arrayObject.AddField("count", laneData.NumberOfEntitiesInLane);
+            j.Add(arrayObject);
         }
 
 
@@ -120,6 +122,7 @@ public class Client : MonoBehaviour
     {
         if (webSocket == null)
             return;
+
         webSocket.SendString(message);
         Debug.Log("Sent " + message);
     }
