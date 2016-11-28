@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
-using System.Linq;
 
 [System.Serializable]
 public class TrafficLaneData
@@ -8,7 +7,7 @@ public class TrafficLaneData
     public string name;
     public int id;
 
-    //public List<Trafficlight> trafficLights = new List<Trafficlight>();
+    public List<Trafficlight> trafficLights = new List<Trafficlight>();
     public List<WaypointManager> waypointManagers = new List<WaypointManager>();
 
     public int NumberOfEntitiesInLane
@@ -76,7 +75,6 @@ public class TrafficManager : Singleton<TrafficManager>
     {
         PopulateTrafficLanes();
 
-        trafficLights = FindObjectsOfType<Trafficlight>().ToList();
 
         client = GetComponent<Client>();
         SetAllTrafficLights(Trafficlight.eTrafficState.RED);
@@ -93,13 +91,34 @@ public class TrafficManager : Singleton<TrafficManager>
 
     private void SetAllTrafficLights(Trafficlight.eTrafficState newState)
     {
-        for (int i = 0; i < trafficLights.Count; i++)
+        for (int i = 0; i < TrafficLanes.Count; i++)
         {
-            Trafficlight trafficLight = trafficLights[i];
-            if (trafficLight == null) continue;
+            for (int j = 0; j < TrafficLanes[i].trafficLights.Count; j++)
+            {
+                Trafficlight trafficLight = TrafficLanes[i].trafficLights[j];
+                if (trafficLight == null) continue;
 
-            SetTrafficLightState(trafficLight.Id, newState);
-            
+                SetTrafficLightState(trafficLight.Id, newState);
+            }
+
+        }
+    }
+
+    /// <summary>
+    /// Will do the lazy work for me in the editor :p
+    /// </summary>
+    public void OnValidate()
+    {
+        for (int i = 0; i < TrafficLanes.Count; i++)
+        {
+            TrafficLaneData trafficLane = TrafficLanes[i];
+            if (trafficLane == null) continue;
+
+            if (trafficLane.trafficLights.Count < 1) return;
+
+            if (trafficLane.trafficLights[0] == null) continue;
+
+            trafficLane.name = trafficLane.id + "(" + trafficLane.trafficLights[0].transform.parent.name + ")";
         }
     }
 
@@ -166,14 +185,31 @@ public class TrafficManager : Singleton<TrafficManager>
 
     public void SetTrafficLightState(int id, Trafficlight.eTrafficState newTrafficLightState)
     {
-        for (int j = 0; j < trafficLights.Count; j++)
+        for (int i = 0; i < TrafficLanes.Count; i++)
         {
-            Trafficlight trafficLight = trafficLights[j];
+            TrafficLaneData laneData = TrafficLanes[i];
 
-            if (trafficLight.Id != id) continue;
+            if (laneData == null) continue;
 
-            trafficLight.TrafficState = newTrafficLightState;
-        }        
+            for (int j = 0; j < laneData.trafficLights.Count; j++)
+            {
+                Trafficlight trafficLight = laneData.trafficLights[j];
+
+                if (trafficLight.Id != id) continue;
+
+                trafficLight.TrafficState = newTrafficLightState;
+            }
+
+
+            if (newTrafficLightState == Trafficlight.eTrafficState.GREEN || newTrafficLightState == Trafficlight.eTrafficState.ORANGE)
+                for (int j = 0; j < laneData.waypointAgents.Count; j++)
+                {
+                    WaypointAgent agentInLane = laneData.waypointAgents[j];
+                    agentInLane.WaypointSystemActivated = true;
+
+                }
+
+        }
     }
 
     public void DecreaseNumberOfCarsInLaneByOne(int laneId)

@@ -52,10 +52,6 @@ public class WaypointAgent : MonoBehaviour {
 			if (waypointSystemActivated == value)
 				return;
 
-			//Dont make the waypoint system stop when this entity has already left the lane.
-			if (hasLeftLane)
-				return;
-
 			movingEntity.SetFreeze(value);
 			waypointSystemActivated = value;
 		}
@@ -130,8 +126,6 @@ public class WaypointAgent : MonoBehaviour {
 			if (AssignedTrafficLane.id != laneIdentifier.Id)
 				return;
 
-			laneIdentifier.FrozenAgents.Add(this);
-
 			WaypointSystemActivated = false;
 		}
 	}
@@ -163,7 +157,6 @@ public class WaypointAgent : MonoBehaviour {
 				return;
 
 			hasLeftLane = true;
-
 			TrafficManager.Instance.DecreaseNumberOfCarsInLaneByOne(AssignedTrafficLane.id);
 		}
 	}
