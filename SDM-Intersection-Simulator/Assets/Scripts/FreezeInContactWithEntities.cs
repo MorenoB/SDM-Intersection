@@ -23,7 +23,12 @@ public class FreezeInContactWithEntities : MonoBehaviour
         
         if (other.CompareTag("MovingEntity"))
         {
-            waypointAgent.WaypointSystemActivated = false;
+            WaypointAgent otherAgent = other.GetComponentInParent<WaypointAgent>();
+
+            if (otherAgent == null) return;
+
+            if(waypointAgent.TrafficLaneId == otherAgent.TrafficLaneId)
+                waypointAgent.WaypointSystemActivated = false;
         }
     }
 
