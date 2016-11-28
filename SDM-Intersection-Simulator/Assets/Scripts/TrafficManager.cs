@@ -269,6 +269,17 @@ public class TrafficManager : Singleton<TrafficManager>
                 trafficLane = trainLanes[randomIndex];
 
                 break;
+
+            case SpawnManager.SpawnType.PEDESTRIAN:
+                randomIndex = Random.Range(0, pedestrianLanes.Count);
+                trafficLane = pedestrianLanes[randomIndex];
+
+                break;
+
+            default:
+                Debug.LogError("Spawntype " + entityType +  " not recognized!");
+
+                break;
         }
 
         if (maxNrOfEnttitiesInLane == -1)

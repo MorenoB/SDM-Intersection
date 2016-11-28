@@ -3064,6 +3064,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1000010927932960
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 4000012535427690}
+  m_Layer: 9
+  m_Name: CenterOfMass
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1000010928667310
 GameObject:
   m_ObjectHideFlags: 1
@@ -17786,7 +17801,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000011034860628}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.37199998, z: 1.6040001}
+  m_LocalPosition: {x: 0, y: 0.61, z: 1.6040001}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
@@ -17920,7 +17935,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000013840641874}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.594, z: 0.047}
+  m_LocalPosition: {x: 0, y: 0.575, z: 0.047}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
@@ -19773,7 +19788,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000010461030740}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -10.324477, y: 0.60000014, z: 1.2823687}
+  m_LocalPosition: {x: 0, y: 1.128, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
@@ -19782,6 +19797,7 @@ Transform:
   - {fileID: 4000010951793388}
   - {fileID: 4000012973913120}
   - {fileID: 4000013952324004}
+  - {fileID: 4000012535427690}
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!4 &4000012273400562
@@ -20573,6 +20589,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4000014294692032}
   m_RootOrder: 0
+--- !u!4 &4000012535427690
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010927932960}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.022, y: 0.398, z: 0.684}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 4000012271439068}
+  m_RootOrder: 5
 --- !u!4 &4000012540028346
 Transform:
   m_ObjectHideFlags: 1
@@ -48396,7 +48425,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.24, y: 1.69, z: 1}
+  m_Size: {x: 0.24, y: 0.92, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!65 &65000014109601160
 BoxCollider:
@@ -48501,6 +48530,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   randomizeExactTarget: 0
+  WaitingForTrafficLight: {fileID: 0}
   m_waypointManager: {fileID: 0}
   currentTarget: {fileID: 0}
   currentNodeTarget: {x: 0, y: 0, z: 0}
@@ -48561,7 +48591,7 @@ MonoBehaviour:
   - {fileID: 146000011312620874}
   backWheelColliders:
   - {fileID: 146000012299083734}
-  m_CarDriveType: 1
+  m_CarDriveType: 2
   m_WheelColliders: []
   m_WheelMeshes:
   - {fileID: 1000013784202946}
@@ -48571,14 +48601,14 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 114000013329605144}
   - {fileID: 0}
-  m_CentreOfMassOffset: {x: 0, y: 0, z: 0}
-  m_MaximumSteerAngle: 60
-  m_SteerHelper: 0.173
-  m_TractionControl: 0
-  m_FullTorqueOverAllWheels: 500
-  m_ReverseTorque: 250
+  m_CentreOfMassOffset: {x: 0, y: 0, z: 0.684}
+  m_MaximumSteerAngle: 50
+  m_SteerHelper: 0.824
+  m_TractionControl: 0.394
+  m_FullTorqueOverAllWheels: 2000
+  m_ReverseTorque: 1000
   m_MaxHandbrakeTorque: 100000000
-  m_Downforce: 10
+  m_Downforce: 100
   m_SpeedType: 1
   m_Topspeed: 10
   m_RevRangeBoundary: 1
@@ -48591,7 +48621,7 @@ WheelCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000012304401390}
   m_Center: {x: 0, y: 0, z: 0}
-  m_Radius: 0.44
+  m_Radius: 0.475
   m_SuspensionSpring:
     spring: 70000
     damper: 3500
@@ -48620,7 +48650,7 @@ WheelCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000013840641874}
   m_Center: {x: 0, y: 0, z: 0}
-  m_Radius: 0.44
+  m_Radius: 0.475
   m_SuspensionSpring:
     spring: 70000
     damper: 3500
