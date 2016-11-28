@@ -11,6 +11,7 @@ public class SpawnManager : MonoBehaviour
     public int maximumBicyclesInLane = 6;
     public int maximumBussesInLane = 1;
     public int maximumTrainsInLane = 1;
+    public int maximumPedestriansInLane = 5;
 
 
     [Header("Prefab settings.")]
@@ -34,6 +35,7 @@ public class SpawnManager : MonoBehaviour
     private bool randomCarSpawningLoopActive;
     private bool randomBicycleSpawningLoopActive;
     private bool randomBusSpawningLoopActive;
+    private bool randomPedestrianSpawningLoopActive;
 
 
     void Awake()
@@ -127,6 +129,14 @@ public class SpawnManager : MonoBehaviour
                     SpawnObject(SpawnType.BUS, randomBusLane.id);
             }
 
+            if(randomPedestrianSpawningLoopActive)
+            {
+                TrafficLaneData randomPedestrianLane = TrafficManager.Instance.GetLane(SpawnType.PEDESTRIAN, maximumPedestriansInLane);
+
+                if (randomPedestrianLane != null)
+                    SpawnObject(SpawnType.PEDESTRIAN, randomPedestrianLane.id);
+            }
+
 
             yield return new WaitForSeconds(spawnRate);
         }
@@ -155,7 +165,13 @@ public class SpawnManager : MonoBehaviour
             Debug.Log("Random bus loop is " + randomBusSpawningLoopActive);
         }
 
-        if(Input.GetKeyDown(KeyCode.I))
+        if (Input.GetKeyDown(KeyCode.I))
+        {
+            randomPedestrianSpawningLoopActive = !randomPedestrianSpawningLoopActive;
+            Debug.Log("Random pedestrian loop is " + randomPedestrianSpawningLoopActive);
+        }
+
+        if (Input.GetKeyDown(KeyCode.J))
         {
             TrafficLaneData randomTrainLane = TrafficManager.Instance.GetLane(SpawnType.TRAIN, maximumTrainsInLane);
 
