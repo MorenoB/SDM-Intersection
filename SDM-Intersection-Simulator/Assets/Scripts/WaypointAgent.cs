@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 [System.Serializable]
 [RequireComponent(typeof(IMovingEntity))]
@@ -8,20 +9,36 @@ public class WaypointAgent : MonoBehaviour {
 	//New
 	public bool randomizeExactTarget = false;
 
-	private TrafficLaneData assignedTrafficLane;
+	private Queue<Trafficlight> trafficlightQueue = new Queue<Trafficlight>();
 
-	public TrafficLaneData AssignedTrafficLane
+	public Queue<Trafficlight> TrafficlightQueue
 	{
 		get
 		{
-			return assignedTrafficLane;
+			return trafficlightQueue;
 		}
 		set
 		{
-			if (value != assignedTrafficLane)
-				assignedTrafficLane = value;
+			if (value != trafficlightQueue)
+				trafficlightQueue = value;
 		}
 	}
+
+	private int trafficLaneId = -1;
+	public int TrafficLaneId
+	{
+		get
+		{
+			return trafficLaneId;
+		}
+
+		set
+		{
+			trafficLaneId = value;
+		}
+	}
+
+	public Trafficlight WaitingForTrafficLight = null;
 
 	private IMovingEntity movingEntity;
 	private bool waypointSystemActivated = true;
@@ -101,13 +118,14 @@ public class WaypointAgent : MonoBehaviour {
 		Gizmos.DrawLine(transform.position, currentNodeTarget);
 	}
 
-	private void OnTriggerStay(Collider other)
+	private void OnTriggerEnter(Collider other)
 	{
-		if (WaypointSystemActivated == false || hasLeftLane)
+		if (WaitingForTrafficLight == null)
 			return;
 
-		if(other.CompareTag("StopLine"))
+		if (other.CompareTag("StopLine"))
 		{
+
 			LaneIdentifier laneIdentifier = other.GetComponent<LaneIdentifier>();
 			if (laneIdentifier == null)
 			{
@@ -116,28 +134,22 @@ public class WaypointAgent : MonoBehaviour {
 			}
 
 
-			if (AssignedTrafficLane == null)
+			if (TrafficlightQueue == null)
 			{
 				Debug.LogError("WaypointAgent " + gameObject.name + " does not have a valid TrafficLane object assigned!");
 				return;
 			}
 
-			//Make sure we exit the correct lane
-			if (AssignedTrafficLane.id != laneIdentifier.Id)
+			//Make sure we stop at the correct trafficlight
+			if (WaitingForTrafficLight.Id != laneIdentifier.Id)
 				return;
+
 
 			WaypointSystemActivated = false;
 		}
-	}
 
-	private void OnTriggerEnter(Collider other)
-	{
-		if(other.CompareTag("HasLeftLane"))
+		if (other.CompareTag("HasLeftLane"))
 		{
-
-			if (hasLeftLane)
-				return;
-
 			LaneIdentifier laneIdentifier = other.GetComponent<LaneIdentifier>();
 			if(laneIdentifier == null)
 			{
@@ -146,19 +158,37 @@ public class WaypointAgent : MonoBehaviour {
 			}
 
 
-			if (AssignedTrafficLane == null)
+			if (TrafficlightQueue == null)
 			{
 				Debug.LogError("WaypointAgent " + gameObject.name + " does not have a valid TrafficLane object assigned!");
 				return;
 			}
 
 			//Make sure we exit the correct lane
-			if (AssignedTrafficLane.id != laneIdentifier.Id)
+			if (WaitingForTrafficLight.Id != laneIdentifier.Id)
 				return;
 
+			WaitingForTrafficLight.WaitingAgents.Remove(this);
+
+			AssignNextTrafficlight();
+
 			hasLeftLane = true;
-			TrafficManager.Instance.DecreaseNumberOfCarsInLaneByOne(AssignedTrafficLane.id);
+			TrafficManager.Instance.DecreaseNumberOfCarsInLaneByOne(TrafficLaneId);
 		}
+	}
+
+	public void AssignNextTrafficlight()
+	{
+		if (TrafficlightQueue.Count < 1)
+		{
+			WaitingForTrafficLight = null;
+			return;
+		}
+
+		WaitingForTrafficLight = TrafficlightQueue.Dequeue();
+
+		if (!WaitingForTrafficLight.WaitingAgents.Contains(this))
+			WaitingForTrafficLight.WaitingAgents.Add(this);
 	}
 
 	protected void WaypointMovementUpdate()

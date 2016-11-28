@@ -23,7 +23,10 @@ public class WebSocket
 
 	public void SendString(string str)
 	{
-		Send(Encoding.UTF8.GetBytes (str));
+		//Dont use bytecode to send, just use normal string format.
+		m_Socket.Send(str);
+
+		//Send(Encoding.UTF8.GetBytes (str));
 	}
 
 	public string RecvString()

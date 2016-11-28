@@ -21,6 +21,8 @@ public class Trafficlight : MonoBehaviour {
 
     public List<TrafficLightStateObject> LightStates = new List<TrafficLightStateObject>();
 
+    public List<WaypointAgent> WaitingAgents = new List<WaypointAgent>();
+
     private eTrafficState trafficState = eTrafficState.NONE;
     public eTrafficState TrafficState
     {
@@ -99,8 +101,6 @@ public class Trafficlight : MonoBehaviour {
                 if (stoplineCollider != null)
                     stoplineCollider.gameObject.SetActive(false);
 
-                if (hasLeftLaneCollider != null)
-                    hasLeftLaneCollider.gameObject.SetActive(true);
                 break;
 
             case eTrafficState.ORANGE:
@@ -109,8 +109,6 @@ public class Trafficlight : MonoBehaviour {
                 if (stoplineCollider != null)
                     stoplineCollider.gameObject.SetActive(false);
 
-                if (hasLeftLaneCollider != null)
-                    hasLeftLaneCollider.gameObject.SetActive(true);
                 break;
 
             case eTrafficState.RED:
@@ -119,8 +117,6 @@ public class Trafficlight : MonoBehaviour {
                 if(stoplineCollider != null)
                     stoplineCollider.gameObject.SetActive(true);
 
-                if(hasLeftLaneCollider != null)
-                    hasLeftLaneCollider.gameObject.SetActive(false);
                 break;
         }
 
