@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
+using System.Linq;
 
 [System.Serializable]
 public class TrafficLaneData
@@ -57,6 +58,13 @@ public class TrafficManager : Singleton<TrafficManager>
     public List<TrafficLaneData> pedestrianLanes = new List<TrafficLaneData>();
 
     private List<Trafficlight> trafficLights = new List<Trafficlight>();
+    public List<Trafficlight> Trafficlights
+    {
+        get
+        {
+            return trafficLights;
+        }
+    }
 
 
     private List<TrafficLaneData> cachedTrafficLanes = new List<TrafficLaneData>();
@@ -75,6 +83,7 @@ public class TrafficManager : Singleton<TrafficManager>
     {
         PopulateTrafficLanes();
 
+        trafficLights = FindObjectsOfType<Trafficlight>().ToList();
 
         client = GetComponent<Client>();
         SetAllTrafficLights(Trafficlight.eTrafficState.RED);
@@ -177,7 +186,15 @@ public class TrafficManager : Singleton<TrafficManager>
         laneData.NumberOfEntitiesInLane++;
 
         //Add updated lane data object to the waypointagent
-        waypointAgent.AssignedTrafficLane = laneData;
+        waypointAgent.TrafficLaneId = laneData.id;
+
+        for (int i = 0; i < laneData.trafficLights.Count; i++)
+        {
+            waypointAgent.TrafficlightQueue.Enqueue(laneData.trafficLights[i]);
+        }
+
+        waypointAgent.AssignNextTrafficlight();
+
 
         //Send update to controller
         client.SendStateData();
