@@ -11284,6 +11284,12 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 400002, guid: 28f8c28668840a54d9d3139e3bf8fe1d, type: 3}
   m_PrefabInternal: {fileID: 510562351}
+--- !u!114 &510798038 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114000011035748420, guid: 6f1598eb9de56f446b4773465932d8bc,
+    type: 2}
+  m_PrefabInternal: {fileID: 1546719461}
+  m_Script: {fileID: 11500000, guid: 7ba0ad8f05bc84346868b2747c32bf42, type: 3}
 --- !u!1001 &510852907
 Prefab:
   m_ObjectHideFlags: 0
@@ -17027,6 +17033,12 @@ Transform:
 Transform:
   m_PrefabParentObject: {fileID: 400002, guid: c39d7d9976b11ce4db371c8ad552da6a, type: 3}
   m_PrefabInternal: {fileID: 1656390257}
+--- !u!114 &776884861 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114000011035748420, guid: 6f1598eb9de56f446b4773465932d8bc,
+    type: 2}
+  m_PrefabInternal: {fileID: 99415061}
+  m_Script: {fileID: 11500000, guid: 7ba0ad8f05bc84346868b2747c32bf42, type: 3}
 --- !u!4 &776960059 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400002, guid: c39d7d9976b11ce4db371c8ad552da6a, type: 3}
@@ -26912,6 +26924,7 @@ MonoBehaviour:
     id: 36
     trafficLights:
     - {fileID: 731243763}
+    - {fileID: 776884861}
     waypointManagers:
     - {fileID: 1846718664}
     waypointAgents: []
@@ -26929,6 +26942,21 @@ MonoBehaviour:
     - {fileID: 795531031}
     waypointManagers:
     - {fileID: 84039790}
+    waypointAgents: []
+  - name: (32)SchransToZuiderplein
+    id: 32
+    trafficLights:
+    - {fileID: 1225153337}
+    - {fileID: 510798038}
+    waypointManagers:
+    - {fileID: 1434738245}
+    waypointAgents: []
+  - name: (34)StationswegToSchrans
+    id: 34
+    trafficLights:
+    - {fileID: 776884861}
+    waypointManagers:
+    - {fileID: 505669074}
     waypointAgents: []
 --- !u!4 &1220868760
 Transform:
@@ -27048,6 +27076,12 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 400002, guid: c39d7d9976b11ce4db371c8ad552da6a, type: 3}
   m_PrefabInternal: {fileID: 1082809357}
+--- !u!114 &1225153337 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114000011035748420, guid: 6f1598eb9de56f446b4773465932d8bc,
+    type: 2}
+  m_PrefabInternal: {fileID: 1547003980}
+  m_Script: {fileID: 11500000, guid: 7ba0ad8f05bc84346868b2747c32bf42, type: 3}
 --- !u!1 &1225328492
 GameObject:
   m_ObjectHideFlags: 0
