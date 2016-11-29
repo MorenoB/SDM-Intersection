@@ -193,22 +193,10 @@ public class WaypointAgent : MonoBehaviour {
 
 	protected void WaypointMovementUpdate()
 	{
-		Vector3 relativeVector = Vector3.one;
-
-		float steerAngle = 0;
-		float speed = 0;
-		float brakeforce = 0;
-
-		// If the agent has a game object target assigned then move towards it otherwise 
-		// get a target position in 3d space and move towards that
 		if (currentTarget == null)
 		{
-			relativeVector = transform.InverseTransformPoint(currentNodeTarget);
 
-			steerAngle = relativeVector.x / relativeVector.magnitude;
-			speed = 1;
-
-			movingEntity.Move(steerAngle, speed, brakeforce, brakeforce);
+			movingEntity.Move(currentNodeTarget);
 
 			if (m_waypointManager.ObjectIsOnNode(this))
 			{
@@ -246,17 +234,8 @@ public class WaypointAgent : MonoBehaviour {
 		}
 		else
 		{
-			relativeVector = transform.InverseTransformPoint(currentTarget.transform.position);
 
-			steerAngle = relativeVector.x / relativeVector.magnitude;
-			speed = 1;
-
-			if (movingEntity.CurrentSpeed > 0 && speed < 0)
-			{
-				brakeforce = speed;
-			}
-
-			movingEntity.Move(steerAngle, speed, brakeforce, brakeforce);
+			movingEntity.Move(currentTarget.transform.position);
 		}
 			
 		

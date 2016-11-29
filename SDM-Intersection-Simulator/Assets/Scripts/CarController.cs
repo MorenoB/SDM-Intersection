@@ -153,8 +153,17 @@ public class CarController : MonoBehaviour, IMovingEntity
     }
 
 
-    public void Move(float steering, float accel, float footbrake, float handbrake)
+    public void Move(Vector3 currentNodeTarget)
     {
+        // If the agent has a game object target assigned then move towards it otherwise 
+        // get a target position in 3d space and move towards that
+        Vector3 relativeVector = transform.InverseTransformPoint(currentNodeTarget);
+
+        float steering = relativeVector.x / relativeVector.magnitude;
+        float accel = 1;
+        float footbrake = 0;
+        float handbrake = 0;
+
         for (int i = 0; i < WheelColliders.Count; i++)
         {
             GameObject wheelmesh = m_WheelMeshes[i];

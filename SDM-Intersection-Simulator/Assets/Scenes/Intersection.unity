@@ -27135,7 +27135,7 @@ MonoBehaviour:
   trainPrefab: {fileID: 1000012056247804, guid: ce4f4dc93b737d94d88fa9987bf4f7d9,
     type: 2}
   busPrefab: {fileID: 1000012383701126, guid: 704494dd6ae1d544b9c4df84b0237cdf, type: 2}
-  pedestrianPrefab: {fileID: 1000012056247804, guid: ce4f4dc93b737d94d88fa9987bf4f7d9,
+  pedestrianPrefab: {fileID: 1000012109684040, guid: 360bd563c6e93554181123b772324fd2,
     type: 2}
 --- !u!114 &1220868762
 MonoBehaviour:
