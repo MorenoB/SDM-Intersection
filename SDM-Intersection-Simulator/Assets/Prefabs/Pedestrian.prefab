@@ -627,7 +627,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000011537091872}
   - 65: {fileID: 65000012344834714}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: BackCollider
   m_TagString: MovingEntity
   m_Icon: {fileID: 0}
@@ -901,7 +901,7 @@ GameObject:
   - 4: {fileID: 4000011330936760}
   - 65: {fileID: 65000013054279756}
   - 114: {fileID: 114000014270948202}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: FrontCollider
   m_TagString: MovingEntity
   m_Icon: {fileID: 0}
