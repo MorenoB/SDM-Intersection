@@ -26,7 +26,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &1000010903985450
 GameObject:
@@ -74,7 +74,7 @@ GameObject:
   m_TagString: HasLeftLane
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &1000013224666316
 GameObject:
@@ -184,10 +184,10 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000011990041496}
-  m_LocalRotation: {x: -0, y: 0.75061655, z: -0, w: 0.6607381}
-  m_LocalPosition: {x: 17.101265, y: 0.60000014, z: -17.286419}
+  m_LocalRotation: {x: -0, y: 0.7064793, z: -0, w: 0.7077337}
+  m_LocalPosition: {x: -8.385493, y: 0, z: -1.9350886}
   m_LocalScale: {x: 1.0000004, y: 1, z: 1.0000004}
-  m_LocalEulerAnglesHint: {x: 0, y: 97.089005, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 89.901, z: 0}
   m_Children:
   - {fileID: 4000011247108184}
   - {fileID: 4000011161567784}
@@ -307,11 +307,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Id: 42
   headModel: {fileID: 23000010986485346}
-  stoplineColliders: {fileID: 0}
   stoplineCollider: {fileID: 114000013426667946}
   hasLeftLaneCollider: {fileID: 114000012966935206}
   useGameObjectSwitching: 0
   LightStates: []
+  WaitingAgents: []
 --- !u!114 &114000012966935206
 MonoBehaviour:
   m_ObjectHideFlags: 1
