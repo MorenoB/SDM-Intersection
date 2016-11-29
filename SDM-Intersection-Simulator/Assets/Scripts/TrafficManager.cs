@@ -195,6 +195,8 @@ public class TrafficManager : Singleton<TrafficManager>
 
         waypointAgent.AssignNextTrafficlight();
 
+        waypointAgent.WaypointSystemActivated = true;
+
 
         //Send update to controller
         client.SendStateData();

@@ -10,14 +10,22 @@ public class PedestrianController : MonoBehaviour, IMovingEntity
     public Vector3 centerOfMass;
 
     private Rigidbody rigidBody;
-
-    public float CurrentSpeed { get { return rigidBody.velocity.magnitude * 2.23693629f; } }
-
-    private void Start()
+    private Rigidbody RigidBody
     {
-       
-        rigidBody = GetComponent<Rigidbody>();
-        rigidBody.centerOfMass = centerOfMass;
+        get
+        {
+            if (rigidBody == null)
+                rigidBody = GetComponent<Rigidbody>();
+
+            return rigidBody;
+        }
+    }
+
+    public float CurrentSpeed { get { return RigidBody.velocity.magnitude * 2.23693629f; } }
+
+    private void OnEnable()
+    {
+        RigidBody.centerOfMass = centerOfMass;
     }
 
 
@@ -26,12 +34,12 @@ public class PedestrianController : MonoBehaviour, IMovingEntity
         targetPosition.y = transform.position.y;
         transform.LookAt(targetPosition);
 
-        rigidBody.velocity = transform.forward * (speed / 2.23693629f );
+        RigidBody.velocity = transform.forward * (speed / 2.23693629f );
 
     }
 
     public void SetFreeze(bool value)
     {
-        rigidBody.isKinematic = !value;
+        RigidBody.isKinematic = !value;
     }
 }
