@@ -23,6 +23,7 @@ public class PedestrianController : MonoBehaviour, IMovingEntity
 
     public void Move(Vector3 targetPosition)
     {
+        targetPosition.y = transform.position.y;
         transform.LookAt(targetPosition);
 
         rigidBody.velocity = transform.forward * (speed / 2.23693629f );
