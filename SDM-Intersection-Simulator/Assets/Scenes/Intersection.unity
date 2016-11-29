@@ -2020,13 +2020,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a10f19edddaad549af24cf4eec269b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  updateIntervalPerSecond: 10
+  updateIntervalPerSecond: 5
   waypointNodes:
   - {fileID: 1921214011}
   - {fileID: 1960090677}
   - {fileID: 1475965365}
   objectToMove: []
-  nodeProximityDistance: 0.75
+  nodeProximityDistance: 0.4
   rotationMode: 0
   slerpRotationSpeed: 1
   looping: 0
@@ -11259,13 +11259,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a10f19edddaad549af24cf4eec269b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  updateIntervalPerSecond: 10
+  updateIntervalPerSecond: 5
   waypointNodes:
   - {fileID: 1551563979}
   - {fileID: 1257004253}
   - {fileID: 385489501}
   objectToMove: []
-  nodeProximityDistance: 0.75
+  nodeProximityDistance: 0.4
   rotationMode: 0
   slerpRotationSpeed: 1
   looping: 0
@@ -12153,12 +12153,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a10f19edddaad549af24cf4eec269b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  updateIntervalPerSecond: 10
+  updateIntervalPerSecond: 5
   waypointNodes:
   - {fileID: 1225779102}
   - {fileID: 434820504}
   objectToMove: []
-  nodeProximityDistance: 0.75
+  nodeProximityDistance: 0.4
   rotationMode: 0
   slerpRotationSpeed: 1
   looping: 0
@@ -20538,14 +20538,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a10f19edddaad549af24cf4eec269b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  updateIntervalPerSecond: 10
+  updateIntervalPerSecond: 5
   waypointNodes:
   - {fileID: 547383656}
   - {fileID: 1531930187}
   - {fileID: 1909753370}
   - {fileID: 1340827507}
   objectToMove: []
-  nodeProximityDistance: 0.75
+  nodeProximityDistance: 0.4
   rotationMode: 0
   slerpRotationSpeed: 1
   looping: 0
@@ -31679,12 +31679,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a10f19edddaad549af24cf4eec269b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  updateIntervalPerSecond: 10
+  updateIntervalPerSecond: 5
   waypointNodes:
   - {fileID: 1178078519}
   - {fileID: 834820504}
   objectToMove: []
-  nodeProximityDistance: 0.75
+  nodeProximityDistance: 0.4
   rotationMode: 0
   slerpRotationSpeed: 1
   looping: 0
@@ -39979,14 +39979,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a10f19edddaad549af24cf4eec269b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  updateIntervalPerSecond: 10
+  updateIntervalPerSecond: 5
   waypointNodes:
   - {fileID: 1238138806}
   - {fileID: 1309544943}
   - {fileID: 2022386281}
   - {fileID: 931270502}
   objectToMove: []
-  nodeProximityDistance: 0.75
+  nodeProximityDistance: 0.4
   rotationMode: 0
   slerpRotationSpeed: 1
   looping: 0
