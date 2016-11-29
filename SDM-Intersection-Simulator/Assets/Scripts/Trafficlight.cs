@@ -68,6 +68,17 @@ public class Trafficlight : MonoBehaviour {
         return ret;
     }
 
+    private void AllowWaitingCarsToDrive()
+    {
+        if (WaitingAgents.Count < 1)
+            return;
+
+        for (int i = 0; i < WaitingAgents.Count; i++)
+        {
+            WaitingAgents[i].WaypointSystemActivated = true;
+        }
+    }
+
     private void EnableLightStateObject(eTrafficState trafficState)
     {
         for (int i = 0; i < LightStates.Count; i++)
@@ -101,6 +112,7 @@ public class Trafficlight : MonoBehaviour {
                 if (stoplineCollider != null)
                     stoplineCollider.gameObject.SetActive(false);
 
+                AllowWaitingCarsToDrive();
                 break;
 
             case eTrafficState.ORANGE:
@@ -109,6 +121,8 @@ public class Trafficlight : MonoBehaviour {
                 if (stoplineCollider != null)
                     stoplineCollider.gameObject.SetActive(false);
 
+                AllowWaitingCarsToDrive();
+
                 break;
 
             case eTrafficState.RED:
@@ -116,7 +130,6 @@ public class Trafficlight : MonoBehaviour {
 
                 if(stoplineCollider != null)
                     stoplineCollider.gameObject.SetActive(true);
-
                 break;
         }
 

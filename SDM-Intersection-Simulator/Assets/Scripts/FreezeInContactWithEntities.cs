@@ -32,7 +32,7 @@ public class FreezeInContactWithEntities : MonoBehaviour
         }
     }
 
-    private void OnTriggerLeave(Collider other)
+    private void OnTriggerExit(Collider other)
     {
         if (waypointAgent == null)
         {
@@ -42,7 +42,12 @@ public class FreezeInContactWithEntities : MonoBehaviour
 
         if (other.CompareTag("MovingEntity"))
         {
-            waypointAgent.WaypointSystemActivated = true;
+            WaypointAgent otherAgent = other.GetComponentInParent<WaypointAgent>();
+
+            if (otherAgent == null) return;
+
+            if (waypointAgent.TrafficLaneId == otherAgent.TrafficLaneId)
+                waypointAgent.WaypointSystemActivated = true;
         }
     }
 }

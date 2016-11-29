@@ -204,30 +204,15 @@ public class TrafficManager : Singleton<TrafficManager>
 
     public void SetTrafficLightState(int id, Trafficlight.eTrafficState newTrafficLightState)
     {
-        for (int i = 0; i < TrafficLanes.Count; i++)
+        for (int i = 0; i < Trafficlights.Count; i++)
         {
-            TrafficLaneData laneData = TrafficLanes[i];
+            Trafficlight trafficLight = Trafficlights[i];
 
-            if (laneData == null) continue;
+            if (trafficLight == null) continue;
 
-            for (int j = 0; j < laneData.trafficLights.Count; j++)
-            {
-                Trafficlight trafficLight = laneData.trafficLights[j];
+            if (trafficLight.Id != id) continue;
 
-                if (trafficLight.Id != id) continue;
-
-                trafficLight.TrafficState = newTrafficLightState;
-            }
-
-
-            if (newTrafficLightState == Trafficlight.eTrafficState.GREEN || newTrafficLightState == Trafficlight.eTrafficState.ORANGE)
-                for (int j = 0; j < laneData.waypointAgents.Count; j++)
-                {
-                    WaypointAgent agentInLane = laneData.waypointAgents[j];
-                    agentInLane.WaypointSystemActivated = true;
-
-                }
-
+            trafficLight.TrafficState = newTrafficLightState;
         }
     }
 
