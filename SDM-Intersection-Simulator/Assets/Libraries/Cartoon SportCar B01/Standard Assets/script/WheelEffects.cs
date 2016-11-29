@@ -47,6 +47,9 @@ namespace UnityStandardAssets.Vehicles.Car
 
         public void EmitTyreSmoke()
         {
+            if (m_WheelCollider == null)
+                return;
+
             if (useParticles && skidParticles != null)
             {
                 skidParticles.transform.position = transform.position - transform.up * m_WheelCollider.radius;
@@ -61,7 +64,7 @@ namespace UnityStandardAssets.Vehicles.Car
 
         public void PlayAudio()
         {
-            if (m_AudioSource == null)
+            if (m_AudioSource == null || !m_AudioSource.enabled)
                 return;
 
             m_AudioSource.Play();
@@ -71,7 +74,7 @@ namespace UnityStandardAssets.Vehicles.Car
 
         public void StopAudio()
         {
-            if (m_AudioSource == null)
+            if (m_AudioSource == null || !m_AudioSource.enabled)
                 return;
 
             m_AudioSource.Stop();
