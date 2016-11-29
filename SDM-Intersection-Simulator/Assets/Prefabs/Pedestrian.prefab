@@ -610,6 +610,7 @@ GameObject:
   - 114: {fileID: 114000012274841426}
   - 54: {fileID: 54000010678512232}
   - 114: {fileID: 114000010498911820}
+  - 114: {fileID: 114000012467289742}
   m_Layer: 11
   m_Name: Pedestrian
   m_TagString: Untagged
@@ -2295,13 +2296,17 @@ Animation:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000011709776356}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 7400006, guid: 39d03f82786b57d41af8bd27bce84402, type: 3}
+  m_Animation: {fileID: 0}
   m_Animations:
   - {fileID: 7400006, guid: 39d03f82786b57d41af8bd27bce84402, type: 3}
+  - {fileID: 7400008, guid: 39d03f82786b57d41af8bd27bce84402, type: 3}
+  - {fileID: 7400016, guid: 39d03f82786b57d41af8bd27bce84402, type: 3}
+  - {fileID: 7400030, guid: 39d03f82786b57d41af8bd27bce84402, type: 3}
+  - {fileID: 7400032, guid: 39d03f82786b57d41af8bd27bce84402, type: 3}
   m_WrapMode: 0
-  m_PlayAutomatically: 1
+  m_PlayAutomatically: 0
   m_AnimatePhysics: 0
   m_CullingType: 1
 --- !u!114 &114000010498911820
@@ -2334,6 +2339,25 @@ MonoBehaviour:
   currentTarget: {fileID: 0}
   currentNodeTarget: {x: 0, y: 0, z: 0}
   waypointUpdatingEntity: 0
+--- !u!114 &114000012467289742
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012109684040}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 578531fffc5542540b1d5f0018c19d18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animationComponent: {fileID: 111000010071999152}
+  idleAnimations:
+  - {fileID: 7400006, guid: 39d03f82786b57d41af8bd27bce84402, type: 3}
+  - {fileID: 7400008, guid: 39d03f82786b57d41af8bd27bce84402, type: 3}
+  movingAnimations:
+  - {fileID: 7400030, guid: 39d03f82786b57d41af8bd27bce84402, type: 3}
+  - {fileID: 7400032, guid: 39d03f82786b57d41af8bd27bce84402, type: 3}
+  - {fileID: 7400016, guid: 39d03f82786b57d41af8bd27bce84402, type: 3}
 --- !u!114 &114000014127204160
 MonoBehaviour:
   m_ObjectHideFlags: 1
