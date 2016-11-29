@@ -73,12 +73,23 @@ public class CarController : MonoBehaviour, IMovingEntity
     private float m_GearFactor;
     private float m_OldRotation;
     private float m_CurrentTorque;
-    private Rigidbody m_Rigidbody;
+
+    private Rigidbody rigidBody;
+    private Rigidbody RigidBody
+    {
+        get
+        {
+            if (rigidBody == null)
+                rigidBody = GetComponent<Rigidbody>();
+
+            return rigidBody;
+        }
+    }
 
     public bool Skidding { get; private set; }
     public float BrakeInput { get; private set; }
     public float CurrentSteerAngle { get { return m_SteerAngle; } }
-    public float CurrentSpeed { get { return m_Rigidbody.velocity.magnitude * 2.23693629f; } }
+    public float CurrentSpeed { get { return RigidBody.velocity.magnitude * 2.23693629f; } }
     public float MaxSpeed { get { return m_Topspeed; } }
     public float Revs { get; private set; }
     public float AccelInput { get; private set; }
@@ -94,7 +105,6 @@ public class CarController : MonoBehaviour, IMovingEntity
 
         m_MaxHandbrakeTorque = float.MaxValue;
 
-        m_Rigidbody = GetComponent<Rigidbody>();
         m_CurrentTorque = m_FullTorqueOverAllWheels - (m_TractionControl * m_FullTorqueOverAllWheels);
     }
 
@@ -153,8 +163,17 @@ public class CarController : MonoBehaviour, IMovingEntity
     }
 
 
-    public void Move(float steering, float accel, float footbrake, float handbrake)
+    public void Move(Vector3 currentNodeTarget)
     {
+        // If the agent has a game object target assigned then move towards it otherwise 
+        // get a target position in 3d space and move towards that
+        Vector3 relativeVector = transform.InverseTransformPoint(currentNodeTarget);
+
+        float steering = relativeVector.x / relativeVector.magnitude;
+        float accel = 1;
+        float footbrake = 0;
+        float handbrake = 0;
+
         for (int i = 0; i < WheelColliders.Count; i++)
         {
             GameObject wheelmesh = m_WheelMeshes[i];
@@ -212,20 +231,20 @@ public class CarController : MonoBehaviour, IMovingEntity
 
     private void CapSpeed()
     {
-        float speed = m_Rigidbody.velocity.magnitude;
+        float speed = RigidBody.velocity.magnitude;
         switch (m_SpeedType)
         {
             case SpeedType.MPH:
 
                 speed *= 2.23693629f;
                 if (speed > m_Topspeed)
-                    m_Rigidbody.velocity = (m_Topspeed / 2.23693629f) * m_Rigidbody.velocity.normalized;
+                    RigidBody.velocity = (m_Topspeed / 2.23693629f) * RigidBody.velocity.normalized;
                 break;
 
             case SpeedType.KPH:
                 speed *= 3.6f;
                 if (speed > m_Topspeed)
-                    m_Rigidbody.velocity = (m_Topspeed / 3.6f) * m_Rigidbody.velocity.normalized;
+                    RigidBody.velocity = (m_Topspeed / 3.6f) * RigidBody.velocity.normalized;
                 break;
         }
     }
@@ -266,7 +285,7 @@ public class CarController : MonoBehaviour, IMovingEntity
 
         for (int i = 0; i < WheelColliders.Count; i++)
         {
-            if (CurrentSpeed > 5 && Vector3.Angle(transform.forward, m_Rigidbody.velocity) < 50f)
+            if (CurrentSpeed > 5 && Vector3.Angle(transform.forward, RigidBody.velocity) < 50f)
             {
                 WheelColliders[i].brakeTorque = m_BrakeTorque * footbrake;
             }
@@ -294,7 +313,7 @@ public class CarController : MonoBehaviour, IMovingEntity
         {
             var turnadjust = (transform.eulerAngles.y - m_OldRotation) * m_SteerHelper;
             Quaternion velRotation = Quaternion.AngleAxis(turnadjust, Vector3.up);
-            m_Rigidbody.velocity = velRotation * m_Rigidbody.velocity;
+            RigidBody.velocity = velRotation * RigidBody.velocity;
         }
         m_OldRotation = transform.eulerAngles.y;
     }
@@ -420,6 +439,6 @@ public class CarController : MonoBehaviour, IMovingEntity
 
     public void SetFreeze(bool value)
     {
-        m_Rigidbody.isKinematic = !value;
+        RigidBody.isKinematic = !value;
     }
 }

@@ -5,9 +5,8 @@ using UnityEngine;
 [RequireComponent(typeof(IMovingEntity))]
 public class WaypointAgent : MonoBehaviour {
 
-
-	//New
 	public bool randomizeExactTarget = false;
+	public event System.Action OnWaypointsystemActivatedChanged;
 
 	private Queue<Trafficlight> trafficlightQueue = new Queue<Trafficlight>();
 
@@ -41,7 +40,7 @@ public class WaypointAgent : MonoBehaviour {
 	public Trafficlight WaitingForTrafficLight = null;
 
 	private IMovingEntity movingEntity;
-	private bool waypointSystemActivated = true;
+	private bool waypointSystemActivated;
 	private bool hasLeftLane = false;
 
 	///
@@ -69,6 +68,10 @@ public class WaypointAgent : MonoBehaviour {
 			if (waypointSystemActivated == value)
 				return;
 
+			if(OnWaypointsystemActivatedChanged != null)
+				OnWaypointsystemActivatedChanged();
+
+
 			movingEntity.SetFreeze(value);
 			waypointSystemActivated = value;
 		}
@@ -81,7 +84,7 @@ public class WaypointAgent : MonoBehaviour {
 	public float NodeProximityDistance { set { m_nodeProximityDistance = value; } }
 	public int CurrentIndex { get { return currentIndex; } set { currentIndex = value; } }
 
-	public virtual void Start()
+	private void OnEnable()
 	{
 		movingEntity = GetComponent<IMovingEntity>();
 	}
@@ -116,6 +119,11 @@ public class WaypointAgent : MonoBehaviour {
 		Gizmos.DrawSphere(currentNodeTarget, 0.15f);
 		Gizmos.color = Color.grey;
 		Gizmos.DrawLine(transform.position, currentNodeTarget);
+	}
+
+	private void OnDisable()
+	{
+		WaypointSystemActivated = false;
 	}
 
 	private void OnTriggerEnter(Collider other)
@@ -193,22 +201,10 @@ public class WaypointAgent : MonoBehaviour {
 
 	protected void WaypointMovementUpdate()
 	{
-		Vector3 relativeVector = Vector3.one;
-
-		float steerAngle = 0;
-		float speed = 0;
-		float brakeforce = 0;
-
-		// If the agent has a game object target assigned then move towards it otherwise 
-		// get a target position in 3d space and move towards that
 		if (currentTarget == null)
 		{
-			relativeVector = transform.InverseTransformPoint(currentNodeTarget);
 
-			steerAngle = relativeVector.x / relativeVector.magnitude;
-			speed = 1;
-
-			movingEntity.Move(steerAngle, speed, brakeforce, brakeforce);
+			movingEntity.Move(currentNodeTarget);
 
 			if (m_waypointManager.ObjectIsOnNode(this))
 			{
@@ -246,17 +242,8 @@ public class WaypointAgent : MonoBehaviour {
 		}
 		else
 		{
-			relativeVector = transform.InverseTransformPoint(currentTarget.transform.position);
 
-			steerAngle = relativeVector.x / relativeVector.magnitude;
-			speed = 1;
-
-			if (movingEntity.CurrentSpeed > 0 && speed < 0)
-			{
-				brakeforce = speed;
-			}
-
-			movingEntity.Move(steerAngle, speed, brakeforce, brakeforce);
+			movingEntity.Move(currentTarget.transform.position);
 		}
 			
 		
