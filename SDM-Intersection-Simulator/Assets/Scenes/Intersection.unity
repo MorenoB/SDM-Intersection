@@ -255,7 +255,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a10f19edddaad549af24cf4eec269b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  updateIntervalPerSecond: 22
+  updateIntervalPerSecond: 5
   waypointNodes:
   - {fileID: 1132627707}
   - {fileID: 6469404}
@@ -2689,7 +2689,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a10f19edddaad549af24cf4eec269b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  updateIntervalPerSecond: 22
+  updateIntervalPerSecond: 5
   waypointNodes:
   - {fileID: 172347671}
   - {fileID: 115007438}
@@ -3324,6 +3324,11 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114000012740054004, guid: 2e09674b44ad86f4083484bd023c4165,
+        type: 2}
+      propertyPath: updateIntervalPerSecond
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2e09674b44ad86f4083484bd023c4165, type: 2}
   m_IsPrefabParent: 0
@@ -3953,6 +3958,11 @@ Prefab:
       propertyPath: waypointNodes.Array.data[4]
       value: 
       objectReference: {fileID: 1277427304}
+    - target: {fileID: 114000012740054004, guid: 2e09674b44ad86f4083484bd023c4165,
+        type: 2}
+      propertyPath: updateIntervalPerSecond
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2e09674b44ad86f4083484bd023c4165, type: 2}
   m_IsPrefabParent: 0
@@ -6991,6 +7001,11 @@ Prefab:
     - target: {fileID: 4000013831864008, guid: 2e09674b44ad86f4083484bd023c4165, type: 2}
       propertyPath: m_LocalScale.z
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000012740054004, guid: 2e09674b44ad86f4083484bd023c4165,
+        type: 2}
+      propertyPath: updateIntervalPerSecond
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2e09674b44ad86f4083484bd023c4165, type: 2}
@@ -10990,6 +11005,11 @@ Prefab:
       propertyPath: waypointNodes.Array.data[5]
       value: 
       objectReference: {fileID: 347918460}
+    - target: {fileID: 114000012740054004, guid: 2e09674b44ad86f4083484bd023c4165,
+        type: 2}
+      propertyPath: updateIntervalPerSecond
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2e09674b44ad86f4083484bd023c4165, type: 2}
   m_IsPrefabParent: 0
@@ -14157,7 +14177,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a10f19edddaad549af24cf4eec269b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  updateIntervalPerSecond: 20
+  updateIntervalPerSecond: 5
   waypointNodes:
   - {fileID: 1549028159}
   - {fileID: 1491010298}
@@ -17465,6 +17485,11 @@ Prefab:
       propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114000012740054004, guid: 2e09674b44ad86f4083484bd023c4165,
+        type: 2}
+      propertyPath: updateIntervalPerSecond
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2e09674b44ad86f4083484bd023c4165, type: 2}
   m_IsPrefabParent: 0
@@ -17807,7 +17832,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a10f19edddaad549af24cf4eec269b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  updateIntervalPerSecond: 22
+  updateIntervalPerSecond: 5
   waypointNodes:
   - {fileID: 1007175062}
   - {fileID: 807108857}
@@ -18663,7 +18688,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a10f19edddaad549af24cf4eec269b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  updateIntervalPerSecond: 20
+  updateIntervalPerSecond: 5
   waypointNodes:
   - {fileID: 1327494211}
   - {fileID: 1878520711}
@@ -19845,6 +19870,11 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114000012740054004, guid: 2e09674b44ad86f4083484bd023c4165,
+        type: 2}
+      propertyPath: updateIntervalPerSecond
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2e09674b44ad86f4083484bd023c4165, type: 2}
   m_IsPrefabParent: 0
@@ -20094,6 +20124,11 @@ Prefab:
     - target: {fileID: 4000013831864008, guid: 2e09674b44ad86f4083484bd023c4165, type: 2}
       propertyPath: m_LocalScale.z
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000012740054004, guid: 2e09674b44ad86f4083484bd023c4165,
+        type: 2}
+      propertyPath: updateIntervalPerSecond
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2e09674b44ad86f4083484bd023c4165, type: 2}
@@ -24745,6 +24780,11 @@ Prefab:
       propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114000012740054004, guid: 2e09674b44ad86f4083484bd023c4165,
+        type: 2}
+      propertyPath: updateIntervalPerSecond
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2e09674b44ad86f4083484bd023c4165, type: 2}
   m_IsPrefabParent: 0
@@ -25103,7 +25143,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a10f19edddaad549af24cf4eec269b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  updateIntervalPerSecond: 22
+  updateIntervalPerSecond: 5
   waypointNodes:
   - {fileID: 119090088}
   - {fileID: 1110191209}
@@ -33838,6 +33878,11 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114000012740054004, guid: 2e09674b44ad86f4083484bd023c4165,
+        type: 2}
+      propertyPath: updateIntervalPerSecond
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2e09674b44ad86f4083484bd023c4165, type: 2}
   m_IsPrefabParent: 0
@@ -35531,6 +35576,11 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114000012740054004, guid: 2e09674b44ad86f4083484bd023c4165,
+        type: 2}
+      propertyPath: updateIntervalPerSecond
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2e09674b44ad86f4083484bd023c4165, type: 2}
   m_IsPrefabParent: 0
@@ -36000,7 +36050,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a10f19edddaad549af24cf4eec269b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  updateIntervalPerSecond: 22
+  updateIntervalPerSecond: 5
   waypointNodes:
   - {fileID: 463546589}
   - {fileID: 1638181851}
@@ -39089,6 +39139,11 @@ Prefab:
     - target: {fileID: 4000013522354334, guid: 2e09674b44ad86f4083484bd023c4165, type: 2}
       propertyPath: m_LocalPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000012740054004, guid: 2e09674b44ad86f4083484bd023c4165,
+        type: 2}
+      propertyPath: updateIntervalPerSecond
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2e09674b44ad86f4083484bd023c4165, type: 2}
@@ -43214,6 +43269,11 @@ Prefab:
       propertyPath: waypointNodes.Array.data[5]
       value: 
       objectReference: {fileID: 1982605437}
+    - target: {fileID: 114000012740054004, guid: 2e09674b44ad86f4083484bd023c4165,
+        type: 2}
+      propertyPath: updateIntervalPerSecond
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2e09674b44ad86f4083484bd023c4165, type: 2}
   m_IsPrefabParent: 0
@@ -44514,6 +44574,11 @@ Prefab:
       propertyPath: waypointNodes.Array.data[4]
       value: 
       objectReference: {fileID: 2035668191}
+    - target: {fileID: 114000012740054004, guid: 2e09674b44ad86f4083484bd023c4165,
+        type: 2}
+      propertyPath: updateIntervalPerSecond
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2e09674b44ad86f4083484bd023c4165, type: 2}
   m_IsPrefabParent: 0
@@ -46535,6 +46600,11 @@ Prefab:
     - target: {fileID: 4000013831864008, guid: 2e09674b44ad86f4083484bd023c4165, type: 2}
       propertyPath: m_LocalScale.z
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000012740054004, guid: 2e09674b44ad86f4083484bd023c4165,
+        type: 2}
+      propertyPath: updateIntervalPerSecond
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2e09674b44ad86f4083484bd023c4165, type: 2}
