@@ -24,7 +24,7 @@ public class Node
 [System.Serializable]
 public class WaypointManager : MonoBehaviour {
 	
-	[Range(10,60)] public int updateIntervalPerSecond = 20;
+	[Range(1,60)] public int updateIntervalPerSecond = 20;
 	[SerializeField]  public List<WaypointNode> waypointNodes = new List<WaypointNode>();
 	[SerializeField] private List<WaypointAgent> objectToMove = new List<WaypointAgent>();
 
