@@ -9,18 +9,18 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1000011272659682}
+  m_RootGameObject: {fileID: 1000013000269920}
   m_IsPrefabParent: 1
---- !u!1 &1000010547109920
+--- !u!1 &1000012480016612
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
   m_Component:
-  - 4: {fileID: 4000010675135980}
-  - 33: {fileID: 33000011249292932}
-  - 23: {fileID: 23000011905681558}
+  - 4: {fileID: 4000010657674972}
+  - 33: {fileID: 33000013697539622}
+  - 23: {fileID: 23000010804473060}
   m_Layer: 0
   m_Name: Mesh1_Group1_Model
   m_TagString: Untagged
@@ -28,54 +28,54 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &1000011272659682
+--- !u!1 &1000013000269920
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
   m_Component:
-  - 4: {fileID: 4000010950741734}
+  - 4: {fileID: 4000011514559796}
   m_Layer: 0
-  m_Name: roadTile_087 (2)
+  m_Name: PedestrianCrossover
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4000010675135980
+--- !u!4 &4000010657674972
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000010547109920}
+  m_GameObject: {fileID: 1000012480016612}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
-  m_Father: {fileID: 4000010950741734}
+  m_Father: {fileID: 4000011514559796}
   m_RootOrder: 0
---- !u!4 &4000010950741734
+--- !u!4 &4000011514559796
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000011272659682}
+  m_GameObject: {fileID: 1000013000269920}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
-  - {fileID: 4000010675135980}
+  - {fileID: 4000010657674972}
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!23 &23000011905681558
+--- !u!23 &23000010804473060
 MeshRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000010547109920}
+  m_GameObject: {fileID: 1000012480016612}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -84,7 +84,8 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_Materials:
   - {fileID: 2100000, guid: acebd6c89b9c24549818921f49aba5a2, type: 2}
-  - {fileID: 2100000, guid: 9236a0d2d41ce5542b0e1761b09858a2, type: 2}
+  - {fileID: 2100000, guid: 0daccd4389215804d85bcd937d384d53, type: 2}
+  - {fileID: 2100000, guid: db474f57f3655864285a5d49103c1099, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_ProbeAnchor: {fileID: 0}
@@ -100,10 +101,10 @@ MeshRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
---- !u!33 &33000011249292932
+--- !u!33 &33000013697539622
 MeshFilter:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000010547109920}
-  m_Mesh: {fileID: 4300000, guid: 407a14f5d489eef408e107be10439d90, type: 3}
+  m_GameObject: {fileID: 1000012480016612}
+  m_Mesh: {fileID: 4300000, guid: bbe73deae0319f643af6b89913b1031b, type: 3}
