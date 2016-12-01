@@ -32,8 +32,6 @@ public class CarController : MonoBehaviour, IMovingEntity
     [SerializeField]
     private CarDriveType m_CarDriveType = CarDriveType.FourWheelDrive;
     [SerializeField]
-    private WheelCollider[] m_WheelColliders = new WheelCollider[4];
-    [SerializeField]
     private GameObject[] m_WheelMeshes = new GameObject[4];
     [SerializeField]
     private WheelEffects[] m_WheelEffects = new WheelEffects[4];

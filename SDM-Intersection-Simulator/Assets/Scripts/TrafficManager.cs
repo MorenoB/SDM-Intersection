@@ -77,7 +77,13 @@ public class TrafficManager : Singleton<TrafficManager>
         }
     }
 
-    private Client client;
+    private Client ClientInstance
+    {
+        get
+        {
+            return Client.Instance;
+        }
+    }
 
     public void Start()
     {
@@ -85,8 +91,9 @@ public class TrafficManager : Singleton<TrafficManager>
 
         trafficLights = FindObjectsOfType<Trafficlight>().ToList();
 
-        client = GetComponent<Client>();
         SetAllTrafficLights(Trafficlight.eTrafficState.RED);
+
+        ClientInstance.StartClient();
     }
 
     private void PopulateTrafficLanes()
@@ -199,7 +206,7 @@ public class TrafficManager : Singleton<TrafficManager>
 
 
         //Send update to controller
-        client.SendStateData();
+        ClientInstance.SendStateData();
     }
 
     public void SetTrafficLightState(int id, Trafficlight.eTrafficState newTrafficLightState)

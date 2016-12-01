@@ -2,8 +2,11 @@
 using System.Collections;
 using System;
 
-public class Client : MonoBehaviour
+public class Client : Singleton<Client>
 {
+    public bool dontDestroyOnLoad;
+
+    [Header("Configurable connection info")]
     public string address = "localhost";
     public int port = 8080;
     public string optionalWebhook = "Laputa";
@@ -11,7 +14,19 @@ public class Client : MonoBehaviour
     private WebSocket webSocket;
     private int lastNumber = -1;
 
-    IEnumerator Start()
+    private void Start()
+    {
+        if(dontDestroyOnLoad)
+            DontDestroyOnLoad(this);
+    }
+
+
+    public void StartClient()
+    {
+        StartCoroutine(ClientLoop());
+    }
+
+    private IEnumerator ClientLoop()
     {
         webSocket = new WebSocket(new Uri("ws://" + address + ":" + port + "/" + optionalWebhook));
         yield return StartCoroutine(webSocket.Connect());
@@ -35,6 +50,7 @@ public class Client : MonoBehaviour
 
     private void Update()
     {
+        //Force sending of state data when key U is pressed.
         if (Input.GetKeyDown(KeyCode.U))
         {
             SendStateData();
@@ -43,11 +59,13 @@ public class Client : MonoBehaviour
 
     public void SendStateData()
     {
+        if (webSocket == null)
+        {
+            Debug.LogError("Unable to send data, client was not set up or does not have an active connection!");
+            return;
+        }
 
         JSONObject j = new JSONObject(JSONObject.Type.OBJECT);
-        //array
-       // JSONObject arr = new JSONObject(JSONObject.Type.ARRAY);
-        //j.Add(arr);
 
         for (int i = 0; i < TrafficManager.Instance.Trafficlights.Count; i++)
         {

@@ -1,8 +1,9 @@
 ﻿using UnityEngine;
-using System.Collections;
 
-using UnityEngine;
+#if UNITY_EDITOR
 using UnityEditor;
+#endif
+
 using System.Collections.Generic;
 // CopyComponents - by Michael L. Croswell for Colorado Game Coders, LLC
 // March 2010

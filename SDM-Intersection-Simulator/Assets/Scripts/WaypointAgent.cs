@@ -41,7 +41,6 @@ public class WaypointAgent : MonoBehaviour {
 
 	private IMovingEntity movingEntity;
 	private bool waypointSystemActivated;
-	private bool hasLeftLane = false;
 
 	///
 	[SerializeField] protected WaypointManager m_waypointManager;
@@ -91,8 +90,6 @@ public class WaypointAgent : MonoBehaviour {
 
 	public void ResetWaypointTargetToFirst()
 	{
-		hasLeftLane = false;
-
 		currentIndex = 0;
 
 		if (m_waypointManager == null) return;
@@ -180,7 +177,6 @@ public class WaypointAgent : MonoBehaviour {
 
 			AssignNextTrafficlight();
 
-			hasLeftLane = true;
 			TrafficManager.Instance.DecreaseNumberOfCarsInLaneByOne(TrafficLaneId);
 		}
 	}
