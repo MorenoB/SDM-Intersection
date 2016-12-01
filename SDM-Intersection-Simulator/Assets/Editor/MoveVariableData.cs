@@ -13,11 +13,11 @@ public class MoveVariableData : EditorWindow
     {
         if (GUILayout.Button("MoveData"))
         {
-            TrafficManager[] dts = Resources.FindObjectsOfTypeAll<TrafficManager>();
+            /*TrafficManager[] dts = Resources.FindObjectsOfTypeAll<TrafficManager>();
             foreach (TrafficManager dt in dts)
             {
                 //dt.carLanes = dt.trafficLanes;
-            }
+            }*/
         }
     }
 }
