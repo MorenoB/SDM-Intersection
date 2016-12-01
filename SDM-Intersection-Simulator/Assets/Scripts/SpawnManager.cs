@@ -32,10 +32,12 @@ public class SpawnManager : MonoBehaviour
     private EZObjectPool busObjectPool;
     private EZObjectPool pedestrianObjectPool;
 
+    //Random spawning loop bools
     private bool randomCarSpawningLoopActive;
     private bool randomBicycleSpawningLoopActive;
     private bool randomBusSpawningLoopActive;
     private bool randomPedestrianSpawningLoopActive;
+    private bool randomTrainSpawningLoopActive;
 
 
     void Awake()
@@ -137,6 +139,14 @@ public class SpawnManager : MonoBehaviour
                     SpawnObject(SpawnType.PEDESTRIAN, randomPedestrianLane.id);
             }
 
+            if (randomTrainSpawningLoopActive)
+            {
+                TrafficLaneData randomTrainLane = TrafficManager.Instance.GetLane(SpawnType.TRAIN, maximumTrainsInLane);
+
+                if(randomTrainLane!= null)
+                    SpawnObject(SpawnType.TRAIN, randomTrainLane.id);
+            }
+
 
             yield return new WaitForSeconds(spawnRate);
         }
@@ -171,17 +181,10 @@ public class SpawnManager : MonoBehaviour
             Debug.Log("Random pedestrian loop is " + randomPedestrianSpawningLoopActive);
         }
 
-        if (Input.GetKeyDown(KeyCode.J))
+        if (Input.GetKeyDown(KeyCode.O))
         {
-            TrafficLaneData randomTrainLane = TrafficManager.Instance.GetLane(SpawnType.TRAIN, maximumTrainsInLane);
-
-            if(randomTrainLane == null)
-            {
-                Debug.LogError("No available train lanes");
-                return;
-            }
-
-            SpawnObject(SpawnType.TRAIN, randomTrainLane.id);
+            randomTrainSpawningLoopActive = !randomTrainSpawningLoopActive;
+            Debug.Log("Random train loop is " + randomTrainSpawningLoopActive);
         }
     }
 }
