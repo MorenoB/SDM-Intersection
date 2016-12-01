@@ -21618,7 +21618,6 @@ GameObject:
   - 4: {fileID: 1220868760}
   - 114: {fileID: 1220868759}
   - 114: {fileID: 1220868761}
-  - 114: {fileID: 1220868762}
   m_Layer: 0
   m_Name: TrafficManager
   m_TagString: Untagged
@@ -21867,20 +21866,6 @@ MonoBehaviour:
   busPrefab: {fileID: 1000012383701126, guid: 704494dd6ae1d544b9c4df84b0237cdf, type: 2}
   pedestrianPrefab: {fileID: 1000012109684040, guid: 360bd563c6e93554181123b772324fd2,
     type: 2}
---- !u!114 &1220868762
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1220868758}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 958c777daaa2b5047885d910a22e1ff0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  address: 0.tcp.ngrok.io
-  port: 17672
-  optionalWebhook: 
 --- !u!114 &1225153337 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114000011035748420, guid: 6f1598eb9de56f446b4773465932d8bc,
