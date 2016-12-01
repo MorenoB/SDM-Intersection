@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System;
+using System.Collections.Generic;
 
 public class Client : Singleton<Client>
 {
@@ -12,7 +13,6 @@ public class Client : Singleton<Client>
     public string optionalWebhook = "Laputa";
 
     private WebSocket webSocket;
-    private int lastNumber = -1;
 
     private void Start()
     {
@@ -87,56 +87,56 @@ public class Client : Singleton<Client>
         Send(encodedString);
     }
 
+    private void HandleRecievedArrayObject(JSONObject jsonObj)
+    {
+        int trafficLightId = -1;
+        string trafficState = "";
+
+        if(!jsonObj.GetField(ref trafficLightId, "trafficLight"))
+        {
+            Debug.LogError("Unable to retrieve trafficLight id integer! data : " + jsonObj.ToString());
+            return;
+        }
+        if (!jsonObj.GetField(ref trafficState, "status"))
+        {
+            Debug.LogError("Unable to retrieve status! data : " + jsonObj.ToString());
+            return;
+        }
+
+        switch (trafficState)
+        {
+            case "green":
+                TrafficManager.Instance.SetTrafficLightState(trafficLightId, Trafficlight.eTrafficState.GREEN);
+                break;
+
+            case "orange":
+                TrafficManager.Instance.SetTrafficLightState(trafficLightId, Trafficlight.eTrafficState.ORANGE);
+                break;
+
+            case "yellow":
+                Debug.LogWarning("Recieved 'Yellow' instead of 'Orange'!");
+                TrafficManager.Instance.SetTrafficLightState(trafficLightId, Trafficlight.eTrafficState.ORANGE);
+                break;
+
+            case "red":
+                TrafficManager.Instance.SetTrafficLightState(trafficLightId, Trafficlight.eTrafficState.RED);
+                break;
+        }
+    }
+
     private void DecodeJSON(string incomingMsg)
     {
         JSONObject obj = new JSONObject(incomingMsg);
-        switch (obj.type)
+
+        for (int i = 0; i < obj.list.Count; i++)
         {
-            case JSONObject.Type.OBJECT:
-                for (int i = 0; i < obj.list.Count; i++)
-                {
-                    JSONObject j = obj.list[i];
-                    DecodeJSON(j.ToString());
-                }
-                break;
-            case JSONObject.Type.ARRAY:
-                for (int i = 0; i < obj.list.Count; i++)
-                {
-                    JSONObject j = obj.list[i];
-                    DecodeJSON(j.ToString());
-                }
-                break;
-            case JSONObject.Type.STRING:
-                switch (obj.str)
-                {
-                    case "green":
-                        TrafficManager.Instance.SetTrafficLightState(lastNumber, Trafficlight.eTrafficState.GREEN);
-                        break;
-
-                    case "orange":
-                        TrafficManager.Instance.SetTrafficLightState(lastNumber, Trafficlight.eTrafficState.ORANGE);
-                        break;
-
-                    case "yellow":
-                        Debug.LogWarning("Recieved 'Yellow' instead of 'Orange'!");
-                        TrafficManager.Instance.SetTrafficLightState(lastNumber, Trafficlight.eTrafficState.ORANGE);
-                        break;
-
-                    case "red":
-                        TrafficManager.Instance.SetTrafficLightState(lastNumber, Trafficlight.eTrafficState.RED);
-                        break;
-                }
-                break;
-            case JSONObject.Type.NUMBER:
-
-                lastNumber = (int)obj.n;
-
-                break;
-            case JSONObject.Type.BOOL:
-                break;
-            case JSONObject.Type.NULL:
-                break;
-
+            List<JSONObject> arrayInsideJsonData = obj.list[i].list;
+            for (int j = 0; j < arrayInsideJsonData.Count; j++)
+            {
+                JSONObject jsonTrafficlightDataString = arrayInsideJsonData[j];
+                HandleRecievedArrayObject(jsonTrafficlightDataString);
+            }
+          
         }
     }
 
@@ -146,7 +146,7 @@ public class Client : Singleton<Client>
             return;
 
         webSocket.SendString(message);
-        Debug.Log("Sent " + message);
+        //Debug.Log("Sent " + message);
     }
 }
 
