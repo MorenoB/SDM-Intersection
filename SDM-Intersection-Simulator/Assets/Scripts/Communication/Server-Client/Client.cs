@@ -12,6 +12,9 @@ public class Client : Singleton<Client>
     public int port = 8080;
     public string optionalWebhook = "Laputa";
 
+    [Header("Optional configuration.")]
+    public bool onlySendStatesWithACount;
+
     private WebSocket webSocket;
 
     private void Start()
@@ -71,8 +74,8 @@ public class Client : Singleton<Client>
         {
             Trafficlight trafficlight = TrafficManager.Instance.Trafficlights[i];
 
-            //Ignore trafficlights who got count at 0.
-            if (trafficlight.WaitingAgents.Count < 1)
+            //Ignore trafficlights who got count at 0 if 'onlySendStatesWithACount' is checked.
+            if (onlySendStatesWithACount && trafficlight.WaitingAgents.Count < 1)
                 continue;
 
             JSONObject arrayObject = new JSONObject();
@@ -146,7 +149,7 @@ public class Client : Singleton<Client>
             return;
 
         webSocket.SendString(message);
-        //Debug.Log("Sent " + message);
+        Debug.Log("Sent " + message);
     }
 }
 
