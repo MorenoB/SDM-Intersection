@@ -19,6 +19,10 @@ public class FreezeInContactWithEntities : MonoBehaviour
             Debug.LogError("No waypoint agent is assigned to this object " + name);
             return;
         }
+
+        //Don't freeze in place when not waiting for a trafficlight.
+        if (waypointAgent.WaitingForTrafficLight == null)
+            return;
             
         
         if (other.CompareTag("MovingEntity"))
