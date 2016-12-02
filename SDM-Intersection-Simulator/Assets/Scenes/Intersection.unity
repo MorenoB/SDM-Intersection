@@ -27490,6 +27490,14 @@ Prefab:
       propertyPath: m_Name
       value: TrafficLight Pedestrian (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1000013406197684, guid: 6f1598eb9de56f446b4773465932d8bc, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000013720757196, guid: 6f1598eb9de56f446b4773465932d8bc, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6f1598eb9de56f446b4773465932d8bc, type: 2}
   m_IsPrefabParent: 0
