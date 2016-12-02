@@ -423,7 +423,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000014036010326}
-  - 95: {fileID: 95000014238572158}
   m_Layer: 10
   m_Name: bus (1)
   m_TagString: Untagged
@@ -2573,23 +2572,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
---- !u!95 &95000014238572158
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000012647045832}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 7089f119f850b514c89b3e4f68025a29, type: 3}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114000010301371350
 MonoBehaviour:
   m_ObjectHideFlags: 1
