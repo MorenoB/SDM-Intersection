@@ -13,16 +13,24 @@ public class SpawnManager : MonoBehaviour
     public int maximumTrainsInLane = 1;
     public int maximumPedestriansInLane = 5;
 
-
     [Header("Prefab settings.")]
-    [Range(1, 500)]
-    public int poolSize = 200;
-
     public GameObject carPrefab = null;
     public GameObject bicyclePrefab = null;
     public GameObject trainPrefab = null;
     public GameObject busPrefab = null;
     public GameObject pedestrianPrefab = null;
+
+    [Header("Pool sizes.")]
+    [Range(1, 500)]
+    public int carPoolsize = 200;
+    [Range(1, 500)]
+    public int bicyclePoolsize = 200;
+    [Range(1, 500)]
+    public int trainPoolsize = 200;
+    [Range(1, 500)]
+    public int busPoolsize = 200;
+    [Range(1, 500)]
+    public int pedestrianPoolsize = 200;
 
     public enum SpawnType { CAR, TRAIN, PEDESTRIAN, BICYCLE, BUS };
 
@@ -42,11 +50,11 @@ public class SpawnManager : MonoBehaviour
 
     void Awake()
     {
-        carObjectPool = EZObjectPool.CreateObjectPool(carPrefab, "Cars", poolSize, true, true, true);
-        bicycleObjectPool = EZObjectPool.CreateObjectPool(bicyclePrefab, "Bicycles", poolSize, true, true, true);
-        trainObjectPool = EZObjectPool.CreateObjectPool(trainPrefab, "Trains", poolSize, true, true, true);
-        busObjectPool = EZObjectPool.CreateObjectPool(busPrefab, "Busses", poolSize, true, true, true);
-        pedestrianObjectPool = EZObjectPool.CreateObjectPool(pedestrianPrefab, "Pedestrians", poolSize, true, true, true);
+        carObjectPool = EZObjectPool.CreateObjectPool(carPrefab, "Cars", carPoolsize, true, true, true);
+        bicycleObjectPool = EZObjectPool.CreateObjectPool(bicyclePrefab, "Bicycles", bicyclePoolsize, true, true, true);
+        trainObjectPool = EZObjectPool.CreateObjectPool(trainPrefab, "Trains", trainPoolsize, true, true, true);
+        busObjectPool = EZObjectPool.CreateObjectPool(busPrefab, "Busses", busPoolsize, true, true, true);
+        pedestrianObjectPool = EZObjectPool.CreateObjectPool(pedestrianPrefab, "Pedestrians", pedestrianPoolsize, true, true, true);
     }
 
     private void Start()
