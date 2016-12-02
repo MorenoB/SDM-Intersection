@@ -87,12 +87,15 @@ public class TrafficManager : Singleton<TrafficManager>
 
     public void Start()
     {
+        //Update the cachedTrafficLanes list, used for performance reasons.
         PopulateTrafficLanes();
 
+        //Caching of trafficLights
         trafficLights = FindObjectsOfType<Trafficlight>().ToList();
+        
 
+        //Set all trafficLights to red and start client
         SetAllTrafficLights(Trafficlight.eTrafficState.RED);
-
         ClientInstance.StartClient();
     }
 
@@ -114,35 +117,12 @@ public class TrafficManager : Singleton<TrafficManager>
                 Trafficlight trafficLight = TrafficLanes[i].trafficLights[j];
                 if (trafficLight == null) continue;
 
-                SetTrafficLightState(trafficLight.Id, newState);
+                SetTrafficlightStateById(trafficLight.Id, newState);
             }
 
         }
     }
 
-    /// <summary>
-    /// Will do the lazy work for me in the editor :p
-    /// </summary>
-    public void OnValidate()
-    {
-        for (int i = 0; i < TrafficLanes.Count; i++)
-        {
-            TrafficLaneData trafficLane = TrafficLanes[i];
-            if (trafficLane == null) continue;
-
-            if (trafficLane.trafficLights.Count < 1) return;
-
-            if (trafficLane.trafficLights[0] == null) continue;
-
-            trafficLane.name = trafficLane.id + "(" + trafficLane.trafficLights[0].transform.parent.name + ")";
-        }
-    }
-
-    /// <summary>
-    /// Used for initializing entities on the map & configuring the correct lane data & Waypoint data.
-    /// </summary>
-    /// <param name="laneId"></param>
-    /// <param name="objectToSpawn"></param>
     public void InitEntityAtLane(int laneId, GameObject objectToSpawn)
     {
         TrafficLaneData laneData = FindLaneDataById(laneId);
@@ -168,9 +148,6 @@ public class TrafficManager : Singleton<TrafficManager>
             return;
         }
 
-        Transform spawnLocation = waypointManager.waypointNodes[0].transform;
-
-        objectToSpawn.transform.rotation = spawnLocation.rotation;
 
         WaypointAgent waypointAgent = objectToSpawn.GetComponent<WaypointAgent>();
 
@@ -180,36 +157,44 @@ public class TrafficManager : Singleton<TrafficManager>
             return;
         }
 
+        //Set spawn location and rotation
+        Transform spawnLocation = waypointManager.waypointNodes[0].transform;
+        objectToSpawn.transform.rotation = spawnLocation.rotation;
         objectToSpawn.transform.position = spawnLocation.position;
 
         //Assign waypoint systems.
         waypointAgent.WaypointSystem = waypointManager;
 
+        //Reset waypointsystem
         waypointAgent.ResetWaypointTargetToFirst();
 
-        //Notify the lane data
+        //Update the lane data, add this waypointagent to the lane data list.
         laneData.AddWaypointAgent(waypointAgent);
-
         laneData.NumberOfEntitiesInLane++;
 
-        //Add updated lane data object to the waypointagent
+        //Assign traffic lane id to the waypointagent
         waypointAgent.TrafficLaneId = laneData.id;
 
+
+        //Add any trafficlights assigned from the lane to the waypoint trafficlight queue.
+        //This is the order of trafficlights the waypoint agent will drive through
         for (int i = 0; i < laneData.trafficLights.Count; i++)
         {
             waypointAgent.TrafficlightQueue.Enqueue(laneData.trafficLights[i]);
         }
-
         waypointAgent.AssignNextTrafficlight();
 
+
+
+        //When finished configuring, activate the waypoint system.
         waypointAgent.WaypointSystemActivated = true;
 
 
-        //Send update to controller
+        //Send update to controller with newest state data.
         ClientInstance.SendStateData();
     }
 
-    public void SetTrafficLightState(int id, Trafficlight.eTrafficState newTrafficLightState)
+    public void SetTrafficlightStateById(int id, Trafficlight.eTrafficState newTrafficLightState)
     {
         for (int i = 0; i < Trafficlights.Count; i++)
         {
@@ -236,7 +221,7 @@ public class TrafficManager : Singleton<TrafficManager>
         laneData.NumberOfEntitiesInLane--;
     }
 
-    public TrafficLaneData GetLane(SpawnManager.SpawnType entityType, int maxNrOfEnttitiesInLane = -1)
+    public TrafficLaneData GetRandomLane(SpawnManager.SpawnType entityType, int maxNrOfEnttitiesInLane = -1)
     {
         int randomIndex = 0;
         TrafficLaneData trafficLane = null;
@@ -300,6 +285,10 @@ public class TrafficManager : Singleton<TrafficManager>
         return null;
     }
 
+
+    //Following block will not be compiled when it is a production build.
+    //These are debug keyboard keys which will force all trafficlights to a certain state.
+#if UNITY_EDITOR
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.F5))
@@ -316,4 +305,5 @@ public class TrafficManager : Singleton<TrafficManager>
         }
 
     }
+#endif
 }

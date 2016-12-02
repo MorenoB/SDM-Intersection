@@ -81,6 +81,18 @@ public class Trafficlight : MonoBehaviour {
 
     private void EnableLightStateObject(eTrafficState trafficState)
     {
+        //Firstly disable all objects
+        for (int i = 0; i < LightStates.Count; i++)
+        {
+            TrafficLightStateObject obj = LightStates[i];
+            if (obj == null) continue;
+
+            if (obj.gameObject.activeSelf)
+                obj.gameObject.SetActive(false);
+
+        }
+
+        //Next, enable the specific object.
         for (int i = 0; i < LightStates.Count; i++)
         {
             TrafficLightStateObject obj = LightStates[i];
@@ -91,11 +103,9 @@ public class Trafficlight : MonoBehaviour {
                 if (!obj.gameObject.activeSelf)
                     obj.gameObject.SetActive(true);
 
-                continue;
+                break;
             }
 
-            if(obj.gameObject.activeSelf)
-                obj.gameObject.SetActive(false);
         }
     } 
 

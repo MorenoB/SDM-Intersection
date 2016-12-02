@@ -13,16 +13,24 @@ public class SpawnManager : MonoBehaviour
     public int maximumTrainsInLane = 1;
     public int maximumPedestriansInLane = 5;
 
-
     [Header("Prefab settings.")]
-    [Range(1, 500)]
-    public int poolSize = 200;
-
     public GameObject carPrefab = null;
     public GameObject bicyclePrefab = null;
     public GameObject trainPrefab = null;
     public GameObject busPrefab = null;
     public GameObject pedestrianPrefab = null;
+
+    [Header("Pool sizes.")]
+    [Range(1, 500)]
+    public int carPoolsize = 200;
+    [Range(1, 500)]
+    public int bicyclePoolsize = 200;
+    [Range(1, 500)]
+    public int trainPoolsize = 200;
+    [Range(1, 500)]
+    public int busPoolsize = 200;
+    [Range(1, 500)]
+    public int pedestrianPoolsize = 200;
 
     public enum SpawnType { CAR, TRAIN, PEDESTRIAN, BICYCLE, BUS };
 
@@ -42,11 +50,11 @@ public class SpawnManager : MonoBehaviour
 
     void Awake()
     {
-        carObjectPool = EZObjectPool.CreateObjectPool(carPrefab, "Cars", poolSize, true, true, true);
-        bicycleObjectPool = EZObjectPool.CreateObjectPool(bicyclePrefab, "Bicycles", poolSize, true, true, true);
-        trainObjectPool = EZObjectPool.CreateObjectPool(trainPrefab, "Trains", poolSize, true, true, true);
-        busObjectPool = EZObjectPool.CreateObjectPool(busPrefab, "Busses", poolSize, true, true, true);
-        pedestrianObjectPool = EZObjectPool.CreateObjectPool(pedestrianPrefab, "Pedestrians", poolSize, true, true, true);
+        carObjectPool = EZObjectPool.CreateObjectPool(carPrefab, "Cars", carPoolsize, true, true, true);
+        bicycleObjectPool = EZObjectPool.CreateObjectPool(bicyclePrefab, "Bicycles", bicyclePoolsize, true, true, true);
+        trainObjectPool = EZObjectPool.CreateObjectPool(trainPrefab, "Trains", trainPoolsize, true, true, true);
+        busObjectPool = EZObjectPool.CreateObjectPool(busPrefab, "Busses", busPoolsize, true, true, true);
+        pedestrianObjectPool = EZObjectPool.CreateObjectPool(pedestrianPrefab, "Pedestrians", pedestrianPoolsize, true, true, true);
     }
 
     private void Start()
@@ -107,7 +115,7 @@ public class SpawnManager : MonoBehaviour
         {
             if (randomCarSpawningLoopActive)
             {
-                TrafficLaneData randomCarLane = TrafficManager.Instance.GetLane(SpawnType.CAR, maximumCarsInLane);
+                TrafficLaneData randomCarLane = TrafficManager.Instance.GetRandomLane(SpawnType.CAR, maximumCarsInLane);
 
 
                 if (randomCarLane != null)                
@@ -117,7 +125,7 @@ public class SpawnManager : MonoBehaviour
 
             if(randomBicycleSpawningLoopActive)
             {
-                TrafficLaneData randomBicycleLane = TrafficManager.Instance.GetLane(SpawnType.BICYCLE, maximumBicyclesInLane);
+                TrafficLaneData randomBicycleLane = TrafficManager.Instance.GetRandomLane(SpawnType.BICYCLE, maximumBicyclesInLane);
 
                 if (randomBicycleLane != null)
                 SpawnObject(SpawnType.BICYCLE, randomBicycleLane.id);
@@ -125,7 +133,7 @@ public class SpawnManager : MonoBehaviour
 
             if(randomBusSpawningLoopActive)
             {
-                TrafficLaneData randomBusLane = TrafficManager.Instance.GetLane(SpawnType.BUS, maximumBussesInLane);
+                TrafficLaneData randomBusLane = TrafficManager.Instance.GetRandomLane(SpawnType.BUS, maximumBussesInLane);
 
                 if (randomBusLane != null)
                     SpawnObject(SpawnType.BUS, randomBusLane.id);
@@ -133,7 +141,7 @@ public class SpawnManager : MonoBehaviour
 
             if(randomPedestrianSpawningLoopActive)
             {
-                TrafficLaneData randomPedestrianLane = TrafficManager.Instance.GetLane(SpawnType.PEDESTRIAN, maximumPedestriansInLane);
+                TrafficLaneData randomPedestrianLane = TrafficManager.Instance.GetRandomLane(SpawnType.PEDESTRIAN, maximumPedestriansInLane);
 
                 if (randomPedestrianLane != null)
                     SpawnObject(SpawnType.PEDESTRIAN, randomPedestrianLane.id);
@@ -141,7 +149,7 @@ public class SpawnManager : MonoBehaviour
 
             if (randomTrainSpawningLoopActive)
             {
-                TrafficLaneData randomTrainLane = TrafficManager.Instance.GetLane(SpawnType.TRAIN, maximumTrainsInLane);
+                TrafficLaneData randomTrainLane = TrafficManager.Instance.GetRandomLane(SpawnType.TRAIN, maximumTrainsInLane);
 
                 if(randomTrainLane!= null)
                     SpawnObject(SpawnType.TRAIN, randomTrainLane.id);

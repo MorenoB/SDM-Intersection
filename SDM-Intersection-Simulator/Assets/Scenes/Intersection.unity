@@ -21858,7 +21858,6 @@ MonoBehaviour:
   maximumBussesInLane: 2
   maximumTrainsInLane: 1
   maximumPedestriansInLane: 5
-  poolSize: 200
   carPrefab: {fileID: 1000012056247804, guid: ce4f4dc93b737d94d88fa9987bf4f7d9, type: 2}
   bicyclePrefab: {fileID: 1000010461030740, guid: bb6f2cfce8ff6b249b77b04395eb2658,
     type: 2}
@@ -21867,6 +21866,11 @@ MonoBehaviour:
   busPrefab: {fileID: 1000012383701126, guid: 704494dd6ae1d544b9c4df84b0237cdf, type: 2}
   pedestrianPrefab: {fileID: 1000012109684040, guid: 360bd563c6e93554181123b772324fd2,
     type: 2}
+  carPoolsize: 100
+  bicyclePoolsize: 100
+  trainPoolsize: 10
+  busPoolsize: 10
+  pedestrianPoolsize: 100
 --- !u!114 &1225153337 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114000011035748420, guid: 6f1598eb9de56f446b4773465932d8bc,
@@ -27485,6 +27489,14 @@ Prefab:
     - target: {fileID: 1000013475274442, guid: 6f1598eb9de56f446b4773465932d8bc, type: 2}
       propertyPath: m_Name
       value: TrafficLight Pedestrian (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000013406197684, guid: 6f1598eb9de56f446b4773465932d8bc, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000013720757196, guid: 6f1598eb9de56f446b4773465932d8bc, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6f1598eb9de56f446b4773465932d8bc, type: 2}
