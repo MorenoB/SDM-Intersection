@@ -672,7 +672,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000011819752766}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.422, z: -1.2900009}
+  m_LocalPosition: {x: 0, y: 0.422, z: -1.617}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
@@ -726,7 +726,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000011774508238}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.561, z: 1.4500008}
+  m_LocalPosition: {x: 0, y: 0.561, z: 1.743}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
@@ -1794,7 +1794,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.6344483, y: 0.5, z: 1}
+  m_Size: {x: 1.25, y: 0.5, z: 0.25}
   m_Center: {x: 0.04206717, y: 0, z: 0}
 --- !u!65 &65000014148608876
 BoxCollider:
@@ -1806,7 +1806,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.6344483, y: 0.5, z: 1}
+  m_Size: {x: 1.6344483, y: 0.5, z: 0.5}
   m_Center: {x: 0.04206717, y: 0, z: 0}
 --- !u!82 &82000011934973768
 AudioSource:
@@ -2503,7 +2503,6 @@ MonoBehaviour:
   - {fileID: 146000012862769954}
   - {fileID: 146000013223049060}
   m_CarDriveType: 2
-  m_WheelColliders: []
   m_WheelMeshes:
   - {fileID: 1000011207494196}
   - {fileID: 1000013033560116}

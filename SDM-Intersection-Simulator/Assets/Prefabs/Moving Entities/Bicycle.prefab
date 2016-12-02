@@ -16925,7 +16925,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000011715232374}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.61, z: 1.6040001}
+  m_LocalPosition: {x: 0, y: 0.61, z: 2.07}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
@@ -17779,7 +17779,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000011034860628}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.61, z: -0.07}
+  m_LocalPosition: {x: 0, y: 0.61, z: -0.506}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
@@ -19753,7 +19753,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000010461030740}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.891206, y: 0.60000014, z: -5.1343155}
+  m_LocalPosition: {x: -13.58654, y: -11.1175785, z: -3.8217206}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
@@ -48283,7 +48283,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.24, y: 0.92, z: 1}
+  m_Size: {x: 0.24, y: 0.92, z: 0.25}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!65 &65000011306393528
 BoxCollider:
@@ -48319,7 +48319,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.24, y: 0.92, z: 1}
+  m_Size: {x: 0.24, y: 0.92, z: 0.25}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!108 &108000011279380526
 Light:
@@ -48474,7 +48474,6 @@ MonoBehaviour:
   backWheelColliders:
   - {fileID: 146000012299083734}
   m_CarDriveType: 2
-  m_WheelColliders: []
   m_WheelMeshes:
   - {fileID: 1000013784202946}
   - {fileID: 1000012546016048}
