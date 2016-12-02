@@ -106,20 +106,20 @@ public class Client : Singleton<Client>
         switch (trafficState)
         {
             case "green":
-                TrafficManager.Instance.SetTrafficLightState(trafficLightId, Trafficlight.eTrafficState.GREEN);
+                TrafficManager.Instance.SetTrafficlightStateById(trafficLightId, Trafficlight.eTrafficState.GREEN);
                 break;
 
             case "orange":
-                TrafficManager.Instance.SetTrafficLightState(trafficLightId, Trafficlight.eTrafficState.ORANGE);
+                TrafficManager.Instance.SetTrafficlightStateById(trafficLightId, Trafficlight.eTrafficState.ORANGE);
                 break;
 
             case "yellow":
                 Debug.LogWarning("Recieved 'Yellow' instead of 'Orange'!");
-                TrafficManager.Instance.SetTrafficLightState(trafficLightId, Trafficlight.eTrafficState.ORANGE);
+                TrafficManager.Instance.SetTrafficlightStateById(trafficLightId, Trafficlight.eTrafficState.ORANGE);
                 break;
 
             case "red":
-                TrafficManager.Instance.SetTrafficLightState(trafficLightId, Trafficlight.eTrafficState.RED);
+                TrafficManager.Instance.SetTrafficlightStateById(trafficLightId, Trafficlight.eTrafficState.RED);
                 break;
         }
     }

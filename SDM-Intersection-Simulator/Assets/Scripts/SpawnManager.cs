@@ -107,7 +107,7 @@ public class SpawnManager : MonoBehaviour
         {
             if (randomCarSpawningLoopActive)
             {
-                TrafficLaneData randomCarLane = TrafficManager.Instance.GetLane(SpawnType.CAR, maximumCarsInLane);
+                TrafficLaneData randomCarLane = TrafficManager.Instance.GetRandomLane(SpawnType.CAR, maximumCarsInLane);
 
 
                 if (randomCarLane != null)                
@@ -117,7 +117,7 @@ public class SpawnManager : MonoBehaviour
 
             if(randomBicycleSpawningLoopActive)
             {
-                TrafficLaneData randomBicycleLane = TrafficManager.Instance.GetLane(SpawnType.BICYCLE, maximumBicyclesInLane);
+                TrafficLaneData randomBicycleLane = TrafficManager.Instance.GetRandomLane(SpawnType.BICYCLE, maximumBicyclesInLane);
 
                 if (randomBicycleLane != null)
                 SpawnObject(SpawnType.BICYCLE, randomBicycleLane.id);
@@ -125,7 +125,7 @@ public class SpawnManager : MonoBehaviour
 
             if(randomBusSpawningLoopActive)
             {
-                TrafficLaneData randomBusLane = TrafficManager.Instance.GetLane(SpawnType.BUS, maximumBussesInLane);
+                TrafficLaneData randomBusLane = TrafficManager.Instance.GetRandomLane(SpawnType.BUS, maximumBussesInLane);
 
                 if (randomBusLane != null)
                     SpawnObject(SpawnType.BUS, randomBusLane.id);
@@ -133,7 +133,7 @@ public class SpawnManager : MonoBehaviour
 
             if(randomPedestrianSpawningLoopActive)
             {
-                TrafficLaneData randomPedestrianLane = TrafficManager.Instance.GetLane(SpawnType.PEDESTRIAN, maximumPedestriansInLane);
+                TrafficLaneData randomPedestrianLane = TrafficManager.Instance.GetRandomLane(SpawnType.PEDESTRIAN, maximumPedestriansInLane);
 
                 if (randomPedestrianLane != null)
                     SpawnObject(SpawnType.PEDESTRIAN, randomPedestrianLane.id);
@@ -141,7 +141,7 @@ public class SpawnManager : MonoBehaviour
 
             if (randomTrainSpawningLoopActive)
             {
-                TrafficLaneData randomTrainLane = TrafficManager.Instance.GetLane(SpawnType.TRAIN, maximumTrainsInLane);
+                TrafficLaneData randomTrainLane = TrafficManager.Instance.GetRandomLane(SpawnType.TRAIN, maximumTrainsInLane);
 
                 if(randomTrainLane!= null)
                     SpawnObject(SpawnType.TRAIN, randomTrainLane.id);
