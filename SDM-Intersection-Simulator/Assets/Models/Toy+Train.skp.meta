@@ -1,0 +1,1082 @@
+fileFormatVersion: 2
+guid: 831756f7a367e154b80d96ee20168f1f
+timeCreated: 1480950679
+licenseType: Free
+SketchUpImporter:
+  generateBackFace: 0
+  mergeCoplanarFaces: 0
+  selectedNodes: 000000000100000002000000030000000400000005000000060000000700000008000000090000000a0000000b0000000c0000000d0000000e0000000f000000100000001100000012000000130000001400000015000000160000001700000018000000190000001a0000001b0000001c0000001d0000001e0000001f000000200000002100000022000000230000002400000025000000260000002700000028000000290000002a0000002b0000002c0000002d0000002e0000002f000000300000003100000032000000330000003400000035000000360000003700000038000000390000003a0000003b0000003c0000003d0000003e0000003f000000400000004100000042000000430000004400000045000000460000004700000048000000490000004a0000004b0000004c0000004d0000004e0000004f000000500000005100000052000000530000005400000055000000560000005700000058000000590000005a0000005b0000005c0000005d0000005e0000005f000000600000006100000062000000630000006400000065000000660000006700000068000000690000006a0000006b0000006c0000006d0000006e0000006f000000700000007100000072000000730000007400000075000000760000007700000078000000790000007a0000007b0000007c0000007d0000007e0000007f000000800000008100000082000000830000008400000085000000860000008700000088000000890000008a0000008b0000008c0000008d0000008e0000008f000000900000009100000092000000930000009400000095000000960000009700000098000000990000009a0000009b0000009c0000009d0000009e0000009f000000a0000000a1000000a2000000a3000000a4000000a5000000a6000000a7000000a8000000a9000000aa000000ab000000ac000000ad000000ae000000af000000b0000000b1000000b2000000b3000000b4000000b5000000b6000000b7000000b8000000b9000000ba000000bb000000bc000000bd000000be000000bf000000c0000000c1000000c2000000c3000000c4000000c5000000c6000000c7000000c8000000c9000000ca000000cb000000cc000000cd000000ce000000cf000000d0000000d1000000d2000000d3000000d4000000d5000000d6000000d7000000d8000000d9000000da000000db000000dc000000dd000000de000000df000000e0000000e1000000e2000000e3000000e4000000e5000000e6000000e7000000e8000000e9000000ea000000eb000000ec000000ed000000ee000000ef000000f0000000f1000000f2000000f3000000f4000000f5000000f6000000f7000000f8000000f9000000fa000000fb000000fc000000fd000000fe000000ff000000000100000101000002010000030100000401000005010000060100000701000008010000090100000a0100000b0100000c0100000d0100000e0100000f010000100100001101000012010000130100001401000015010000160100001701000018010000190100001a0100001b0100001c0100001d0100001e0100001f010000200100002101000022010000230100002401000025010000260100002701000028010000290100002a0100002b0100002c0100002d0100002e0100002f010000300100003101000032010000330100003401000035010000360100003701000038010000390100003a0100003b0100003c0100003d0100003e0100003f010000400100004101000042010000430100004401000045010000460100004701000048010000490100004a0100004b0100004c0100004d0100004e0100004f010000500100005101000052010000530100005401000055010000560100005701000058010000590100005a0100005b0100005c0100005d0100005e0100005f010000600100006101000062010000630100006401000065010000660100006701000068010000690100006a0100006b0100006c0100006d0100006e0100006f010000700100007101000072010000730100007401000075010000760100007701000078010000790100007a0100007b0100007c0100007d0100007e0100007f010000800100008101000082010000830100008401000085010000860100008701000088010000890100008a0100008b0100008c0100008d0100008e0100008f010000900100009101000092010000930100009401000095010000960100009701000098010000990100009a0100009b0100009c0100009d0100009e0100009f010000a0010000a1010000a2010000a3010000a4010000a5010000a6010000a7010000a8010000a9010000aa010000ab010000ac010000ad010000ae010000af010000b0010000b1010000b2010000b3010000b4010000b5010000b6010000b7010000b8010000b9010000ba010000bb010000bc010000bd010000be010000bf010000c0010000c1010000c2010000c3010000c4010000c5010000c6010000c7010000c8010000c9010000ca010000cb010000cc010000cd010000ce010000cf010000
+  assetHash:
+    serializedVersion: 2
+    Hash: fe4b8f36988c407ddc903a46b06d0919
+  longitude: -105.283
+  latitude: 40.017
+  northCorrection: -0
+  fileUnit: 0
+  sketchUpImportData:
+    defaultCamera:
+      position: {x: 1.5092947, y: 0.58638847, z: -1.184471}
+      lookAt: {x: 0.9591476, y: 0.0116084935, z: 0.5539142}
+      up: {x: -0.09071168, y: 0.9537355, z: 0.2866357}
+      fov: 35
+      aspectRatio: 0
+      orthoSize: 1
+      isPerspective: 1
+    scenes: []
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: basic car truck mounts
+    100002: basic car truck mounts 1
+    100004: basic car truck mounts 2
+    100006: basic car truck mounts 3
+    100008: basic car truck mounts 4
+    100010: basic car truck mounts 5
+    100012: basic car truck mounts 6
+    100014: basic car truck mounts 7
+    100016: basic car truck wheel mounts
+    100018: basic car truck wheel mounts 1
+    100020: basic car truck wheel mounts 10
+    100022: basic car truck wheel mounts 11
+    100024: basic car truck wheel mounts 12
+    100026: basic car truck wheel mounts 13
+    100028: basic car truck wheel mounts 14
+    100030: basic car truck wheel mounts 15
+    100032: basic car truck wheel mounts 2
+    100034: basic car truck wheel mounts 3
+    100036: basic car truck wheel mounts 4
+    100038: basic car truck wheel mounts 5
+    100040: basic car truck wheel mounts 6
+    100042: basic car truck wheel mounts 7
+    100044: basic car truck wheel mounts 8
+    100046: basic car truck wheel mounts 9
+    100048: basic drive wheel mounts
+    100050: basic drive wheel mounts 1
+    100052: basic drive wheel mounts 2
+    100054: basic drive wheel mounts 3
+    100056: basic truck wheels
+    100058: basic truck wheels 1
+    100060: basic truck wheels 10
+    100062: basic truck wheels 11
+    100064: basic truck wheels 12
+    100066: basic truck wheels 13
+    100068: basic truck wheels 14
+    100070: basic truck wheels 15
+    100072: basic truck wheels 16
+    100074: basic truck wheels 17
+    100076: basic truck wheels 18
+    100078: basic truck wheels 19
+    100080: basic truck wheels 2
+    100082: basic truck wheels 20
+    100084: basic truck wheels 21
+    100086: basic truck wheels 22
+    100088: basic truck wheels 23
+    100090: basic truck wheels 24
+    100092: basic truck wheels 25
+    100094: basic truck wheels 26
+    100096: basic truck wheels 27
+    100098: basic truck wheels 28
+    100100: basic truck wheels 29
+    100102: basic truck wheels 3
+    100104: basic truck wheels 30
+    100106: basic truck wheels 31
+    100108: basic truck wheels 32
+    100110: basic truck wheels 33
+    100112: basic truck wheels 34
+    100114: basic truck wheels 35
+    100116: basic truck wheels 36
+    100118: basic truck wheels 37
+    100120: basic truck wheels 38
+    100122: basic truck wheels 39
+    100124: basic truck wheels 4
+    100126: basic truck wheels 40
+    100128: basic truck wheels 41
+    100130: basic truck wheels 42
+    100132: basic truck wheels 43
+    100134: basic truck wheels 5
+    100136: basic truck wheels 6
+    100138: basic truck wheels 7
+    100140: basic truck wheels 8
+    100142: basic truck wheels 9
+    100144: bax car door
+    100146: bax car door 1
+    100148: bax car door pull
+    100150: bax car door pull 1
+    100152: box car door rails-inside
+    100154: box car door rails-inside 1
+    100156: box car door rails-inside 2
+    100158: box car door rails-inside 3
+    100160: box car door rails-outside
+    100162: box car door rails-outside 1
+    100164: box car front/back
+    100166: box car front/back 1
+    100168: box car platform
+    100170: box car sides
+    100172: box car sides 1
+    100174: box car sides 2
+    100176: box car sides 3
+    100178: box car top
+    100180: box car top rail
+    100182: caboose end railing
+    100184: caboose end railing 1
+    100186: caboose front/back
+    100188: caboose front/back 1
+    100190: caboose lookout
+    100192: caboose lookout roof
+    100194: caboose platform
+    100196: caboose sides
+    100198: caboose sides 1
+    100200: caboose top
+    100202: coal car back
+    100204: coal car platform
+    100206: coal car sides
+    100208: coal car sides 1
+    100210: coal car truck mount
+    100212: coal car truck mount 1
+    100214: coupler pin
+    100216: coupler pin 1
+    100218: coupler pin 2
+    100220: coupler pin 3
+    100222: coupler pin 4
+    100224: coupler pin 5
+    100226: dump car box ends
+    100228: dump car box ends 1
+    100230: dump car box sides
+    100232: dump car box sides 1
+    100234: dump car coupler
+    100236: dump car coupler 1
+    100238: dump car coupler 2
+    100240: dump car coupler 3
+    100242: dump car coupler 4
+    100244: dump car ends
+    100246: dump car ends 1
+    100248: dump car pivot pin
+    100250: dump car pivot pin 1
+    100252: dump car platform
+    100254: flat car platform
+    100256: flat car posts
+    100258: flat car posts 1
+    100260: flat car posts 10
+    100262: flat car posts 11
+    100264: flat car posts 2
+    100266: flat car posts 3
+    100268: flat car posts 4
+    100270: flat car posts 5
+    100272: flat car posts 6
+    100274: flat car posts 7
+    100276: flat car posts 8
+    100278: flat car posts 9
+    100280: Group 1
+    100282: Group 101
+    100284: Group 102
+    100286: Group 103
+    100288: Group 11
+    100290: Group 122
+    100292: Group 123
+    100294: Group 142
+    100296: Group 147
+    100298: Group 172
+    100300: Group 179
+    100302: Group 184
+    100304: Group 189
+    100306: Group 190
+    100308: Group 2
+    100310: Group 207
+    100312: Group 218
+    100314: Group 233
+    100316: Group 234
+    100318: Group 245
+    100320: Group 260
+    100322: Group 277
+    100324: Group 28
+    100326: Group 284
+    100328: Group 307
+    100330: Group 308
+    100332: Group 309
+    100334: Group 328
+    100336: Group 335
+    100338: Group 336
+    100340: Group 35
+    100342: Group 355
+    100344: Group 356
+    100346: Group 36
+    100348: Group 37
+    100350: Group 374
+    100352: Group 375
+    100354: Group 376
+    100356: Group 395
+    100358: Group 402
+    100360: Group 427
+    100362: Group 428
+    100364: Group 447
+    100366: Group 448
+    100368: Group 450
+    100370: Group 452
+    100372: Group 454
+    100374: Group 456
+    100376: Group 458
+    100378: Group 460
+    100380: Group 462
+    100382: Group 56
+    100384: Group 63
+    100386: Group 64
+    100388: Group 83
+    100390: Group 96
+    100392: locomotive  back bolier mount
+    100394: locomotive axels
+    100396: locomotive axels 1
+    100398: locomotive axels 10
+    100400: locomotive axels 11
+    100402: locomotive axels 12
+    100404: locomotive axels 13
+    100406: locomotive axels 14
+    100408: locomotive axels 15
+    100410: locomotive axels 16
+    100412: locomotive axels 17
+    100414: locomotive axels 18
+    100416: locomotive axels 19
+    100418: locomotive axels 2
+    100420: locomotive axels 20
+    100422: locomotive axels 21
+    100424: locomotive axels 22
+    100426: locomotive axels 23
+    100428: locomotive axels 3
+    100430: locomotive axels 4
+    100432: locomotive axels 5
+    100434: locomotive axels 6
+    100436: locomotive axels 7
+    100438: locomotive axels 8
+    100440: locomotive axels 9
+    100442: locomotive bolier
+    100444: locomotive drive wheel mounts
+    100446: locomotive drive wheel mounts 1
+    100448: locomotive drive wheels
+    100450: locomotive drive wheels 1
+    100452: locomotive drive wheels 2
+    100454: locomotive drive wheels 3
+    100456: locomotive engine coupler
+    100458: locomotive firewall
+    100460: locomotive front bolier mount
+    100462: locomotive lower cab sides
+    100464: locomotive lower cab sides 1
+    100466: locomotive lower platform#2
+    100468: locomotive mid platform#2
+    100470: locomotive pistons
+    100472: locomotive pistons 1
+    100474: locomotive pressuer dome
+    100476: locomotive roof
+    100478: locomotive roof 1
+    100480: locomotive smokestack
+    100482: locomotive truck wheel mounts
+    100484: locomotive truck wheel mounts 1
+    100486: locomotive upper cab sides
+    100488: locomotive upper cab sides 1
+    100490: locomotive upper platform#2
+    100492: pullman car end railing
+    100494: pullman car end railing 1
+    100496: pullman car front/back
+    100498: pullman car front/back 1
+    100500: pullman car platform
+    100502: pullman car sides
+    100504: pullman car sides 1
+    100506: pullman car top
+    100508: pullman car top rail
+    100510: //RootNode
+    400000: basic car truck mounts
+    400002: basic car truck mounts 1
+    400004: basic car truck mounts 2
+    400006: basic car truck mounts 3
+    400008: basic car truck mounts 4
+    400010: basic car truck mounts 5
+    400012: basic car truck mounts 6
+    400014: basic car truck mounts 7
+    400016: basic car truck wheel mounts
+    400018: basic car truck wheel mounts 1
+    400020: basic car truck wheel mounts 10
+    400022: basic car truck wheel mounts 11
+    400024: basic car truck wheel mounts 12
+    400026: basic car truck wheel mounts 13
+    400028: basic car truck wheel mounts 14
+    400030: basic car truck wheel mounts 15
+    400032: basic car truck wheel mounts 2
+    400034: basic car truck wheel mounts 3
+    400036: basic car truck wheel mounts 4
+    400038: basic car truck wheel mounts 5
+    400040: basic car truck wheel mounts 6
+    400042: basic car truck wheel mounts 7
+    400044: basic car truck wheel mounts 8
+    400046: basic car truck wheel mounts 9
+    400048: basic drive wheel mounts
+    400050: basic drive wheel mounts 1
+    400052: basic drive wheel mounts 2
+    400054: basic drive wheel mounts 3
+    400056: basic truck wheels
+    400058: basic truck wheels 1
+    400060: basic truck wheels 10
+    400062: basic truck wheels 11
+    400064: basic truck wheels 12
+    400066: basic truck wheels 13
+    400068: basic truck wheels 14
+    400070: basic truck wheels 15
+    400072: basic truck wheels 16
+    400074: basic truck wheels 17
+    400076: basic truck wheels 18
+    400078: basic truck wheels 19
+    400080: basic truck wheels 2
+    400082: basic truck wheels 20
+    400084: basic truck wheels 21
+    400086: basic truck wheels 22
+    400088: basic truck wheels 23
+    400090: basic truck wheels 24
+    400092: basic truck wheels 25
+    400094: basic truck wheels 26
+    400096: basic truck wheels 27
+    400098: basic truck wheels 28
+    400100: basic truck wheels 29
+    400102: basic truck wheels 3
+    400104: basic truck wheels 30
+    400106: basic truck wheels 31
+    400108: basic truck wheels 32
+    400110: basic truck wheels 33
+    400112: basic truck wheels 34
+    400114: basic truck wheels 35
+    400116: basic truck wheels 36
+    400118: basic truck wheels 37
+    400120: basic truck wheels 38
+    400122: basic truck wheels 39
+    400124: basic truck wheels 4
+    400126: basic truck wheels 40
+    400128: basic truck wheels 41
+    400130: basic truck wheels 42
+    400132: basic truck wheels 43
+    400134: basic truck wheels 5
+    400136: basic truck wheels 6
+    400138: basic truck wheels 7
+    400140: basic truck wheels 8
+    400142: basic truck wheels 9
+    400144: bax car door
+    400146: bax car door 1
+    400148: bax car door pull
+    400150: bax car door pull 1
+    400152: box car door rails-inside
+    400154: box car door rails-inside 1
+    400156: box car door rails-inside 2
+    400158: box car door rails-inside 3
+    400160: box car door rails-outside
+    400162: box car door rails-outside 1
+    400164: box car front/back
+    400166: box car front/back 1
+    400168: box car platform
+    400170: box car sides
+    400172: box car sides 1
+    400174: box car sides 2
+    400176: box car sides 3
+    400178: box car top
+    400180: box car top rail
+    400182: caboose end railing
+    400184: caboose end railing 1
+    400186: caboose front/back
+    400188: caboose front/back 1
+    400190: caboose lookout
+    400192: caboose lookout roof
+    400194: caboose platform
+    400196: caboose sides
+    400198: caboose sides 1
+    400200: caboose top
+    400202: coal car back
+    400204: coal car platform
+    400206: coal car sides
+    400208: coal car sides 1
+    400210: coal car truck mount
+    400212: coal car truck mount 1
+    400214: coupler pin
+    400216: coupler pin 1
+    400218: coupler pin 2
+    400220: coupler pin 3
+    400222: coupler pin 4
+    400224: coupler pin 5
+    400226: dump car box ends
+    400228: dump car box ends 1
+    400230: dump car box sides
+    400232: dump car box sides 1
+    400234: dump car coupler
+    400236: dump car coupler 1
+    400238: dump car coupler 2
+    400240: dump car coupler 3
+    400242: dump car coupler 4
+    400244: dump car ends
+    400246: dump car ends 1
+    400248: dump car pivot pin
+    400250: dump car pivot pin 1
+    400252: dump car platform
+    400254: flat car platform
+    400256: flat car posts
+    400258: flat car posts 1
+    400260: flat car posts 10
+    400262: flat car posts 11
+    400264: flat car posts 2
+    400266: flat car posts 3
+    400268: flat car posts 4
+    400270: flat car posts 5
+    400272: flat car posts 6
+    400274: flat car posts 7
+    400276: flat car posts 8
+    400278: flat car posts 9
+    400280: Group 1
+    400282: Group 101
+    400284: Group 102
+    400286: Group 103
+    400288: Group 11
+    400290: Group 122
+    400292: Group 123
+    400294: Group 142
+    400296: Group 147
+    400298: Group 172
+    400300: Group 179
+    400302: Group 184
+    400304: Group 189
+    400306: Group 190
+    400308: Group 2
+    400310: Group 207
+    400312: Group 218
+    400314: Group 233
+    400316: Group 234
+    400318: Group 245
+    400320: Group 260
+    400322: Group 277
+    400324: Group 28
+    400326: Group 284
+    400328: Group 307
+    400330: Group 308
+    400332: Group 309
+    400334: Group 328
+    400336: Group 335
+    400338: Group 336
+    400340: Group 35
+    400342: Group 355
+    400344: Group 356
+    400346: Group 36
+    400348: Group 37
+    400350: Group 374
+    400352: Group 375
+    400354: Group 376
+    400356: Group 395
+    400358: Group 402
+    400360: Group 427
+    400362: Group 428
+    400364: Group 447
+    400366: Group 448
+    400368: Group 450
+    400370: Group 452
+    400372: Group 454
+    400374: Group 456
+    400376: Group 458
+    400378: Group 460
+    400380: Group 462
+    400382: Group 56
+    400384: Group 63
+    400386: Group 64
+    400388: Group 83
+    400390: Group 96
+    400392: locomotive  back bolier mount
+    400394: locomotive axels
+    400396: locomotive axels 1
+    400398: locomotive axels 10
+    400400: locomotive axels 11
+    400402: locomotive axels 12
+    400404: locomotive axels 13
+    400406: locomotive axels 14
+    400408: locomotive axels 15
+    400410: locomotive axels 16
+    400412: locomotive axels 17
+    400414: locomotive axels 18
+    400416: locomotive axels 19
+    400418: locomotive axels 2
+    400420: locomotive axels 20
+    400422: locomotive axels 21
+    400424: locomotive axels 22
+    400426: locomotive axels 23
+    400428: locomotive axels 3
+    400430: locomotive axels 4
+    400432: locomotive axels 5
+    400434: locomotive axels 6
+    400436: locomotive axels 7
+    400438: locomotive axels 8
+    400440: locomotive axels 9
+    400442: locomotive bolier
+    400444: locomotive drive wheel mounts
+    400446: locomotive drive wheel mounts 1
+    400448: locomotive drive wheels
+    400450: locomotive drive wheels 1
+    400452: locomotive drive wheels 2
+    400454: locomotive drive wheels 3
+    400456: locomotive engine coupler
+    400458: locomotive firewall
+    400460: locomotive front bolier mount
+    400462: locomotive lower cab sides
+    400464: locomotive lower cab sides 1
+    400466: locomotive lower platform#2
+    400468: locomotive mid platform#2
+    400470: locomotive pistons
+    400472: locomotive pistons 1
+    400474: locomotive pressuer dome
+    400476: locomotive roof
+    400478: locomotive roof 1
+    400480: locomotive smokestack
+    400482: locomotive truck wheel mounts
+    400484: locomotive truck wheel mounts 1
+    400486: locomotive upper cab sides
+    400488: locomotive upper cab sides 1
+    400490: locomotive upper platform#2
+    400492: pullman car end railing
+    400494: pullman car end railing 1
+    400496: pullman car front/back
+    400498: pullman car front/back 1
+    400500: pullman car platform
+    400502: pullman car sides
+    400504: pullman car sides 1
+    400506: pullman car top
+    400508: pullman car top rail
+    400510: //RootNode
+    2300000: basic car truck mounts
+    2300002: basic car truck mounts 1
+    2300004: basic car truck mounts 2
+    2300006: basic car truck mounts 3
+    2300008: basic car truck mounts 4
+    2300010: basic car truck mounts 5
+    2300012: basic car truck mounts 6
+    2300014: basic car truck mounts 7
+    2300016: basic car truck wheel mounts
+    2300018: basic car truck wheel mounts 1
+    2300020: basic car truck wheel mounts 10
+    2300022: basic car truck wheel mounts 11
+    2300024: basic car truck wheel mounts 12
+    2300026: basic car truck wheel mounts 13
+    2300028: basic car truck wheel mounts 14
+    2300030: basic car truck wheel mounts 15
+    2300032: basic car truck wheel mounts 2
+    2300034: basic car truck wheel mounts 3
+    2300036: basic car truck wheel mounts 4
+    2300038: basic car truck wheel mounts 5
+    2300040: basic car truck wheel mounts 6
+    2300042: basic car truck wheel mounts 7
+    2300044: basic car truck wheel mounts 8
+    2300046: basic car truck wheel mounts 9
+    2300048: basic drive wheel mounts
+    2300050: basic drive wheel mounts 1
+    2300052: basic drive wheel mounts 2
+    2300054: basic drive wheel mounts 3
+    2300056: basic truck wheels
+    2300058: basic truck wheels 1
+    2300060: basic truck wheels 10
+    2300062: basic truck wheels 11
+    2300064: basic truck wheels 12
+    2300066: basic truck wheels 13
+    2300068: basic truck wheels 14
+    2300070: basic truck wheels 15
+    2300072: basic truck wheels 16
+    2300074: basic truck wheels 17
+    2300076: basic truck wheels 18
+    2300078: basic truck wheels 19
+    2300080: basic truck wheels 2
+    2300082: basic truck wheels 20
+    2300084: basic truck wheels 21
+    2300086: basic truck wheels 22
+    2300088: basic truck wheels 23
+    2300090: basic truck wheels 24
+    2300092: basic truck wheels 25
+    2300094: basic truck wheels 26
+    2300096: basic truck wheels 27
+    2300098: basic truck wheels 28
+    2300100: basic truck wheels 29
+    2300102: basic truck wheels 3
+    2300104: basic truck wheels 30
+    2300106: basic truck wheels 31
+    2300108: basic truck wheels 32
+    2300110: basic truck wheels 33
+    2300112: basic truck wheels 34
+    2300114: basic truck wheels 35
+    2300116: basic truck wheels 36
+    2300118: basic truck wheels 37
+    2300120: basic truck wheels 38
+    2300122: basic truck wheels 39
+    2300124: basic truck wheels 4
+    2300126: basic truck wheels 40
+    2300128: basic truck wheels 41
+    2300130: basic truck wheels 42
+    2300132: basic truck wheels 43
+    2300134: basic truck wheels 5
+    2300136: basic truck wheels 6
+    2300138: basic truck wheels 7
+    2300140: basic truck wheels 8
+    2300142: basic truck wheels 9
+    2300144: bax car door
+    2300146: bax car door 1
+    2300148: bax car door pull
+    2300150: bax car door pull 1
+    2300152: box car door rails-inside
+    2300154: box car door rails-inside 1
+    2300156: box car door rails-inside 2
+    2300158: box car door rails-inside 3
+    2300160: box car door rails-outside
+    2300162: box car door rails-outside 1
+    2300164: box car front/back
+    2300166: box car front/back 1
+    2300168: box car platform
+    2300170: box car sides
+    2300172: box car sides 1
+    2300174: box car sides 2
+    2300176: box car sides 3
+    2300178: box car top
+    2300180: box car top rail
+    2300182: caboose end railing
+    2300184: caboose end railing 1
+    2300186: caboose front/back
+    2300188: caboose front/back 1
+    2300190: caboose lookout
+    2300192: caboose lookout roof
+    2300194: caboose platform
+    2300196: caboose sides
+    2300198: caboose sides 1
+    2300200: caboose top
+    2300202: coal car back
+    2300204: coal car platform
+    2300206: coal car sides
+    2300208: coal car sides 1
+    2300210: coal car truck mount
+    2300212: coal car truck mount 1
+    2300214: coupler pin
+    2300216: coupler pin 1
+    2300218: coupler pin 2
+    2300220: coupler pin 3
+    2300222: coupler pin 4
+    2300224: coupler pin 5
+    2300226: dump car box ends
+    2300228: dump car box ends 1
+    2300230: dump car box sides
+    2300232: dump car box sides 1
+    2300234: dump car coupler
+    2300236: dump car coupler 1
+    2300238: dump car coupler 2
+    2300240: dump car coupler 3
+    2300242: dump car coupler 4
+    2300244: dump car ends
+    2300246: dump car ends 1
+    2300248: dump car pivot pin
+    2300250: dump car pivot pin 1
+    2300252: dump car platform
+    2300254: flat car platform
+    2300256: flat car posts
+    2300258: flat car posts 1
+    2300260: flat car posts 10
+    2300262: flat car posts 11
+    2300264: flat car posts 2
+    2300266: flat car posts 3
+    2300268: flat car posts 4
+    2300270: flat car posts 5
+    2300272: flat car posts 6
+    2300274: flat car posts 7
+    2300276: flat car posts 8
+    2300278: flat car posts 9
+    2300280: Group 356
+    2300282: Group 448
+    2300284: Group 450
+    2300286: Group 452
+    2300288: Group 454
+    2300290: Group 456
+    2300292: Group 458
+    2300294: Group 460
+    2300296: Group 462
+    2300298: locomotive  back bolier mount
+    2300300: locomotive axels
+    2300302: locomotive axels 1
+    2300304: locomotive axels 10
+    2300306: locomotive axels 11
+    2300308: locomotive axels 12
+    2300310: locomotive axels 13
+    2300312: locomotive axels 14
+    2300314: locomotive axels 15
+    2300316: locomotive axels 16
+    2300318: locomotive axels 17
+    2300320: locomotive axels 18
+    2300322: locomotive axels 19
+    2300324: locomotive axels 2
+    2300326: locomotive axels 20
+    2300328: locomotive axels 21
+    2300330: locomotive axels 22
+    2300332: locomotive axels 23
+    2300334: locomotive axels 3
+    2300336: locomotive axels 4
+    2300338: locomotive axels 5
+    2300340: locomotive axels 6
+    2300342: locomotive axels 7
+    2300344: locomotive axels 8
+    2300346: locomotive axels 9
+    2300348: locomotive bolier
+    2300350: locomotive drive wheel mounts
+    2300352: locomotive drive wheel mounts 1
+    2300354: locomotive drive wheels
+    2300356: locomotive drive wheels 1
+    2300358: locomotive drive wheels 2
+    2300360: locomotive drive wheels 3
+    2300362: locomotive engine coupler
+    2300364: locomotive firewall
+    2300366: locomotive front bolier mount
+    2300368: locomotive lower cab sides
+    2300370: locomotive lower cab sides 1
+    2300372: locomotive lower platform#2
+    2300374: locomotive mid platform#2
+    2300376: locomotive pistons
+    2300378: locomotive pistons 1
+    2300380: locomotive pressuer dome
+    2300382: locomotive roof
+    2300384: locomotive roof 1
+    2300386: locomotive smokestack
+    2300388: locomotive truck wheel mounts
+    2300390: locomotive truck wheel mounts 1
+    2300392: locomotive upper cab sides
+    2300394: locomotive upper cab sides 1
+    2300396: locomotive upper platform#2
+    2300398: pullman car end railing
+    2300400: pullman car end railing 1
+    2300402: pullman car front/back
+    2300404: pullman car front/back 1
+    2300406: pullman car platform
+    2300408: pullman car sides
+    2300410: pullman car sides 1
+    2300412: pullman car top
+    2300414: pullman car top rail
+    3300000: basic car truck mounts
+    3300002: basic car truck mounts 1
+    3300004: basic car truck mounts 2
+    3300006: basic car truck mounts 3
+    3300008: basic car truck mounts 4
+    3300010: basic car truck mounts 5
+    3300012: basic car truck mounts 6
+    3300014: basic car truck mounts 7
+    3300016: basic car truck wheel mounts
+    3300018: basic car truck wheel mounts 1
+    3300020: basic car truck wheel mounts 10
+    3300022: basic car truck wheel mounts 11
+    3300024: basic car truck wheel mounts 12
+    3300026: basic car truck wheel mounts 13
+    3300028: basic car truck wheel mounts 14
+    3300030: basic car truck wheel mounts 15
+    3300032: basic car truck wheel mounts 2
+    3300034: basic car truck wheel mounts 3
+    3300036: basic car truck wheel mounts 4
+    3300038: basic car truck wheel mounts 5
+    3300040: basic car truck wheel mounts 6
+    3300042: basic car truck wheel mounts 7
+    3300044: basic car truck wheel mounts 8
+    3300046: basic car truck wheel mounts 9
+    3300048: basic drive wheel mounts
+    3300050: basic drive wheel mounts 1
+    3300052: basic drive wheel mounts 2
+    3300054: basic drive wheel mounts 3
+    3300056: basic truck wheels
+    3300058: basic truck wheels 1
+    3300060: basic truck wheels 10
+    3300062: basic truck wheels 11
+    3300064: basic truck wheels 12
+    3300066: basic truck wheels 13
+    3300068: basic truck wheels 14
+    3300070: basic truck wheels 15
+    3300072: basic truck wheels 16
+    3300074: basic truck wheels 17
+    3300076: basic truck wheels 18
+    3300078: basic truck wheels 19
+    3300080: basic truck wheels 2
+    3300082: basic truck wheels 20
+    3300084: basic truck wheels 21
+    3300086: basic truck wheels 22
+    3300088: basic truck wheels 23
+    3300090: basic truck wheels 24
+    3300092: basic truck wheels 25
+    3300094: basic truck wheels 26
+    3300096: basic truck wheels 27
+    3300098: basic truck wheels 28
+    3300100: basic truck wheels 29
+    3300102: basic truck wheels 3
+    3300104: basic truck wheels 30
+    3300106: basic truck wheels 31
+    3300108: basic truck wheels 32
+    3300110: basic truck wheels 33
+    3300112: basic truck wheels 34
+    3300114: basic truck wheels 35
+    3300116: basic truck wheels 36
+    3300118: basic truck wheels 37
+    3300120: basic truck wheels 38
+    3300122: basic truck wheels 39
+    3300124: basic truck wheels 4
+    3300126: basic truck wheels 40
+    3300128: basic truck wheels 41
+    3300130: basic truck wheels 42
+    3300132: basic truck wheels 43
+    3300134: basic truck wheels 5
+    3300136: basic truck wheels 6
+    3300138: basic truck wheels 7
+    3300140: basic truck wheels 8
+    3300142: basic truck wheels 9
+    3300144: bax car door
+    3300146: bax car door 1
+    3300148: bax car door pull
+    3300150: bax car door pull 1
+    3300152: box car door rails-inside
+    3300154: box car door rails-inside 1
+    3300156: box car door rails-inside 2
+    3300158: box car door rails-inside 3
+    3300160: box car door rails-outside
+    3300162: box car door rails-outside 1
+    3300164: box car front/back
+    3300166: box car front/back 1
+    3300168: box car platform
+    3300170: box car sides
+    3300172: box car sides 1
+    3300174: box car sides 2
+    3300176: box car sides 3
+    3300178: box car top
+    3300180: box car top rail
+    3300182: caboose end railing
+    3300184: caboose end railing 1
+    3300186: caboose front/back
+    3300188: caboose front/back 1
+    3300190: caboose lookout
+    3300192: caboose lookout roof
+    3300194: caboose platform
+    3300196: caboose sides
+    3300198: caboose sides 1
+    3300200: caboose top
+    3300202: coal car back
+    3300204: coal car platform
+    3300206: coal car sides
+    3300208: coal car sides 1
+    3300210: coal car truck mount
+    3300212: coal car truck mount 1
+    3300214: coupler pin
+    3300216: coupler pin 1
+    3300218: coupler pin 2
+    3300220: coupler pin 3
+    3300222: coupler pin 4
+    3300224: coupler pin 5
+    3300226: dump car box ends
+    3300228: dump car box ends 1
+    3300230: dump car box sides
+    3300232: dump car box sides 1
+    3300234: dump car coupler
+    3300236: dump car coupler 1
+    3300238: dump car coupler 2
+    3300240: dump car coupler 3
+    3300242: dump car coupler 4
+    3300244: dump car ends
+    3300246: dump car ends 1
+    3300248: dump car pivot pin
+    3300250: dump car pivot pin 1
+    3300252: dump car platform
+    3300254: flat car platform
+    3300256: flat car posts
+    3300258: flat car posts 1
+    3300260: flat car posts 10
+    3300262: flat car posts 11
+    3300264: flat car posts 2
+    3300266: flat car posts 3
+    3300268: flat car posts 4
+    3300270: flat car posts 5
+    3300272: flat car posts 6
+    3300274: flat car posts 7
+    3300276: flat car posts 8
+    3300278: flat car posts 9
+    3300280: Group 356
+    3300282: Group 448
+    3300284: Group 450
+    3300286: Group 452
+    3300288: Group 454
+    3300290: Group 456
+    3300292: Group 458
+    3300294: Group 460
+    3300296: Group 462
+    3300298: locomotive  back bolier mount
+    3300300: locomotive axels
+    3300302: locomotive axels 1
+    3300304: locomotive axels 10
+    3300306: locomotive axels 11
+    3300308: locomotive axels 12
+    3300310: locomotive axels 13
+    3300312: locomotive axels 14
+    3300314: locomotive axels 15
+    3300316: locomotive axels 16
+    3300318: locomotive axels 17
+    3300320: locomotive axels 18
+    3300322: locomotive axels 19
+    3300324: locomotive axels 2
+    3300326: locomotive axels 20
+    3300328: locomotive axels 21
+    3300330: locomotive axels 22
+    3300332: locomotive axels 23
+    3300334: locomotive axels 3
+    3300336: locomotive axels 4
+    3300338: locomotive axels 5
+    3300340: locomotive axels 6
+    3300342: locomotive axels 7
+    3300344: locomotive axels 8
+    3300346: locomotive axels 9
+    3300348: locomotive bolier
+    3300350: locomotive drive wheel mounts
+    3300352: locomotive drive wheel mounts 1
+    3300354: locomotive drive wheels
+    3300356: locomotive drive wheels 1
+    3300358: locomotive drive wheels 2
+    3300360: locomotive drive wheels 3
+    3300362: locomotive engine coupler
+    3300364: locomotive firewall
+    3300366: locomotive front bolier mount
+    3300368: locomotive lower cab sides
+    3300370: locomotive lower cab sides 1
+    3300372: locomotive lower platform#2
+    3300374: locomotive mid platform#2
+    3300376: locomotive pistons
+    3300378: locomotive pistons 1
+    3300380: locomotive pressuer dome
+    3300382: locomotive roof
+    3300384: locomotive roof 1
+    3300386: locomotive smokestack
+    3300388: locomotive truck wheel mounts
+    3300390: locomotive truck wheel mounts 1
+    3300392: locomotive upper cab sides
+    3300394: locomotive upper cab sides 1
+    3300396: locomotive upper platform#2
+    3300398: pullman car end railing
+    3300400: pullman car end railing 1
+    3300402: pullman car front/back
+    3300404: pullman car front/back 1
+    3300406: pullman car platform
+    3300408: pullman car sides
+    3300410: pullman car sides 1
+    3300412: pullman car top
+    3300414: pullman car top rail
+    4300000: Mesh coal car platform
+    4300002: Mesh dump car coupler
+    4300004: Mesh coal car truck mount
+    4300006: Mesh coupler pin
+    4300008: Mesh basic drive wheel mounts
+    4300010: Mesh basic truck wheels
+    4300012: Mesh locomotive axels
+    4300014: Mesh coal car sides
+    4300016: Mesh coal car back
+    4300018: Mesh basic car truck wheel mounts
+    4300020: Mesh basic car truck mounts
+    4300022: Mesh coupler pin
+    4300024: Mesh dump car coupler
+    4300026: Mesh pullman car platform
+    4300028: Mesh pullman car end railing
+    4300030: Mesh pullman car front/back
+    4300032: Mesh pullman car sides
+    4300034: Mesh pullman car top rail
+    4300036: Mesh pullman car top
+    4300038: Mesh bax car door pull
+    4300040: Mesh bax car door
+    4300042: Mesh box car front/back
+    4300044: Mesh box car sides
+    4300046: Mesh box car door rails-inside
+    4300048: Mesh box car door rails-outside
+    4300050: Mesh box car platform
+    4300052: Mesh box car top
+    4300054: Mesh box car top rail
+    4300056: Mesh caboose end railing
+    4300058: Mesh caboose platform
+    4300060: Mesh caboose sides
+    4300062: Mesh caboose front/back
+    4300064: Mesh caboose lookout
+    4300066: Mesh caboose lookout roof
+    4300068: Mesh caboose top
+    4300070: Mesh locomotive bolier
+    4300072: Mesh locomotive front bolier mount
+    4300074: Mesh locomotive  back bolier mount
+    4300076: Mesh locomotive pressuer dome
+    4300078: Mesh locomotive smokestack
+    4300080: Mesh locomotive lower cab sides
+    4300082: Mesh locomotive firewall
+    4300084: Mesh locomotive upper cab sides
+    4300086: Mesh locomotive roof
+    4300088: Mesh locomotive truck wheel mounts
+    4300090: Mesh locomotive lower platform#2
+    4300092: Mesh locomotive mid platform#2
+    4300094: Mesh locomotive upper platform#2
+    4300096: Mesh locomotive drive wheels
+    4300098: Mesh locomotive drive wheel mounts
+    4300100: Mesh locomotive engine coupler
+    4300102: Mesh locomotive pistons
+    4300104: Mesh dump car platform
+    4300106: Mesh Group 356
+    4300108: Mesh dump car pivot pin
+    4300110: Mesh dump car ends
+    4300112: Mesh dump car box sides
+    4300114: Mesh dump car box ends
+    4300116: Mesh dump car coupler
+    4300118: Mesh flat car platform
+    4300120: Mesh coupler pin
+    4300122: Mesh flat car posts
+    4300124: Mesh Group 448
+  materials:
+    importMaterials: 1
+    materialName: 2
+    materialSearch: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 0.0254
+    meshCompression: 2
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 0
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
