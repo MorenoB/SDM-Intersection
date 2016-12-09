@@ -70,13 +70,31 @@ public class Client : Singleton<Client>
 
         JSONObject j = new JSONObject(JSONObject.Type.OBJECT);
 
+        List<int> sentIds = new List<int>();
+        List<int> doubleInts = new List<int>();
+
         for (int i = 0; i < TrafficManager.Instance.Trafficlights.Count; i++)
         {
             Trafficlight trafficlight = TrafficManager.Instance.Trafficlights[i];
 
+            //Invalid stoplight data, just for visual aspect.
+            if (trafficlight.stoplineCollider == null || trafficlight.hasLeftLaneCollider == null)
+                continue;
+
             //Ignore trafficlights who got count at 0 if 'onlySendStatesWithACount' is checked.
             if (onlySendStatesWithACount && trafficlight.WaitingAgents.Count < 1)
                 continue;
+
+            if(sentIds.Contains(trafficlight.Id))
+            {
+
+                Debug.LogWarning("Sent double traffic light id! " + trafficlight.Id);
+                continue;
+
+            }
+
+            sentIds.Add(trafficlight.Id);
+
 
             JSONObject arrayObject = new JSONObject();
             arrayObject.AddField("trafficLight", trafficlight.Id);
