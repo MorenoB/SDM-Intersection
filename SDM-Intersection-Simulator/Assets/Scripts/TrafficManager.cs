@@ -219,6 +219,8 @@ public class TrafficManager : Singleton<TrafficManager>
         }
 
         laneData.NumberOfEntitiesInLane--;
+
+        Client.Instance.SendStateData();
     }
 
     public TrafficLaneData GetRandomLane(SpawnManager.SpawnType entityType, int maxNrOfEnttitiesInLane = -1)
