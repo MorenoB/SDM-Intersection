@@ -1303,6 +1303,20 @@ Prefab:
       propertyPath: m_Name
       value: TrafficLight Pedestrian (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 114000011035748420, guid: 6f1598eb9de56f446b4773465932d8bc,
+        type: 2}
+      propertyPath: stoplineCollider
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000011035748420, guid: 6f1598eb9de56f446b4773465932d8bc,
+        type: 2}
+      propertyPath: hasLeftLaneCollider
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000014240980596, guid: 6f1598eb9de56f446b4773465932d8bc, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6f1598eb9de56f446b4773465932d8bc, type: 2}
   m_IsPrefabParent: 0
@@ -1427,6 +1441,20 @@ Prefab:
     - target: {fileID: 1000013475274442, guid: 6f1598eb9de56f446b4773465932d8bc, type: 2}
       propertyPath: m_Name
       value: TrafficLight Pedestrian (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000011035748420, guid: 6f1598eb9de56f446b4773465932d8bc,
+        type: 2}
+      propertyPath: stoplineCollider
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000011035748420, guid: 6f1598eb9de56f446b4773465932d8bc,
+        type: 2}
+      propertyPath: hasLeftLaneCollider
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000014240980596, guid: 6f1598eb9de56f446b4773465932d8bc, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6f1598eb9de56f446b4773465932d8bc, type: 2}
@@ -3974,6 +4002,20 @@ Prefab:
       propertyPath: m_Name
       value: TrafficLight Pedestrian (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 114000011035748420, guid: 6f1598eb9de56f446b4773465932d8bc,
+        type: 2}
+      propertyPath: stoplineCollider
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000011035748420, guid: 6f1598eb9de56f446b4773465932d8bc,
+        type: 2}
+      propertyPath: hasLeftLaneCollider
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000014240980596, guid: 6f1598eb9de56f446b4773465932d8bc, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6f1598eb9de56f446b4773465932d8bc, type: 2}
   m_IsPrefabParent: 0
@@ -4311,12 +4353,6 @@ Transform:
   m_PrefabParentObject: {fileID: 4000013461229952, guid: ed2ccee1abfd2284688b3492fe672c83,
     type: 2}
   m_PrefabInternal: {fileID: 245403715}
---- !u!114 &256587191 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114000011035748420, guid: 6f1598eb9de56f446b4773465932d8bc,
-    type: 2}
-  m_PrefabInternal: {fileID: 1041982339}
-  m_Script: {fileID: 11500000, guid: 7ba0ad8f05bc84346868b2747c32bf42, type: 3}
 --- !u!1001 &261556741
 Prefab:
   m_ObjectHideFlags: 0
@@ -8151,12 +8187,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2e09674b44ad86f4083484bd023c4165, type: 2}
   m_IsPrefabParent: 0
---- !u!114 &480867643 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114000012740054004, guid: 2e09674b44ad86f4083484bd023c4165,
-    type: 2}
-  m_PrefabInternal: {fileID: 480867642}
-  m_Script: {fileID: 11500000, guid: 6a10f19edddaad549af24cf4eec269b7, type: 3}
 --- !u!114 &480867644 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114000010985823710, guid: 2e09674b44ad86f4083484bd023c4165,
@@ -11725,6 +11755,12 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 1497122531}
   m_Script: {fileID: 11500000, guid: 7ba0ad8f05bc84346868b2747c32bf42, type: 3}
+--- !u!114 &664061061 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114000011035748420, guid: 6f1598eb9de56f446b4773465932d8bc,
+    type: 2}
+  m_PrefabInternal: {fileID: 854027029}
+  m_Script: {fileID: 11500000, guid: 7ba0ad8f05bc84346868b2747c32bf42, type: 3}
 --- !u!1001 &664683100
 Prefab:
   m_ObjectHideFlags: 0
@@ -14148,12 +14184,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 807108853}
   m_RootOrder: 1
---- !u!114 &776884861 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114000011035748420, guid: 6f1598eb9de56f446b4773465932d8bc,
-    type: 2}
-  m_PrefabInternal: {fileID: 99415061}
-  m_Script: {fileID: 11500000, guid: 7ba0ad8f05bc84346868b2747c32bf42, type: 3}
 --- !u!1001 &780566198
 Prefab:
   m_ObjectHideFlags: 0
@@ -14567,12 +14597,6 @@ Transform:
   m_PrefabParentObject: {fileID: 4000011182338988, guid: a71bc3cd00ff60d41be3d29f22100963,
     type: 2}
   m_PrefabInternal: {fileID: 597833306}
---- !u!114 &795531031 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114000011035748420, guid: 6f1598eb9de56f446b4773465932d8bc,
-    type: 2}
-  m_PrefabInternal: {fileID: 95068722}
-  m_Script: {fileID: 11500000, guid: 7ba0ad8f05bc84346868b2747c32bf42, type: 3}
 --- !u!114 &796165818 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114000012740054004, guid: 2e09674b44ad86f4083484bd023c4165,
@@ -16195,7 +16219,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 859668287}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 9, y: 0, z: -43.9}
+  m_LocalPosition: {x: 10.13, y: 0, z: 7.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
@@ -17566,7 +17590,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 931270500}
   m_LocalRotation: {x: 0.000000029802322, y: -0.7071068, z: -0.000000029802322, w: 0.7071068}
-  m_LocalPosition: {x: 4.61, y: -9.3, z: 46.88}
+  m_LocalPosition: {x: 41.19, y: -9.3, z: 10.56}
   m_LocalScale: {x: 1.0000005, y: 1, z: 1.0000005}
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
   m_Children: []
@@ -21039,6 +21063,7 @@ Transform:
   m_Children:
   - {fileID: 119090087}
   - {fileID: 859668288}
+  - {fileID: 2049434369}
   m_Father: {fileID: 1745751884}
   m_RootOrder: 1
 --- !u!114 &1110191209
@@ -21069,6 +21094,7 @@ MonoBehaviour:
   waypointNodes:
   - {fileID: 119090088}
   - {fileID: 1110191209}
+  - {fileID: 2049434370}
   objectToMove: []
   nodeProximityDistance: 2
   rotationMode: 0
@@ -21625,12 +21651,6 @@ Transform:
   m_PrefabParentObject: {fileID: 4000011182338988, guid: 66c209c4ce64829419b89d62f938741c,
     type: 2}
   m_PrefabInternal: {fileID: 1134446610}
---- !u!114 &1134446612 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114000010254210900, guid: 66c209c4ce64829419b89d62f938741c,
-    type: 2}
-  m_PrefabInternal: {fileID: 1134446610}
-  m_Script: {fileID: 11500000, guid: 7ba0ad8f05bc84346868b2747c32bf42, type: 3}
 --- !u!1001 &1135197928
 Prefab:
   m_ObjectHideFlags: 0
@@ -23706,8 +23726,7 @@ MonoBehaviour:
   - name: (21) ZuiderpleinToSchrans
     id: 21
     trafficLights:
-    - {fileID: 1403658715}
-    - {fileID: 795531031}
+    - {fileID: 465373103}
     waypointManagers:
     - {fileID: 1110191210}
     waypointAgents: []
@@ -23731,14 +23750,6 @@ MonoBehaviour:
     - {fileID: 1591990149}
     waypointManagers:
     - {fileID: 1638181854}
-    waypointAgents: []
-  - name: (26) ZuiderpleinToSchrans
-    id: 26
-    trafficLights:
-    - {fileID: 1956868119}
-    - {fileID: 1134446612}
-    waypointManagers:
-    - {fileID: 480867643}
     waypointAgents: []
   busLanes:
   - name: 42(Oostergoweg)BUS
@@ -23775,7 +23786,6 @@ MonoBehaviour:
     id: 36
     trafficLights:
     - {fileID: 731243763}
-    - {fileID: 776884861}
     waypointManagers:
     - {fileID: 1846718664}
     waypointAgents: []
@@ -23789,8 +23799,7 @@ MonoBehaviour:
   - name: (31)OostergoToSchrans
     id: 31
     trafficLights:
-    - {fileID: 256587191}
-    - {fileID: 795531031}
+    - {fileID: 664061061}
     waypointManagers:
     - {fileID: 84039790}
     waypointAgents: []
@@ -23801,13 +23810,6 @@ MonoBehaviour:
     - {fileID: 510798038}
     waypointManagers:
     - {fileID: 1434738245}
-    waypointAgents: []
-  - name: (34)StationswegToSchrans
-    id: 34
-    trafficLights:
-    - {fileID: 776884861}
-    waypointManagers:
-    - {fileID: 505669074}
     waypointAgents: []
 --- !u!4 &1220868760
 Transform:
@@ -27443,12 +27445,6 @@ Transform:
   m_PrefabParentObject: {fileID: 4000013491556692, guid: 076563b7b1cd4ce4baa6c0157dedb322,
     type: 2}
   m_PrefabInternal: {fileID: 1403047632}
---- !u!114 &1403658715 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114000010254210900, guid: 66c209c4ce64829419b89d62f938741c,
-    type: 2}
-  m_PrefabInternal: {fileID: 467615410}
-  m_Script: {fileID: 11500000, guid: 7ba0ad8f05bc84346868b2747c32bf42, type: 3}
 --- !u!1001 &1410233402
 Prefab:
   m_ObjectHideFlags: 0
@@ -28441,7 +28437,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1475965363}
   m_LocalRotation: {x: 0.00000005087574, y: -0.7071068, z: -0.00000005087574, w: 0.7071068}
-  m_LocalPosition: {x: -13.6, y: -9.3, z: 46.5}
+  m_LocalPosition: {x: 42.2, y: -9.3, z: -13.5}
   m_LocalScale: {x: 1.0000014, y: 1, z: 1.0000014}
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
   m_Children: []
@@ -37932,12 +37928,6 @@ Transform:
   m_PrefabParentObject: {fileID: 4000011182338988, guid: 66c209c4ce64829419b89d62f938741c,
     type: 2}
   m_PrefabInternal: {fileID: 1956868117}
---- !u!114 &1956868119 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114000010254210900, guid: 66c209c4ce64829419b89d62f938741c,
-    type: 2}
-  m_PrefabInternal: {fileID: 1956868117}
-  m_Script: {fileID: 11500000, guid: 7ba0ad8f05bc84346868b2747c32bf42, type: 3}
 --- !u!1 &1960090675
 GameObject:
   m_ObjectHideFlags: 0
@@ -39222,7 +39212,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2022386279}
   m_LocalRotation: {x: 0.000000029802322, y: -0.7071068, z: -0.000000029802322, w: 0.7071068}
-  m_LocalPosition: {x: 4.6, y: -9.3, z: 10.5}
+  m_LocalPosition: {x: 22.5, y: -9.3, z: 10.5}
   m_LocalScale: {x: 1.0000005, y: 1, z: 1.0000005}
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
   m_Children: []
@@ -39917,6 +39907,49 @@ Transform:
   m_PrefabParentObject: {fileID: 4000013461229952, guid: ed2ccee1abfd2284688b3492fe672c83,
     type: 2}
   m_PrefabInternal: {fileID: 2041032702}
+--- !u!1 &2049434368
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 1000010046850212, guid: 2e09674b44ad86f4083484bd023c4165,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 2049434369}
+  - 114: {fileID: 2049434370}
+  m_Layer: 0
+  m_Name: Node 3 (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!4 &2049434369
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 4000013522354334, guid: 2e09674b44ad86f4083484bd023c4165,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2049434368}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -42.4, y: 0.0000009536743, z: 7.2000012}
+  m_LocalScale: {x: 0.9999988, y: 1, z: 0.9999993}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 1110191205}
+  m_RootOrder: 2
+--- !u!114 &2049434370
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 114000010985823710, guid: 2e09674b44ad86f4083484bd023c4165,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2049434368}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04043f5e87d38be4aad8e50d742642e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2049927064
 Prefab:
   m_ObjectHideFlags: 0
